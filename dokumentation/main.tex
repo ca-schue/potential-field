@@ -1,0 +1,122 @@
+\documentclass[
+  11pt,					% Schriftgröße
+  paper=a4,
+  DIV=13,				% Seitenlayout (Satzspiegel)
+  parskip=half,			% Abstand zwischen Absätzen
+  %twoside,				% Doppelseitig
+  openright,			% neues Kapitel rechts
+%  cleardoublepage,
+  bibtotoc,				% Literaturverzeichis in Inhaltsverzeichnis
+  headsepline,			% Kopfzeilentrennlinie
+  headings,	
+%  draft,				% Korrekturfassung
+  ]{scrreprt}		% scrartcl	
+
+% Eingabecodierung
+\usepackage[utf8]{inputenc}
+
+% Schriftcodierung
+\usepackage[T1]{fontenc}
+
+% Sprachraum
+\usepackage[ngerman]{babel}
+
+% Blindtext
+\usepackage{blindtext}
+ 
+% Schrifteinstellungen
+\usepackage{lmodern} 		% Vektorschrift
+\renewcommand{\familydefault}{\sfdefault} % Serifenlose Schrift
+\usepackage{sansmath}  	% Mathe-Schrift ohne Serifen
+\sansmath 							% aktiviert serifenlose Matheschrift
+\usepackage{microtype}	% harmonische Typenverteilung
+
+% Literatur einbinden
+\usepackage{csquotes}	% Steuerung der Anführungszeichen
+\usepackage[
+  backend=biber,			% Sortier-Compiler
+  style=numeric-comp,	% Zitationsstil
+  block=ragged,
+  ]{biblatex}
+
+\addbibresource{ref/ref_liste.bib}
+
+% Mathemodus
+\usepackage{amsmath,amssymb}
+
+% Trennung
+\hyphenation{Crash-zo-ne}
+
+% Bilder einbinden
+\usepackage{graphicx}
+\graphicspath{{bilder/}}
+\usepackage{svg}
+
+% Kopf- und Fußzeile
+\usepackage[
+	headsepline,	% Kopfzeilen-Sepparationslinie
+	automark,		% Lebende Kolumnentitel
+	]
+	{scrlayer-scrpage}
+\pagestyle{scrheadings}		
+\ofoot*{\pagemark}			
+\ohead{\headmark}
+
+
+% Titelseite
+
+
+
+\titlehead{
+		\hfil
+		  \includegraphics[width=0.3\textwidth]{thi_logo}
+		  \hfil
+  }
+
+
+\title{\vspace{5ex} Roboternavigation durch Potentialfelder: Attractive/Repulsive und Wavefront Potentiale}
+
+\subtitle{ \vspace{6ex} \Large Intelligente Robotik WS2023/24\\Praktische Arbeit \vspace{5ex}}
+
+\author{Carl Schünemann (Mat.Nr. $00107827$)}
+
+\date{\today}
+  
+
+\begin{document}
+  
+  % Titelseite anzeigen
+  \maketitle
+  
+  \pagenumbering{Roman}
+
+  
+  % Inhaltsverzeichnis
+  \tableofcontents
+  
+  \cleardoubleoddpage
+  \pagenumbering{arabic}
+
+  
+  % Kapitel einbinden
+  \include{kapitel/ziel}
+
+  % Kapitel einbinden
+  \include{kapitel/technische-voraussetzungen}
+
+  % Kapitel einbinden
+  \include{kapitel/robotermodell}
+  
+  % Kapitel einbinden
+  \include{kapitel/konfigurationsraum}
+
+  \include{kapitel/potentialfelder}
+
+  \include{kapitel/navigation}
+  
+  \include{kapitel/grenzen}
+
+  % Literatur anzeigen
+  \printbibliography
+  
+\end{document}
