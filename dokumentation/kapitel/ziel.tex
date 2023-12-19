@@ -1,1 +1,30 @@
 \chapter{Ziel der Implementierung}
+
+Gegebene Aufgabenstellung:
+
+Es soll ein Planungssystem zur Mikronavigation implementiert werden. Die
+Planung erfolgt auf Basis eines statisch gegebenen, einfachen Occupancy Gids
+mit Hilfe der Potenzialfeldmethode. Der Roboter besitzt eine rechteckige Form
+variabler Größer. Der gefundene Plan wird visualisiert. Planungsstatistiken
+werden geführt. Die Leistungsfähigkeit des Planers wird anhand verschiedener
+Planungsszenarien bewertet.
+
+Umgesetzt durch:
+- Python Jupyter Notebook
+- Einzige externe Bibliothek zur Durchführung Mathematischer Operationen: numpy
+> Fokus der Implementierung
+	- Robotermodell: 
+		- Rechteckiger Roboter mit Variabler Größe (width, length)
+		- Rotation des Roboters um "Ankerpunkt" im und gegen den Uhrzeigersinn in 90° Schritten (0°, 90°, 180°, 270°) 
+			> "Ankerpunkt" = Ecke "links oben" bei 0° Rotation
+	- Konfigurationsraum:
+		- Roboter befindet sich in statischem Occupancy Grid: 2D Array variabler Größe: Wenn sich An Koordinate (X,Y) ein Hindernis befindet => False, sonst True
+		- Um Roboterrotationen zu berücksichten: Transformation des 2D Occupancy Grid in einen 3D Konfigurationsraum:
+		- Ebene in Z-Richtung entspr. Roboterrotation => 4 Ebenen
+		- In jeder Ebene wird Occupancy Grid um die Dimensionen des Roboters in der jeweiligen Rotation erweitert
+	- Potentialfelder:
+		- Roboter wird Startpunkt/-rotation und Zielpunkt/-rotation im Occupancy-Grid gegeben
+		- Berechnung von Potentialfeldern in Konfigurationsraum 1) Mit Attractive (anziehend zu Zielpunkt) / Repulsive Potentialen
+	- Roboternavigation:
+		- Berechnung der Potentialgradienten
+		- Gradientenabstiegsverfahren

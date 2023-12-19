@@ -1,8 +1,53 @@
 \chapter{Berechnung der Potentialfelder}
 
+- Anforderung: Die Planung erfolgt [...] mit Hilfe der Potenzialfeldmethode.
 
+Def. Potenzialfeldmethode = jeder Koordinate des diskretisierten Konfigurationsraums wird ein physikalisches Potential zugewiesen:
+
+Vereinfacht: je Höher die "potenzielle Energie" einer Koordinate, desto weiter ist der Punkt auf dem aktuellen Pfad vom Ziel entfernt.
+
+Berechnung dieses Potenzialfelds für den Konfigurationsraum ist Vorbedingung zur Roboternavigation im nächsten Kapitel.
+
+Zur Berechung des Potenzialfelds wurden in dieser Implementierung zwei unterschiedliche Ansätze der Literator verfolgt.
 
 \section{Attractive/Repulsive Potentiale}
 
+Idee: Gesamtpotenzial an einer Koordinate = Kombination aus 
+- Anziehendem Potenzial: Berücksichtigt ausschließlich die Entfernung zum Ziel (TODO: Formel)
+
+*** TODO: Abbildung mit Plot ***
+
+- Abstoßendes Potenzial: Hier wird ausschließlich der Einfluss umliegender Hindernisse berücksichtig. (TODO: Unterschiedliche Formeln in Literatur, hier:)
+
+*** TODO: Abbildung mit Plot ***
+
+Kombination der Potenziale unterschiedlich in Literatur. Hier gemäß ... (TODO) Addition beider Potenziale in einem Punkt
+
+*** TODO: Abbildung mit Plot ***
+
+Problem: Lokale Minima
+
 
 \section{Wavefront Potentiale}
+
+XYZ stellt sogenannte "Wavefront Potenziale" als Alternative zu anziehenden und abstoßenden Potenzialen vor.
+
+Berechnung über sog. "Wavefront" Algorithmus 
+- Initialisierung:
+	> jeder Punkt mit Potenzial 0 
+	> Hindernisse haben nicht definiertes Potenzial (hier np.nan)
+	> Warteschlange = [(Zielpunkt, 2)]	
+
+- Wiederhole bis Warteschlange leer:
+	> (Aktueller Punkt, aktuelles Potenzial) = Vorderstes Element in Warteschlange
+	> Setze aktuelles Potenzial für aktuellen Punkt
+	> finde aktuell erreichbare Nachbarn: (x-1, x+1, ... (z-1) mod 4) + kein Hindernis + nicht außerhalb der grenzen des Occupancy-Grids
+	> Nachbarn als Tupel in Warteschlange setzen (Nachbar, Potenzial+1)
+
+- Dieser Breitensuchen-ähnliche Algorithmus breitet immer größer werdende Potenziale "wellenartig" im erreichbaren Raum aus
+- Punkte, die hinter Hindernissen liegen erhalten somit höhere Potenziale als direkt vom Ziel erreichbare Punkte
+
+*** TODO: Abbildung mit ein paar Iterationen ***
+
+
+

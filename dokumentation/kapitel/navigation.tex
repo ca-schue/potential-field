@@ -1,6 +1,56 @@
 \chapter{Roboternavigation}
 
+Basierend auf berechneten Potenzialen für jede freie Koordinate im Konfigurationsraum: Roboternavigation durch Gradientenabstiegsverfahren = In jedem Punkt in die Richtung der größten Verringerung des Potenzials gehen.
+
 \section{Berechnung der Gradienten}
+
+Berechnung der Gradienten über np.gradients => Gradienten = Kraftvektoren in x, y und Rotations-Richtung
+Zeigen in Richtung der größten Verringerung des Potenzials der benachbarten Koordinaten entlang einer Achse
+
+*** Abbildung mit Kraftvektoren in Konfigurationsraum ***
+
+1. Manuelle Berechnung an "Grenzen":
+	- Grenzen des Occupancy-Grids
+	- Grenzen zu Hindernis (np.nan)
+	
+	=> np.gradients liefert einen np.nan Gradienten
+	=> Besser: Berechnung Ableitung 1. Grad
+	- "Grenze rechts" (x+1 == np.nan): Gradient = ... Beispiel: *Abb*
+	- "Grenze links" (x-1 == np.nan): Gradient = ... Beispiel: *Abb*
+	- "Grenze vorne" (y-1 == np.nan): Gradient = ... Beispiel: *Abb*
+	- "Grenze hinten" (y+1 == np.nan): Gradient = ... Beispiel: *Abb*
+	- "Grenze oben" (z-1 mod 4 == np.nan): Gradient = ... Beispiel: *Abb*
+	- "Grenze unten" (z+1 mod 4 == np.nan): Gradient = ... Beispiel: *Abb*
+
+2. Wichtig: Wenn resultierender Kraftvektor in Grenze zeigt => Kraftvektor = 0
+		- Dadurch können neue lokale Minima geschaffen werden: Wenn beide anderen Kraftvektoren ebenfalls 0 sind 
+		- Wenn ja, für jeder Achse prüfen, ob Nachbarn gleiches Potenzial haben,
+		- Wenn ja, mit demjenigen Nachbarn Gradienten 1. Grades berechnen, dessen Kraftvektor für Achse nicht zur aktuellen Position führen würde
+		=> Ergebnis: Für jede Achse Kraftpfeil in Richtung niedrigerem Potenzial, dessen Kraftvektor nicht zurückführen würden, wenn gegenüberliegende Potenziale gleich groß sind
+
+*** Abbildung mit Beispiel ***
+
 
 \section{Gradientenabstieg}
 
+Startpunkt in 3D Konfigurationsraum
+
+Wiederhole bis Kraftvektor x = Kraftvektor y = Kraftvektor rotation = 0:
+	- Diskretisierung der Gradienten in Translationen des 3D Konfigurationsraum: Für betragsmäßig größten (oder gleich große) Gradienten in x, y oder Rotations-Richtung wird neue Position berechnet
+	- Aus allen möglichen neuen Positionen wird diejenige gewählt, die noch nicht besucht wurde und deren Gesamtkraft maximal ist-
+
+*** Abbildung mit paar Iterationen bis Ziel gefunden ***
+
+
+\section{Vergleich der Potenzialfeldmethoden}
+
+Anziehendes/Abstoßendes Potenzial:
+	- Nachteil : lokale Minima
+	...
+	- "Nicht-Lineare Gradienten"
+
+
+- Vorteil Wavefront Algorithmus: 
+	- Garantierte Konvergenz zum Ziel => Keine Lokalen Minima
+	...
+	"Lineare Gradienten"

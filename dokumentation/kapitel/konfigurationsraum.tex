@@ -1,1 +1,26 @@
 \chapter{Konfigurationsraum}
+
+Roboter befindet sich in "Occupancy-Grid": 2D Boolean Array "occupancy-grid" der Größe "occu-size-y" x "occu-size-x", das der Umgebung des Roboters entspricht, mit Ursprung "links oben"
+Für ein Hindernis an der Stelle (X,Y) steht im Occupancy-Grid "False", für eine freie Koordinate "True"
+
+Translation: "x-1" (links), "x+1" (rechts), "y-1" (oben), "y+1" (unten)
+
+*** TODO: Abbildung 2D Occupancy Grid ***
+
+Umsetzung der Kombination aus variabler Größe + Roboterrotation: Ansatz aus Literatur ... (TODO): 
+- Transformation der Bewegung des Roboters der Größe "width", "length" in die Punkt-Bewegung des Roboters mit Größe width=1, length=1
+- Deshalb für jede der möglichen 4 Rotationen des Roboters (0°, 90°, 180°, 270°): neues Occupancy-Grid in dem das ursprüngliche Occupancy-Grid um die Roboterdimensionen der jeweiligen Rotation erweitert wurde
+=> Ergebnis: 4x 2D-Occupancy-Grids mit erweiterten Hindernis = 4x "Rotationsebene"
+
+*** TODO: Abbildung der erweiterten Occupancy Grids"
+
+=> Zusammenfassen zu einem 3D-Array "configuration-space[rotation][y][x] der Dimension 4 x "occu-size-y" x "occu-size-y"
+=> Rotation: in Rotationsbene "rotation": 
+	- "(rotation+1) mod 4" (Rotation um 90° im Uhrzeigersinn)
+	- "(rotation-1) mod 4" (Rotation um 90° gegen Uhrzeigersinn)
+
+*** TODO: Abbildung 3D Plot ***
+
+3D Konfigurationsraum ermöglicht somit 
+	1. kollisionsfreie Translation
+	2. kollisionsfreie Rotation

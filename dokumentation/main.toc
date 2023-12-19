@@ -5,9 +5,10 @@
 \contentsline {chapter}{\numberline {4}Konfigurationsraum}{4}{}%
 \contentsline {chapter}{\numberline {5}Berechnung der Potentialfelder}{5}{}%
 \contentsline {section}{\numberline {5.1}Attractive/Repulsive Potentiale}{5}{}%
-\contentsline {section}{\numberline {5.2}Wavefront Potentiale}{5}{}%
-\contentsline {chapter}{\numberline {6}Roboternavigation}{6}{}%
-\contentsline {section}{\numberline {6.1}Berechnung der Gradienten}{6}{}%
-\contentsline {section}{\numberline {6.2}Gradientenabstieg}{6}{}%
-\contentsline {chapter}{\numberline {7}Grenzen der Implementierung}{7}{}%
+\contentsline {section}{\numberline {5.2}Wavefront Potentiale}{6}{}%
+\contentsline {chapter}{\numberline {6}Roboternavigation}{7}{}%
+\contentsline {section}{\numberline {6.1}Berechnung der Gradienten}{7}{}%
+\contentsline {section}{\numberline {6.2}Gradientenabstieg}{7}{}%
+\contentsline {section}{\numberline {6.3}Vergleich der Potenzialfeldmethoden}{8}{}%
+\contentsline {chapter}{\numberline {7}Grenzen der Implementierung}{9}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
