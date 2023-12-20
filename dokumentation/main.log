@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  19 DEC 2023 22:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  20 DEC 2023 13:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1127,19 +1127,7 @@ chapter 6.
 
 
 
-])
-Runaway argument?
-! File ended while scanning use of \language@active@arg".
-<inserted text> 
-                \par 
-l.115   \include{kapitel/navigation}
-                                    
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
-
-[8]
+]) [8]
 \openout2 = `kapitel/grenzen.aux'.
 
  (kapitel/grenzen.tex
@@ -1169,13 +1157,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21591 strings out of 475281
- 455124 string characters out of 2774064
- 1441837 words of memory out of 3000000
- 42572 multiletter control sequences out of 15000+600000
- 560582 words of font info for 147 fonts, out of 8000000 for 9000
+ 21602 strings out of 475281
+ 456024 string characters out of 2774064
+ 1441850 words of memory out of 3000000
+ 42585 multiletter control sequences out of 15000+600000
+ 560481 words of font info for 146 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 108i,20n,106p,10601b,2367s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 108i,19n,106p,10601b,2367s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
 :/Users/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/U
 sers/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}<C:/Users
@@ -1183,7 +1171,7 @@ sers/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}<C:/Users
 /carls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users
 /carls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Use
 rs/carls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb>
-Output written on main.pdf (11 pages, 125995 bytes).
+Output written on main.pdf (11 pages, 125541 bytes).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

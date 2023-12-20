@@ -8,7 +8,9 @@
 \contentsline {section}{\numberline {5.2}Wavefront Potentiale}{6}{}%
 \contentsline {chapter}{\numberline {6}Roboternavigation}{7}{}%
 \contentsline {section}{\numberline {6.1}Berechnung der Gradienten}{7}{}%
-\contentsline {section}{\numberline {6.2}Gradientenabstieg}{7}{}%
+\contentsline {subsection}{\numberline {6.1.1}Gradienten an Hindernissen}{7}{}%
+\contentsline {subsection}{\numberline {6.1.2}Behandlung lokaler Maxima}{7}{}%
+\contentsline {section}{\numberline {6.2}Gradientenabstieg}{8}{}%
 \contentsline {section}{\numberline {6.3}Vergleich der Potenzialfeldmethoden}{8}{}%
 \contentsline {chapter}{\numberline {7}Grenzen der Implementierung}{9}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

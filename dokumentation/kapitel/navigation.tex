@@ -1,6 +1,9 @@
 \chapter{Roboternavigation}
 
+
 Basierend auf berechneten Potenzialen für jede freie Koordinate im Konfigurationsraum: Roboternavigation durch Gradientenabstiegsverfahren = In jedem Punkt in die Richtung der größten Verringerung des Potenzials gehen.
+
+Fokus der Implementierung: Beheben lokaler Maxima (durch Kräftegleichgewicht)
 
 \section{Berechnung der Gradienten}
 
@@ -9,29 +12,40 @@ Zeigen in Richtung der größten Verringerung des Potenzials der benachbarten Ko
 
 *** Abbildung mit Kraftvektoren in Konfigurationsraum ***
 
-1. Manuelle Berechnung an "Grenzen":
-	- Grenzen des Occupancy-Grids
-	- Grenzen zu Hindernis (np.nan)
-	
-	=> np.gradients liefert einen np.nan Gradienten
-	=> Besser: Berechnung Ableitung 1. Grad
+Problem 1: np.gradients berechnet Gradienten an Grenzen von Array als Differenz der letzten beiden Werte (edge-order = 1)
+Lösung: Manuelles clipping der Gradienten: Wenn Gradient in Richtung der Grenze => Wird auf 0 geclippt
+Wichtig: durch Clipping können an Grenzen können lokale Minima oder Plateaus geschaffen werden:
+	*** TODO: Abbildung ***
+
+
+\subsection{Gradienten an Hindernissen}
+
+Problem 2: np.gradients Gradienten an Hindernissen (np.nan) np.nan als Gradienten. 
+Lösung: Behandlung von Hindernissen als Array-Grenzen: (Funktion "compute-obstacle-gradients")
 	- "Grenze rechts" (x+1 == np.nan): Gradient = ... Beispiel: *Abb*
 	- "Grenze links" (x-1 == np.nan): Gradient = ... Beispiel: *Abb*
 	- "Grenze vorne" (y-1 == np.nan): Gradient = ... Beispiel: *Abb*
 	- "Grenze hinten" (y+1 == np.nan): Gradient = ... Beispiel: *Abb*
 	- "Grenze oben" (z-1 mod 4 == np.nan): Gradient = ... Beispiel: *Abb*
 	- "Grenze unten" (z+1 mod 4 == np.nan): Gradient = ... Beispiel: *Abb*
+Wichtig: durch Clipping können an Hindernissen lokale Minima und Plateaus geschaffen werden: Wenn beide anderen Kraftvektoren ebenfalls 0 sind 
 
-2. Wichtig: Wenn resultierender Kraftvektor in Grenze zeigt => Kraftvektor = 0
-		- Dadurch können neue lokale Minima geschaffen werden: Wenn beide anderen Kraftvektoren ebenfalls 0 sind 
-		- Wenn ja, für jeder Achse prüfen, ob Nachbarn gleiches Potenzial haben,
-		- Wenn ja, mit demjenigen Nachbarn Gradienten 1. Grades berechnen, dessen Kraftvektor für Achse nicht zur aktuellen Position führen würde
-		=> Ergebnis: Für jede Achse Kraftpfeil in Richtung niedrigerem Potenzial, dessen Kraftvektor nicht zurückführen würden, wenn gegenüberliegende Potenziale gleich groß sind
+
+\subsection{Behandlung lokaler Maxima}
+
+Problem: lokale Maxima
+> In jeder Achse haben die beiden entgegengesetzten Nachbarn gleich großes Potenzial
+> Unterschied lokales Minimum und Plateau: Potenzial der Nachbarn ist dabei niedriger als das der aktuellen Position
+
+Lösung:
+> Durch Implementierung von "compute-obstacle-gradients" kann lokales Maximum nicht an Grenze oder Hindernis existieren
+> Gedachte Grenze zu einem Nachbarn setzen: Berechne Differnz zu einem der Nachbarpotenziale Gradienten
 
 *** Abbildung mit Beispiel ***
 
-
 \section{Gradientenabstieg}
+
+Lokales Minimum oder Plateau: 0-Kraftvektor in allen Achsen
 
 Startpunkt in 3D Konfigurationsraum
 
@@ -47,10 +61,10 @@ Wiederhole bis Kraftvektor x = Kraftvektor y = Kraftvektor rotation = 0:
 Anziehendes/Abstoßendes Potenzial:
 	- Nachteil : lokale Minima
 	...
-	- "Nicht-Lineare Gradienten"
+	- Nicht-Lineare Gradienten
 
 
 - Vorteil Wavefront Algorithmus: 
 	- Garantierte Konvergenz zum Ziel => Keine Lokalen Minima
 	...
-	"Lineare Gradienten"
+	Lineare Gradienten
