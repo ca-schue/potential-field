@@ -69,9 +69,9 @@ def plot_occupancy_grid(occupancy_grid, goal_point, plot_axis, rotation_step, cu
             if robot_width is None or robot_length is None:
                 # Darstellung des aktuellen Roboters als x
                 if not occupancy_grid[path_y, path_x]:
-                    plot_axis.scatter(path_x, path_y, color=path_color, marker='x', label='Path', alpha=0.5)
+                    plot_axis.scatter(path_x, path_y, color=path_color, marker='x', label='Path', alpha=0.3)
                 else:
-                    plot_axis.scatter(path_x, path_y, color=path_color, marker='o', label='Path', alpha=0.5)
+                    plot_axis.scatter(path_x, path_y, color=path_color, marker='o', label='Path', alpha=0.3)
                     # Darstellung des aktuellen Roboters als Rechteck
             else:
                 path_rect = plt.Rectangle(
