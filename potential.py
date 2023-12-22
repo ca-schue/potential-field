@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import warnings
 
-def compute_potential_attraction_repulsion(configuration_space, goal, attraction_weight=3, repulsion_weight=0):
+def compute_potential_attraction_repulsion(configuration_space, goal, attraction_weight=3, repulsion_weight=2):
     size_rotation, size_y, size_x = configuration_space.shape
     attraction_potential = np.zeros((size_rotation, size_y, size_x))
     repulsion_potential = np.zeros((size_rotation, size_y, size_x))
@@ -20,27 +20,27 @@ def compute_potential_attraction_repulsion(configuration_space, goal, attraction
                 # Abstand zu Hindernissen in der aktuellen Rotationsebene
                 distances_to_obstacles = np.sqrt((y - np.where(configuration_space[rotation] == False)[0])**2 +
                                                  (x - np.where(configuration_space[rotation] == False)[1])**2)
+                
                 for distance_to_obstacle in distances_to_obstacles:
                     # Abstoßendes Potential von Hindernissen in der aktuellen Rotationsebene (Quadratische Funktion)
-                    repulsive_potentials_to_all_objects.append((1 / (repulsion_weight + distance_to_obstacle)) if distance_to_obstacle != 0 else 1) # or repulsion_weight ???
+                    repulsive_potentials_to_all_objects.append(1 / (repulsion_weight + distance_to_obstacle) if distance_to_obstacle != 0 else 0)
 
                 # Abstand zu Hindernissen in den benachbarten Rotationsebenen
                 adjacent_rotations = [(rotation + 1) % size_rotation, (rotation - 1) % size_rotation]
                 distances_to_obstacles_adjacent_grids = [(np.sqrt(
                                                         (y - np.where(configuration_space[adj_rotation] == False)[0])**2 +
-                                                        (x - np.where(configuration_space[adj_rotation] == False)[1])**2)+
-                                                        (rotation - adj_rotation)**2)
+                                                        (x - np.where(configuration_space[adj_rotation] == False)[1])**2) + (rotation - adj_rotation)**2)
                                                     for adj_rotation in adjacent_rotations]
-                
+ 
                 for distances_to_obstacles_adjacent_grid in distances_to_obstacles_adjacent_grids:
                     for distance_to_obstacles_adjacent in distances_to_obstacles_adjacent_grid:
-                        repulsive_potentials_to_all_objects.append((1 / (repulsion_weight + distance_to_obstacles_adjacent)) if distance_to_obstacles_adjacent != 0 else 1) # or repulsion_weight ???)
+                        repulsive_potentials_to_all_objects.append(1 / (repulsion_weight + distance_to_obstacles_adjacent) if distance_to_obstacles_adjacent != 0 else 0)
                                 
                 repulsion_potential[rotation, y, x] = np.max(repulsive_potentials_to_all_objects)
                 
 
     normalized_attraction_potential = (attraction_potential / np.max(attraction_potential)) * attraction_weight
-    #normalized_repulsion_potential = repulsion_potential #/ np.max(repulsion_potential)
+
     total_potential = normalized_attraction_potential + repulsion_potential
     total_potential[~configuration_space] = np.nan
 
