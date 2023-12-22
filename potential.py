@@ -83,7 +83,7 @@ def compute_potential_wavefront(configuration_space, goal):
     return potential
 
 
-def plot_potential_stacked(potential, title, ax):
+def plot_potential_stacked(potential, title, ax, rotation_step):
 
     potential_plot = np.nan_to_num(potential)
 
@@ -99,12 +99,17 @@ def plot_potential_stacked(potential, title, ax):
     for r in range(rotation):
         Z = np.full_like(X, r)  # Z-Koordinate auf Höhe der Rotationsebene
         colors = plt.cm.plasma(potential_plot[r, :, :])
-        colors[np.isnan(potential[r, :, :])] = (0, 0, 0, 1.0)  # Graue Farbe für np.nan
+        colors[np.isnan(potential[r, :, :])] = (1,1,1,1)  # Graue Farbe für np.nan
         ax.plot_surface(X, Y, Z, facecolors=colors, rstride=1, cstride=1, alpha=1, antialiased=True)
 
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
     ax.set_zlabel('Rotation')
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        angles = np.arange(0, 360, rotation_step)    
+        ax.set_zticklabels([item for sublist in zip([f'{angle}°' for angle in angles], [''] * len(angles)) for item in sublist])
+
     ax.set_title(title)
     ax.invert_yaxis()
 
@@ -126,10 +131,12 @@ def plot_potential_slice(potential_slice, title, ax):
     y = np.arange(size_y)
     X, Y = np.meshgrid(x, y)
 
-    Z = potential_slice_plot  # Set Z to the potential values
+    # Maskiere np.nan-Werte
+    Z = np.ma.masked_where(np.isnan(potential_slice), potential_slice_plot)
 
-    colors = plt.cm.plasma(potential_slice_plot)
-    colors[np.isnan(potential_slice)] = (0, 0, 0, 1.0) 
+    #Z = potential_slice_plot  # Set Z to the potential values
+
+    colors = plt.cm.plasma(Z)
     ax.plot_surface(X, Y, Z, facecolors=colors, rstride=1, cstride=1, alpha=1, antialiased=True)
 
     ax.set_xlabel('X')

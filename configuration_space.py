@@ -126,17 +126,17 @@ def plot_configuration_space(configuration_space, ax, rotation_step, force_field
     if start_point is not None:
         start_x, start_y, start_rotation = start_point
         # Plotte einen Würfel für den Startpunkt
-        ax.bar3d(start_x - 0.5, start_y - 0.5, start_rotation, 1, 1, 1, color=start_color, alpha=0.5)
+        ax.bar3d(start_x - 0.5, start_y - 0.5, start_rotation, 1, 1, 1, color=start_color, alpha=1)
 
     if goal_point is not None:
         goal_x, goal_y, goal_rotation = goal_point
         # Plotte einen Würfel für den Zielpunkt
-        ax.bar3d(goal_x - 0.5, goal_y - 0.5, goal_rotation, 1, 1, 1, color=goal_color, alpha=0.5)
+        ax.bar3d(goal_x - 0.5, goal_y - 0.5, goal_rotation, 1, 1, 1, color=goal_color, alpha=1)
 
     if current_position is not None:
         current_x, current_y, current_rotation = current_position
         # Plotte einen Würfel für die aktuelle Position
-        ax.bar3d(current_x - 0.5, current_y - 0.5, current_rotation, 1, 1, 1, color=current_color, alpha=0.5)
+        ax.bar3d(current_x - 0.5, current_y - 0.5, current_rotation, 1, 1, 1, color=current_color, alpha=1)
 
     if path != []:
         for path_x, path_y, path_rotation in path:
