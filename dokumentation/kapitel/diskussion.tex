@@ -2,20 +2,40 @@
 
 \section{Vergleich der Potenzialfeldmethoden}
 
-U-shaped obstacle problem \cite{yujiang.2017}
+\subsection*{Anziehendes \& Abstoßendes Potenzial}
 
-Anziehendes/Abstoßendes Potenzial:
-	- Nachteil : lokale Minima
-	...
-	- Nicht-Lineare Gradienten
+In der Literatur bekanntes Problem von anziehendem und abstoßendem Potenzial: 
 
 
-- Vorteil Wavefront Algorithmus: 
-	- Garantierte Konvergenz zum Ziel => Keine Lokalen Minima
+- Für konkave Hindernisse konvergiert die Potenzialfunktion zu einem lokalem Minimum.
 
 "However, the workspace modeled by APF suffers from local minima, especially when mapping convex-shaped obstacles. Path generation by gradient search over an APF containing local minima will result in the robot getting stuck at some intermediate state before reaching the target location." \cite{maqbool.2021}
 
-	...
-	Lineare Gradienten
+	- Beispiel: Literatur "C"- und "U"-shaped Hindernisse \cite{yujiang.2017}
 
-\section{Skalierung des Occupancy Grids}
+
+- Oszillationen zwischen Hindernisengstellen:
+	Wird deutlich bei Szenarien wenn:
+	- Dimensionen des Occupancy Grid klein sind: Da Grenzen als bei Berechnung des abstoßenden Potenzials Hindernisse interpretiert werden: Oszillationen, wenn Roboter zwischen Hindernis und Grenze
+	- Roboter gefangen zwischen zwei Gradienten, die aufeinander zeigen
+
+*** TODO: Abbildung von kleinem Occu Grid vs Großes Occu Grid bei gleicher Robotergröße ***
+
+
+Im Gegnsatz dazu: Wavefront Algorithmus: 
+	- Konvergiert nie zu lokalem Minima
+	- Potenziale nur in physikalisch erreichbaren Regionen definiert
+
+*** TODO: Abbildungen mit unterschiedlichen Wavefront Szenarien ***
+
+
+\section{Überdeckungen des Robotermodells mit Hindernissen}
+
+Beobachtung bei den getesteten Szenarien der Implementierung: 
+- Schlechte Interpolation der rotierten Robotermaske für kleine Roboterdimensionen mit kleinen Rotationsschritten in einem kleinen Occupancy Grids
+ *** TODO: Beispiel 10° ***
+
+In Literatur (Author Wavefront) deshalb empfohlen: mit kleinen Rotationsschritten die Roboterdimensionen und das Occupancy Grid zu skalieren
+=> Erhöht die Auflösung der Robotermaske, verringert Artefakte der Interpolation
+
+*** TODO Beispiel Skalierung ***

@@ -10,7 +10,9 @@ def compute_gradients(potential, goal_point):
     last_layer = potential[-1, :, :]
 
     # Füge die kopierten Ebenen oben und unten an
-    potential_z_padded = np.concatenate([last_layer[np.newaxis, :, :], potential, first_layer[np.newaxis, :, :]], axis=0)
+    potential_z_padded = np.concatenate(
+        [last_layer[np.newaxis, :, :], potential, first_layer[np.newaxis, :, :]], 
+        axis=0)
 
     # Berechne die Gradienten unter Berücksichtigung der erweiterten Ebenen
     gradient_z, gradient_y, gradient_x = np.gradient(potential_z_padded)
@@ -205,14 +207,14 @@ def gradient_descent_step(current_position, force_field_x, force_field_y, force_
         new_rotation = (rotation + 1) % len(force_field_rotation) if force_rotation > 0 else (rotation - 1) % len(force_field_rotation)
         possible_moves.append((x, y, new_rotation))
 
+    if goal_point in possible_moves:
+        return goal_point
+
     # Überprüfe, ob die neue Position bereits im Pfad enthalten ist
     valid_moves = [move for move in possible_moves if move not in path]
 
-    if goal_point in valid_moves:
-        return goal_point
-
     if valid_moves:
-        return max(valid_moves, key=lambda move: abs(force_field_x[move[2], move[1], move[0]]) + abs(force_field_y[move[2], move[1], move[0]]) + abs(force_field_rotation[move[2], move[1], move[0]]))
+        return min(valid_moves, key=lambda move: abs(force_field_x[move[2], move[1], move[0]]) + abs(force_field_y[move[2], move[1], move[0]]) + abs(force_field_rotation[move[2], move[1], move[0]]))
     else:
         raise Exception("Local mininum or plateau at current location: x=" + str(x) + ", y=" + str(y) + ", rotation=" + str(rotation))
 

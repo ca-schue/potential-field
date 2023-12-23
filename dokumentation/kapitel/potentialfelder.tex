@@ -38,7 +38,7 @@ Yujiang und Huilin definieren das abstoßende Potenzial an der Koordinate (\text
 U_{Repul}(\texttt{x}, \texttt{y}, \texttt{rotation}) = \min_{\forall \,\,Hindernis \,\,\in \texttt{ occupancy\_grid}} \{ U_{Repul, Hindernis}(\texttt{x}, \texttt{y}, \texttt{rotation}) \}
 \end{equation*}
 
-*** TODO: Abbildung mit Plot ***
+*** TODO: Abbildung mit Plot. Zeigen, wie "repulsive\_weight" die "Weichheit" der Potenzialgrenze steuert ***
 
 Die gesamte potenzielle Energie einer Koordinate entspricht der Kombination beider Potenziale.
 In der Literatur werden dazu unterschiedliche Ansätze vorgeschlagen. Beispielsweise wählt XYZ das Maximum beider Potenziale. In dieser Implementierung wurden anziehendes und abstoßendes Potenzial gemäß Khalib addiert \cite{khatib.1985}: 
