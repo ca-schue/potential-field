@@ -1,16 +1,18 @@
 \babel@toc {ngerman}{}\relax 
 \contentsline {chapter}{\numberline {1}Ziel der Implementierung}{1}{}%
-\contentsline {chapter}{\numberline {2}Technische Voraussetzungen}{2}{}%
-\contentsline {chapter}{\numberline {3}Robotermodell}{3}{}%
+\contentsline {chapter}{\numberline {2}Ausführung der Implementierung}{2}{}%
+\contentsline {chapter}{\numberline {3}Roboterbewegung im Occupancy Grid}{3}{}%
 \contentsline {chapter}{\numberline {4}Konfigurationsraum}{4}{}%
-\contentsline {chapter}{\numberline {5}Berechnung der Potentialfelder}{5}{}%
-\contentsline {section}{\numberline {5.1}Attractive/Repulsive Potentiale}{5}{}%
-\contentsline {section}{\numberline {5.2}Wavefront Potentiale}{6}{}%
-\contentsline {chapter}{\numberline {6}Roboternavigation}{7}{}%
+\contentsline {chapter}{\numberline {5}Berechnung der Potenzialfelder}{5}{}%
+\contentsline {section}{\numberline {5.1}Anziehende \& Abstoßende Potenziale}{5}{}%
+\contentsline {section}{\numberline {5.2}Wavefront Potenziale}{6}{}%
+\contentsline {chapter}{\numberline {6}Roboternavigation im Kraftfeld}{7}{}%
 \contentsline {section}{\numberline {6.1}Berechnung der Gradienten}{7}{}%
-\contentsline {subsection}{\numberline {6.1.1}Gradienten an Hindernissen}{7}{}%
-\contentsline {subsection}{\numberline {6.1.2}Behandlung lokaler Maxima}{7}{}%
+\contentsline {subsection}{\numberline {6.1.1}Gradienten an Grenzen und Hindernissen}{8}{}%
+\contentsline {subsection}{\numberline {6.1.2}Behandlung lokaler Maxima}{8}{}%
 \contentsline {section}{\numberline {6.2}Gradientenabstieg}{8}{}%
-\contentsline {section}{\numberline {6.3}Vergleich der Potenzialfeldmethoden}{8}{}%
-\contentsline {chapter}{\numberline {7}Grenzen der Implementierung}{9}{}%
+\contentsline {chapter}{\numberline {7}Diskussion}{10}{}%
+\contentsline {section}{\numberline {7.1}Vergleich der Potenzialfeldmethoden}{10}{}%
+\contentsline {section}{\numberline {7.2}Skalierung des Occupancy Grids}{10}{}%
+\contentsline {chapter}{\nonumberline Literatur}{11}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

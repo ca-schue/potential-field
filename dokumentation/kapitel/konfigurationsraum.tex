@@ -1,26 +1,34 @@
 \chapter{Konfigurationsraum}
 
-Roboter befindet sich in "Occupancy-Grid": 2D Boolean Array "occupancy-grid" der Größe "occu-size-y" x "occu-size-x", das der Umgebung des Roboters entspricht, mit Ursprung "links oben"
-Für ein Hindernis an der Stelle (X,Y) steht im Occupancy-Grid "False", für eine freie Koordinate "True"
+% https://cs.stanford.edu/people/eroberts/courses/soco/projects/1998-99/robotics/definitions.html
 
-Translation: "x-1" (links), "x+1" (rechts), "y-1" (oben), "y+1" (unten)
+Bei einer Roboterlänge und -breite größer als eins können Punkte im Occupancy Grid nicht erreicht werden, ohne mit den Roboterdimensionen Hindernisse oder Grenzen zu überdecken. 
+Aus diesem Grund wird die Bewegung des Roboters im Occupancy Grid in eine Punktbewegung im sogenannten \textit{Konfigurationsraum} transformiert.
+In diesem Raum entsprechen die Roboterdimensionen einem Punkt (Roboterlänge = Roboterbreite = $1$), was die Überdeckung von Hindernissen und Grenzen verhindert.
 
-*** TODO: Abbildung 2D Occupancy Grid ***
+Zur Berechnung des Konfigurationsraums wird jedes Hindernis im Occupancy Grid um die Roboterdimensionen erweitert.
+Aufgrund der variablen Roboterdimension ändern sich die überdeckten Koordinaten im Occupancy Grid je nach aktueller Rotation.
+Ansätze in der Literatur schlagen deshalb vor, unabhängig von der aktuellen Rotation des Roboters, jedes Hindernis in X- und Y-Richtung um einen Kreis mit maximaler Roboterdimension als Radius zu vergrößern.
 
-Umsetzung der Kombination aus variabler Größe + Roboterrotation: Ansatz aus Literatur ... (TODO): 
-- Transformation der Bewegung des Roboters der Größe "width", "length" in die Punkt-Bewegung des Roboters mit Größe width=1, length=1
-- Deshalb für jede der möglichen 4 Rotationen des Roboters (0°, 90°, 180°, 270°): neues Occupancy-Grid in dem das ursprüngliche Occupancy-Grid um die Roboterdimensionen der jeweiligen Rotation erweitert wurde
-=> Ergebnis: 4x 2D-Occupancy-Grids mit erweiterten Hindernis = 4x "Rotationsebene"
+\subsection*{3D Konfigurationsraum}
 
-*** TODO: Abbildung der erweiterten Occupancy Grids"
+XYZ (TODO) schlägt einen restriktiveren Ansatz vor, um möglichst wenig Koordinaten um das Hindernis im Konfigurationsraum zu erweitern.
+Dazu wird die Roboterrotation in diskrete Schritte unterteilt. Die Variable \texttt{rotation\_step} gibt als Teiler von 360° an, um wie viel Grad sich der Roboter pro Bewegungsschritt drehen kann.
+Somit sind $\texttt{rotations} = (360 \text{\textdegree} \div \texttt{rotation\_step})$ unterschiedliche Ausrichtungen des Roboters um den Ankerpunkt möglich.
 
-=> Zusammenfassen zu einem 3D-Array "configuration-space[rotation][y][x] der Dimension 4 x "occu-size-y" x "occu-size-y"
-=> Rotation: in Rotationsbene "rotation": 
-	- "(rotation+1) mod 4" (Rotation um 90° im Uhrzeigersinn)
-	- "(rotation-1) mod 4" (Rotation um 90° gegen Uhrzeigersinn)
+Für das Robotermodell wird eine Maske als 2D-Array (\texttt{robot\_length}$*$\texttt{robot\_width}) erstellt und für jeden Rotationsschritt mit \texttt{sklearn.rotate()}\footnote{Mögliche Artefakte und Interpolation der Matrixrotation müssen manuell korrigiert werden.} gedreht.
+Für jede der $(360 \text{\textdegree} \div \texttt{rotation\_step})$ möglichen Rotationen wird ein \textit{erweitertes Occupancy Grids} generiert. Dazu werden Hindernisse sowie Grenzen des ursprünglichen Occupancy Grids um die rotierte Maske erweitert.
+Beispielsweise Rotation um 45° ...
+
+*** TODO: Beispiel für Erweiterung des Roboters um Hindernis ***
+
+Die erweiterten Occupancy Grids werden zum Konfigurationsraum \texttt{configuration-space[rotation][y][x]} mit den Dimensionen $\texttt{rotations} * \texttt{occupancy\_grid\_length} * \texttt{occupancy\_grid\_width}$ zusammengefasst. Für die Dimension \texttt{[rotation]} gilt:
+\begin{itemize}
+\item $\text{[}(\texttt{rotation} + 1) \mod \texttt{rotations]}$ $\widehat{=}$ Rotation um \texttt{rotation\_step} im Uhrzeigersinn
+\item $\text{[}(\texttt{rotation} - 1) \mod \texttt{rotations]}$ $\widehat{=}$ Rotation um \texttt{rotation\_step} gegen den Uhrzeigersinn
+\end{itemize}
+
 
 *** TODO: Abbildung 3D Plot ***
 
-3D Konfigurationsraum ermöglicht somit 
-	1. kollisionsfreie Translation
-	2. kollisionsfreie Rotation
+Durch diesen 3D Konfigurationsraum wird somit die kollisionsfreie Translation und Rotation bei minimalem Verbrauch des freien Konfigurationsraums ermöglicht.

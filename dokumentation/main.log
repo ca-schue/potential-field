@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  20 DEC 2023 13:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  23 DEC 2023 16:24
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -193,23 +193,130 @@ Class scrreprt Info: Using old \@makefntext due to compatibility level
 (scrreprt)           less than 3.22 on input line 7315.
 Class scrreprt Info: Redefining `\numberline' on input line 7328.
 \bibindent=\dimen140
+) (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip65
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen141
+))
+(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen142
+)
+(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count195
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count196
+\leftroot@=\count197
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count198
+\DOTSCASE@=\count199
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen143
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count266
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count267
+\dotsspace@=\muskip16
+\c@parentequation=\count268
+\dspbrk@lvl=\count269
+\tag@help=\toks18
+\row@=\count270
+\column@=\count271
+\maxfields@=\count272
+\andhelp@=\toks19
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks20
+\multlinegap=\skip66
+\multlinetaggap=\skip67
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.st
+y
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+ (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count273
+\float@exts=\toks22
+\float@box=\box55
+\@float@everytoks=\toks23
+\@floatcapt=\box56
+)
+(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks24
+\c@algorithm=\count274
+)
+(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseudoc
+ode.sty
+Package: algpseudocode 
+
+(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorithmi
+cx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count275
+\c@ALG@rem=\count276
+\c@ALG@nested=\count277
+\ALG@tlm=\skip68
+\ALG@thistlm=\skip69
+\c@ALG@Lnr=\count278
+\c@ALG@blocknr=\count279
+\c@ALG@storecount=\count280
+\c@ALG@tmpcounter=\count281
+\ALG@tmplength=\skip70
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks17
-\inpenc@posthook=\toks18
+\inpenc@prehook=\toks25
+\inpenc@posthook=\toks26
 )
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2022/11/30 3.83 The Babel package
-\babel@savecnt=\count195
-\U@D=\dimen141
+\babel@savecnt=\count282
+\U@D=\dimen150
 \l@unhyphenated=\language79
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count196
+\bbl@dirlevel=\count283
 
 *************************************
 * Local config file bblopts.cfg used
@@ -239,24 +346,24 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count197
-\c@Blindtext=\count198
-\c@blind@countparstart=\count199
-\blind@countxx=\count266
-\blindtext@numBlindtext=\count267
-\blind@countyy=\count268
-\c@blindlist=\count269
-\c@blindlistlevel=\count270
-\c@blindlist@level=\count271
-\blind@listitem=\count272
-\c@blind@listcount=\count273
-\c@blind@levelcount=\count274
-\blind@mathformula=\count275
-\blind@Mathformula=\count276
-\c@blind@randomcount=\count277
-\c@blind@randommax=\count278
-\c@blind@pangramcount=\count279
-\c@blind@pangrammax=\count280
+\c@blindtext=\count284
+\c@Blindtext=\count285
+\c@blind@countparstart=\count286
+\blind@countxx=\count287
+\blindtext@numBlindtext=\count288
+\blind@countyy=\count289
+\c@blindlist=\count290
+\c@blindlistlevel=\count291
+\c@blindlist@level=\count292
+\blind@listitem=\count293
+\c@blind@listcount=\count294
+\c@blind@levelcount=\count295
+\blind@mathformula=\count296
+\blind@Mathformula=\count297
+\c@blind@randomcount=\count298
+\c@blind@randommax=\count299
+\c@blind@pangramcount=\count300
+\c@blind@pangrammax=\count301
 )
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
@@ -295,7 +402,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 )
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/sansmath\sansmath.sty
 Package: sansmath 2007/02/28  ver 1.1 Donald Arseneau
-\c@mv@sans=\count281
+\c@mv@sans=\count302
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `sans'
 (Font)                  OT1/cmr/m/n --> OT1/lmss/m/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathsfsl' in version `sans'
@@ -313,18 +420,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsfbf' in version `sans'
 Package: microtype 2022/06/23 v3.0f Micro-typographical refinements (RS)
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count282
+\etb@tempcnta=\count303
 )
-\MT@toks=\toks19
-\MT@tempbox=\box53
-\MT@count=\count283
+\MT@toks=\toks27
+\MT@tempbox=\box57
+\MT@count=\count304
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1045.
 LaTeX Info: Redefining \leftprotrusion on input line 1046.
 LaTeX Info: Redefining \rightprotrusion on input line 1056.
 LaTeX Info: Redefining \textls on input line 1234.
-\MT@outer@kern=\dimen142
+\MT@outer@kern=\dimen151
 LaTeX Info: Redefining \textmicrotypecontext on input line 1858.
-\MT@listname@count=\count284
+\MT@listname@count=\count305
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-pdf
 tex.def
@@ -332,7 +439,7 @@ File: microtype-pdftex.def 2022/06/23 v3.0f Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 900.
 LaTeX Info: Redefining \lslig on input line 900.
-\MT@outer@space=\skip65
+\MT@outer@space=\skip71
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
@@ -341,13 +448,13 @@ File: microtype.cfg 2022/06/23 v3.0f microtype main configuration file (RS)
 ))
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
 Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
-\csq@reset=\count285
-\csq@gtype=\count286
-\csq@glevel=\count287
-\csq@qlevel=\count288
-\csq@maxlvl=\count289
-\csq@tshold=\count290
-\csq@ltx@everypar=\toks20
+\csq@reset=\count306
+\csq@gtype=\count307
+\csq@glevel=\count308
+\csq@qlevel=\count309
+\csq@maxlvl=\count310
+\csq@tshold=\count311
+\csq@ltx@everypar=\toks28
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
 File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
@@ -386,75 +493,72 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )) (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count291
+\lrq@indent=\count312
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
-Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
-)
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
-\Urlmuskip=\muskip16
+\Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count292
-\c@listtotal=\count293
-\c@listcount=\count294
-\c@liststart=\count295
-\c@liststop=\count296
-\c@citecount=\count297
-\c@citetotal=\count298
-\c@multicitecount=\count299
-\c@multicitetotal=\count300
-\c@instcount=\count301
-\c@maxnames=\count302
-\c@minnames=\count303
-\c@maxitems=\count304
-\c@minitems=\count305
-\c@citecounter=\count306
-\c@maxcitecounter=\count307
-\c@savedcitecounter=\count308
-\c@uniquelist=\count309
-\c@uniquename=\count310
-\c@refsection=\count311
-\c@refsegment=\count312
-\c@maxextratitle=\count313
-\c@maxextratitleyear=\count314
-\c@maxextraname=\count315
-\c@maxextradate=\count316
-\c@maxextraalpha=\count317
-\c@abbrvpenalty=\count318
-\c@highnamepenalty=\count319
-\c@lownamepenalty=\count320
-\c@maxparens=\count321
-\c@parenlevel=\count322
-\blx@tempcnta=\count323
-\blx@tempcntb=\count324
-\blx@tempcntc=\count325
-\c@blx@maxsection=\count326
-\blx@maxsegment@0=\count327
-\blx@notetype=\count328
-\blx@parenlevel@text=\count329
-\blx@parenlevel@foot=\count330
-\blx@sectionciteorder@0=\count331
-\blx@sectionciteorderinternal@0=\count332
-\blx@entrysetcounter=\count333
-\blx@biblioinstance=\count334
-\labelnumberwidth=\skip66
-\labelalphawidth=\skip67
-\biblabelsep=\skip68
-\bibitemsep=\skip69
-\bibnamesep=\skip70
-\bibinitsep=\skip71
-\bibparsep=\skip72
-\bibhang=\skip73
+\c@tabx@nest=\count313
+\c@listtotal=\count314
+\c@listcount=\count315
+\c@liststart=\count316
+\c@liststop=\count317
+\c@citecount=\count318
+\c@citetotal=\count319
+\c@multicitecount=\count320
+\c@multicitetotal=\count321
+\c@instcount=\count322
+\c@maxnames=\count323
+\c@minnames=\count324
+\c@maxitems=\count325
+\c@minitems=\count326
+\c@citecounter=\count327
+\c@maxcitecounter=\count328
+\c@savedcitecounter=\count329
+\c@uniquelist=\count330
+\c@uniquename=\count331
+\c@refsection=\count332
+\c@refsegment=\count333
+\c@maxextratitle=\count334
+\c@maxextratitleyear=\count335
+\c@maxextraname=\count336
+\c@maxextradate=\count337
+\c@maxextraalpha=\count338
+\c@abbrvpenalty=\count339
+\c@highnamepenalty=\count340
+\c@lownamepenalty=\count341
+\c@maxparens=\count342
+\c@parenlevel=\count343
+\blx@tempcnta=\count344
+\blx@tempcntb=\count345
+\blx@tempcntc=\count346
+\c@blx@maxsection=\count347
+\blx@maxsegment@0=\count348
+\blx@notetype=\count349
+\blx@parenlevel@text=\count350
+\blx@parenlevel@foot=\count351
+\blx@sectionciteorder@0=\count352
+\blx@sectionciteorderinternal@0=\count353
+\blx@entrysetcounter=\count354
+\blx@biblioinstance=\count355
+\labelnumberwidth=\skip72
+\labelalphawidth=\skip73
+\biblabelsep=\skip74
+\bibitemsep=\skip75
+\bibnamesep=\skip76
+\bibinitsep=\skip77
+\bibparsep=\skip78
+\bibhang=\skip79
 \blx@bcfin=\read3
 \blx@bcfout=\write3
 \blx@langwohyphens=\language80
-\c@mincomprange=\count335
-\c@maxcomprange=\count336
-\c@mincompwidth=\count337
+\c@mincomprange=\count356
+\c@maxcomprange=\count357
+\c@mincompwidth=\count358
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -465,88 +569,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric-comp.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count338
-\c@savedafterword=\count339
-\c@annotator=\count340
-\c@savedannotator=\count341
-\c@author=\count342
-\c@savedauthor=\count343
-\c@bookauthor=\count344
-\c@savedbookauthor=\count345
-\c@commentator=\count346
-\c@savedcommentator=\count347
-\c@editor=\count348
-\c@savededitor=\count349
-\c@editora=\count350
-\c@savededitora=\count351
-\c@editorb=\count352
-\c@savededitorb=\count353
-\c@editorc=\count354
-\c@savededitorc=\count355
-\c@foreword=\count356
-\c@savedforeword=\count357
-\c@holder=\count358
-\c@savedholder=\count359
-\c@introduction=\count360
-\c@savedintroduction=\count361
-\c@namea=\count362
-\c@savednamea=\count363
-\c@nameb=\count364
-\c@savednameb=\count365
-\c@namec=\count366
-\c@savednamec=\count367
-\c@translator=\count368
-\c@savedtranslator=\count369
-\c@shortauthor=\count370
-\c@savedshortauthor=\count371
-\c@shorteditor=\count372
-\c@savedshorteditor=\count373
-\c@labelname=\count374
-\c@savedlabelname=\count375
-\c@institution=\count376
-\c@savedinstitution=\count377
-\c@lista=\count378
-\c@savedlista=\count379
-\c@listb=\count380
-\c@savedlistb=\count381
-\c@listc=\count382
-\c@savedlistc=\count383
-\c@listd=\count384
-\c@savedlistd=\count385
-\c@liste=\count386
-\c@savedliste=\count387
-\c@listf=\count388
-\c@savedlistf=\count389
-\c@location=\count390
-\c@savedlocation=\count391
-\c@organization=\count392
-\c@savedorganization=\count393
-\c@origlocation=\count394
-\c@savedoriglocation=\count395
-\c@origpublisher=\count396
-\c@savedorigpublisher=\count397
-\c@publisher=\count398
-\c@savedpublisher=\count399
-\c@language=\count400
-\c@savedlanguage=\count401
-\c@origlanguage=\count402
-\c@savedoriglanguage=\count403
-\c@pageref=\count404
-\c@savedpageref=\count405
-\shorthandwidth=\skip74
-\shortjournalwidth=\skip75
-\shortserieswidth=\skip76
-\shorttitlewidth=\skip77
-\shortauthorwidth=\skip78
-\shorteditorwidth=\skip79
-\locallabelnumberwidth=\skip80
-\locallabelalphawidth=\skip81
-\localshorthandwidth=\skip82
-\localshortjournalwidth=\skip83
-\localshortserieswidth=\skip84
-\localshorttitlewidth=\skip85
-\localshortauthorwidth=\skip86
-\localshorteditorwidth=\skip87
+\c@afterword=\count359
+\c@savedafterword=\count360
+\c@annotator=\count361
+\c@savedannotator=\count362
+\c@author=\count363
+\c@savedauthor=\count364
+\c@bookauthor=\count365
+\c@savedbookauthor=\count366
+\c@commentator=\count367
+\c@savedcommentator=\count368
+\c@editor=\count369
+\c@savededitor=\count370
+\c@editora=\count371
+\c@savededitora=\count372
+\c@editorb=\count373
+\c@savededitorb=\count374
+\c@editorc=\count375
+\c@savededitorc=\count376
+\c@foreword=\count377
+\c@savedforeword=\count378
+\c@holder=\count379
+\c@savedholder=\count380
+\c@introduction=\count381
+\c@savedintroduction=\count382
+\c@namea=\count383
+\c@savednamea=\count384
+\c@nameb=\count385
+\c@savednameb=\count386
+\c@namec=\count387
+\c@savednamec=\count388
+\c@translator=\count389
+\c@savedtranslator=\count390
+\c@shortauthor=\count391
+\c@savedshortauthor=\count392
+\c@shorteditor=\count393
+\c@savedshorteditor=\count394
+\c@labelname=\count395
+\c@savedlabelname=\count396
+\c@institution=\count397
+\c@savedinstitution=\count398
+\c@lista=\count399
+\c@savedlista=\count400
+\c@listb=\count401
+\c@savedlistb=\count402
+\c@listc=\count403
+\c@savedlistc=\count404
+\c@listd=\count405
+\c@savedlistd=\count406
+\c@liste=\count407
+\c@savedliste=\count408
+\c@listf=\count409
+\c@savedlistf=\count410
+\c@location=\count411
+\c@savedlocation=\count412
+\c@organization=\count413
+\c@savedorganization=\count414
+\c@origlocation=\count415
+\c@savedoriglocation=\count416
+\c@origpublisher=\count417
+\c@savedorigpublisher=\count418
+\c@publisher=\count419
+\c@savedpublisher=\count420
+\c@language=\count421
+\c@savedlanguage=\count422
+\c@origlanguage=\count423
+\c@savedoriglanguage=\count424
+\c@pageref=\count425
+\c@savedpageref=\count426
+\shorthandwidth=\skip80
+\shortjournalwidth=\skip81
+\shortserieswidth=\skip82
+\shorttitlewidth=\skip83
+\shortauthorwidth=\skip84
+\shorteditorwidth=\skip85
+\locallabelnumberwidth=\skip86
+\locallabelalphawidth=\skip87
+\localshorthandwidth=\skip88
+\localshortjournalwidth=\skip89
+\localshortserieswidth=\skip90
+\localshorttitlewidth=\skip91
+\localshortauthorwidth=\skip92
+\localshorteditorwidth=\skip93
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -557,19 +661,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2022/07/12 v3.18b biblatex compatibility (PK/MW)
-\c@textcitecount=\count406
-\c@textcitetotal=\count407
-\c@textcitemaxnames=\count408
-\c@biburlbigbreakpenalty=\count409
-\c@biburlbreakpenalty=\count410
-\c@biburlnumpenalty=\count411
-\c@biburlucpenalty=\count412
-\c@biburllcpenalty=\count413
-\biburlbigskip=\muskip17
-\biburlnumskip=\muskip18
-\biburlucskip=\muskip19
-\biburllcskip=\muskip20
-\c@smartand=\count414
+\c@textcitecount=\count427
+\c@textcitetotal=\count428
+\c@textcitemaxnames=\count429
+\c@biburlbigbreakpenalty=\count430
+\c@biburlbreakpenalty=\count431
+\c@biburlnumpenalty=\count432
+\c@biburlucpenalty=\count433
+\c@biburllcpenalty=\count434
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count435
 )
 Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.bbx' found.
@@ -589,8 +693,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
 bx
 File: standard.bbx 2022/07/12 v3.18b biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count415
-\c@bbx:relatedtotal=\count416
+\c@bbx:relatedcount=\count436
+\c@bbx:relatedtotal=\count437
 )))
 Package biblatex Info: Trying to load citation style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.cbx' found.
@@ -598,10 +702,10 @@ Package biblatex Info: ... file 'numeric-comp.cbx' found.
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric-co
 mp.cbx
 File: numeric-comp.cbx 2022/07/12 v3.18b biblatex citation style (PK/MW)
-\c@cbx@tempcnta=\count417
-\c@cbx@tempcntb=\count418
-\c@cbx@tempcntc=\count419
-\c@cbx@tempcntd=\count420
+\c@cbx@tempcnta=\count438
+\c@cbx@tempcntb=\count439
+\c@cbx@tempcntc=\count440
+\c@cbx@tempcntd=\count441
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -629,8 +733,8 @@ Package: expl3 2022-11-02 L3 programming layer (loader)
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count421
-\l__pdf_internal_box=\box54
+\l__color_backend_stack_int=\count442
+\l__pdf_internal_box=\box58
 ))
 Package biblatex Info: ... and expl3
 (biblatex)             2022-11-02 L3 programming layer (loader) 
@@ -646,74 +750,6 @@ Package: xparse 2022-06-22 L3 Experimental document command parser
 Package: blx-case-expl3 2022/07/12 v3.18b expl3 case changing code for biblatex
 
 ))
-(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
-Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip88
-
-For additional information on amsmath, use the `?' option.
-(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
-Package: amstext 2021/08/26 v2.01 AMS text
-
-(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks21
-\ex@=\dimen143
-))
-(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen144
-)
-(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
-Package: amsopn 2022/04/08 v2.04 operator names
-)
-\inf@bad=\count422
-LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count423
-\leftroot@=\count424
-LaTeX Info: Redefining \overline on input line 399.
-LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count425
-\DOTSCASE@=\count426
-LaTeX Info: Redefining \ldots on input line 496.
-LaTeX Info: Redefining \dots on input line 499.
-LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box55
-\strutbox@=\box56
-LaTeX Info: Redefining \big on input line 722.
-LaTeX Info: Redefining \Big on input line 723.
-LaTeX Info: Redefining \bigg on input line 724.
-LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen145
-LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count427
-LaTeX Info: Redefining \bmod on input line 905.
-LaTeX Info: Redefining \pmod on input line 910.
-LaTeX Info: Redefining \smash on input line 940.
-LaTeX Info: Redefining \relbar on input line 970.
-LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count428
-\dotsspace@=\muskip21
-\c@parentequation=\count429
-\dspbrk@lvl=\count430
-\tag@help=\toks22
-\row@=\count431
-\column@=\count432
-\maxfields@=\count433
-\andhelp@=\toks23
-\eqnshift@=\dimen146
-\alignsep@=\dimen147
-\tagshift@=\dimen148
-\tagwidth@=\dimen149
-\totwidth@=\dimen150
-\lineht@=\dimen151
-\@envbody=\toks24
-\multlinegap=\skip89
-\multlinetaggap=\skip90
-\mathdisplay@stack=\toks25
-LaTeX Info: Redefining \[ on input line 2953.
-LaTeX Info: Redefining \] on input line 2954.
-)
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
@@ -768,9 +804,9 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )) (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 ))
-\c@svg@param@lastpage=\count434
-\svg@box=\box57
-\c@svg@param@currpage=\count435
+\c@svg@param@lastpage=\count443
+\svg@box=\box59
+\c@svg@param@currpage=\count444
 ) (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 
@@ -803,7 +839,7 @@ sty
 y
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
 -common.tex
-\pgfutil@everybye=\toks26
+\pgfutil@everybye=\toks29
 \pgfutil@tempdima=\dimen154
 \pgfutil@tempdimb=\dimen155
 
@@ -811,7 +847,7 @@ y
 -common-lists.tex))
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
 -latex.def
-\pgfutil@abb=\box58
+\pgfutil@abb=\box60
 )
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
 code.tex
@@ -824,12 +860,12 @@ Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
 .code.tex
-\pgfkeys@pathtoks=\toks27
-\pgfkeys@temptoks=\toks28
+\pgfkeys@pathtoks=\toks30
+\pgfkeys@temptoks=\toks31
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
 filtered.code.tex
-\pgfkeys@tmptoks=\toks29
+\pgfkeys@tmptoks=\toks32
 ))
 \pgf@x=\dimen156
 \pgf@y=\dimen157
@@ -843,14 +879,14 @@ filtered.code.tex
 \pgf@yd=\dimen165
 \w@pgf@writea=\write4
 \r@pgf@reada=\read4
-\c@pgf@counta=\count436
-\c@pgf@countb=\count437
-\c@pgf@countc=\count438
-\c@pgf@countd=\count439
-\t@pgf@toka=\toks30
-\t@pgf@tokb=\toks31
-\t@pgf@tokc=\toks32
-\pgf@sys@id@count=\count440
+\c@pgf@counta=\count445
+\c@pgf@countb=\count446
+\c@pgf@countc=\count447
+\c@pgf@countd=\count448
+\t@pgf@toka=\toks33
+\t@pgf@tokb=\toks34
+\t@pgf@tokc=\toks35
+\pgf@sys@id@count=\count449
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
 fg
@@ -869,8 +905,8 @@ File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 ssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count441
-\pgfsyssoftpath@bigbuffer@items=\count442
+\pgfsyssoftpath@smallbuffer@items=\count450
+\pgfsyssoftpath@bigbuffer@items=\count451
 )
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 sprotocol.code.tex
@@ -899,8 +935,8 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 8
-6.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 9
+3.
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -910,35 +946,36 @@ LaTeX Warning: Unused global option(s):
 
 (main.aux (kapitel/ziel.aux) (kapitel/technische-voraussetzungen.aux)
 (kapitel/robotermodell.aux) (kapitel/konfigurationsraum.aux)
-(kapitel/potentialfelder.aux) (kapitel/navigation.aux) (kapitel/grenzen.aux))
+(kapitel/potentialfelder.aux) (kapitel/navigation.aux) (kapitel/diskussion.aux)
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Info: Redefining \microtypecontext on input line 86.
-Package microtype Info: Applying patch `item' on input line 86.
-Package microtype Info: Applying patch `toc' on input line 86.
-Package microtype Info: Applying patch `eqnum' on input line 86.
-Package microtype Info: Applying patch `footnote' on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Info: Redefining \microtypecontext on input line 93.
+Package microtype Info: Applying patch `item' on input line 93.
+Package microtype Info: Applying patch `toc' on input line 93.
+Package microtype Info: Applying patch `eqnum' on input line 93.
+Package microtype Info: Applying patch `footnote' on input line 93.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 86.
+LaTeX Info: Redefining \showhyphens on input line 93.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -972,23 +1009,23 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 86.
-Package biblatex Info: Reference segment=0 on input line 86.
+Package biblatex Info: Reference section=0 on input line 93.
+Package biblatex Info: Reference segment=0 on input line 93.
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count443
+\scratchcounter=\count452
 \scratchdimen=\dimen166
-\scratchbox=\box59
-\nofMPsegments=\count444
-\nofMParguments=\count445
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count446
+\scratchbox=\box61
+\nofMPsegments=\count453
+\nofMParguments=\count454
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count455
 \MPscratchDim=\dimen167
-\MPnumerator=\count447
-\makeMPintoPDFobject=\count448
-\everyMPtoPDFconversion=\toks34
+\MPnumerator=\count456
+\makeMPintoPDFobject=\count457
+\everyMPtoPDFconversion=\toks37
 )
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -1015,18 +1052,42 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 <bilder//thi_logo.pdf, id=4, 165.87971pt x 73.25368pt>
 File: bilder//thi_logo.pdf Graphic file (type pdf)
 <use bilder//thi_logo.pdf>
-Package pdftex.def Info: bilder//thi_logo.pdf  used on input line 90.
+Package pdftex.def Info: bilder//thi_logo.pdf  used on input line 97.
 (pdftex.def)             Requested size: 137.88785pt x 60.8933pt.
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-90.
- (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmss.fd
-File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 9
+7.
+ (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmss' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 90.
+(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 9
+7.
+
+(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+97.
+
+(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+97.
+
+(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 97.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 97.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 97.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
 
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -1035,7 +1096,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 90.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
 
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1049,9 +1110,16 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 {C:/Users/carls/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./bilder//th
 i_logo.pdf>]
-Package tocbasic Info: character protrusion at toc deactivated on input line 95
-.
- (main.toc)
+Package tocbasic Info: character protrusion at toc deactivated on input line 10
+2.
+ (main.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 7.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 7.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 7.
+)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
@@ -1062,6 +1130,21 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 95
 
  (kapitel/ziel.tex
 chapter 1.
+
+Class scrreprt Warning: \float@addtolists detected!
+(scrreprt)              Implementation of \float@addtolist became
+(scrreprt)              deprecated in KOMA-Script v3.01 2008/11/14 and
+(scrreprt)              has been replaced by several more flexible
+(scrreprt)              features of package `tocbasic`.
+(scrreprt)              Since Version 3.12 support for deprecated
+(scrreprt)              \float@addtolist interface has been
+(scrreprt)              restricted to only some of the KOMA-Script
+(scrreprt)              features and been removed from others.
+(scrreprt)              Loading of package `scrhack' may help to
+(scrreprt)              avoid this warning, if you are using a
+(scrreprt)              a package that still implements the
+(scrreprt)              deprecated \float@addtolist interface.
+
 LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
 18.
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmss.fd
@@ -1092,6 +1175,29 @@ chapter 2.
 
  (kapitel/robotermodell.tex
 chapter 3.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 3.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
+.
+(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Overfull \hbox (0.14688pt too wide) in paragraph at lines 10--11
+[]\T1/lmss/m/n/10.95 (-20) Gemäÿ der ge-stell-ten An-for-de-run-gen kann die Di
+-men-si-on des Ro-bo-ters durch die Va-ria-blen \T1/lmtt/m/n/10.95 robot_width
+ []
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 13.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 13.
+
 ) [3
 
 
@@ -1102,6 +1208,16 @@ chapter 3.
 
  (kapitel/konfigurationsraum.tex
 chapter 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 19.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 19.
+
+Overfull \hbox (32.93942pt too wide) in paragraph at lines 25--26
+[]\T1/lmss/m/n/10.95 (-20) Die er-wei-ter-ten Oc-cu-pan-cy Grids wer-den zum Ko
+n-fi-gu-ra-ti-ons-raum \T1/lmtt/m/n/10.95 configuration-space[rotation][y][x]
+ []
+
 ) [4
 
 
@@ -1117,7 +1233,14 @@ chapter 5.
 
 
 
-]) [6]
+]
+Overfull \hbox (30.24559pt too wide) in paragraph at lines 66--67
+[] \T1/lmss/m/n/10.95 (-20) Nach-barn $\OML/lmm/m/it/10.95 N \OT1/lmr/m/n/10.95
+ (-20) := \OMS/lmsy/m/n/10.95 f\OT1/lmr/m/n/10.95 (-20) ([], [], []), ([], [], 
+[]), ...([], [], [])\OMS/lmsy/m/n/10.95 g$ 
+ []
+
+) [6]
 \openout2 = `kapitel/navigation.aux'.
 
  (kapitel/navigation.tex
@@ -1127,53 +1250,106 @@ chapter 6.
 
 
 
-]) [8]
-\openout2 = `kapitel/grenzen.aux'.
+]
+Overfull \hbox (5.35387pt too wide) in paragraph at lines 48--50
+[]\T1/lmss/m/n/10.95 (-20) Im Po-ten-zi-al-feld \T1/lmtt/m/n/10.95 potential \T
+1/lmss/m/n/10.95 (-20) ha-ben Hin-der-nis-se das Po-ten-zi-al \T1/lmtt/m/n/10.9
+5 np.nan\T1/lmss/m/n/10.95 (-20) . So-mit be-rech-net \T1/lmtt/m/n/10.95 np.gra
+dients()
+ []
 
- (kapitel/grenzen.tex
+
+Overfull \hbox (0.2131pt too wide) in paragraph at lines 51--56
+[]\T1/lmss/m/n/10.95 (-20) Kraftfeld Ko-or-di-na-te Hin-der-nis: Gra-di-ent: Kr
+aft = 0, wenn Kraft: for-ce_field_x (x+1) => "rechts"pot.[z,
+ []
+
+
+Overfull \hbox (1.78362pt too wide) in paragraph at lines 72--73
+\OML/lmm/m/it/10.95 F[]\OT1/lmr/m/n/10.95 (-20) ([], [], [])$ \T1/lmss/m/n/10.9
+5 (-20) ge-wählt, bis in ei-ner Ko-or-di-na-te ein Kräf-te-gleich-ge-wicht $\OM
+L/lmm/m/it/10.95 F[]\OT1/lmr/m/n/10.95 (-20) ([], [], []) =
+ []
+
+
+Overfull \hbox (25.92299pt too wide) in paragraph at lines 89--91
+[] $\OT1/lmr/m/n/10.95 (-20) ([], [], []) \OMS/lmsy/m/n/10.95   []\OT1/lmr/m/n/
+10.95 (-20) (\OMS/lmsy/m/n/10.95 j[][][][][][][][][][][]j\OT1/lmr/m/n/10.95 (-2
+0) )$
+ []
+
+[8]) [9]
+\openout2 = `kapitel/diskussion.aux'.
+
+ (kapitel/diskussion.tex
 chapter 7.
-) [9
+) [10
 
 
 
 
 ]
+chapter without number
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 12
+7.
+(C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 
-LaTeX Warning: Empty bibliography on input line 120.
+LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 127.
 
-(main.aux (kapitel/ziel.aux) (kapitel/technische-voraussetzungen.aux)
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+[11
+
+
+
+] (main.aux (kapitel/ziel.aux) (kapitel/technische-voraussetzungen.aux)
 (kapitel/robotermodell.aux) (kapitel/konfigurationsraum.aux)
-(kapitel/potentialfelder.aux) (kapitel/navigation.aux) (kapitel/grenzen.aux))
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+(kapitel/potentialfelder.aux) (kapitel/navigation.aux) (kapitel/diskussion.aux)
+)
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21602 strings out of 475281
- 456024 string characters out of 2774064
- 1441850 words of memory out of 3000000
- 42585 multiletter control sequences out of 15000+600000
- 560481 words of font info for 146 fonts, out of 8000000 for 9000
+ 22739 strings out of 475281
+ 476867 string characters out of 2774064
+ 1461326 words of memory out of 3000000
+ 43630 multiletter control sequences out of 15000+600000
+ 545981 words of font info for 170 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 108i,19n,106p,10601b,2367s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 108i,20n,106p,10601b,2367s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
-:/Users/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/U
-sers/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}<C:/Users
-/carls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users
-/carls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users
-/carls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Use
-rs/carls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb>
-Output written on main.pdf (11 pages, 125541 bytes).
+:/Users/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Us
+ers/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Us
+ers/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Us
+ers/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Us
+ers/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users
+/carls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/User
+s/carls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/User
+s/carls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/User
+s/carls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users
+/carls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/
+carls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/c
+arls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/ca
+rls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/carl
+s/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/carls/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/carls/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/carls/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss8.pfb><C:/Users/carls/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss9.pfb><C:/Users/carls/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/carls/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Users/carls
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/carls
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/carls/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/carls/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb>
+Output written on main.pdf (13 pages, 378785 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
+ 157 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 40978 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 48658 words of extra memory for PDF output out of 51595 (max. 10000000)
 

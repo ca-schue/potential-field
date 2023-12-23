@@ -1,70 +1,117 @@
-\chapter{Roboternavigation}
+\chapter{Roboternavigation im Kraftfeld}
 
-
-Basierend auf berechneten Potenzialen für jede freie Koordinate im Konfigurationsraum: Roboternavigation durch Gradientenabstiegsverfahren = In jedem Punkt in die Richtung der größten Verringerung des Potenzials gehen.
-
-Fokus der Implementierung: Beheben lokaler Maxima (durch Kräftegleichgewicht)
+Die Roboternavigation der Potenzialfeldmethode entspricht der Bewegung eines Körpers im \textit{Gravitationsfeld} des Potenzialfelds.
 
 \section{Berechnung der Gradienten}
 
-Berechnung der Gradienten über np.gradients => Gradienten = Kraftvektoren in x, y und Rotations-Richtung
-Zeigen in Richtung der größten Verringerung des Potenzials der benachbarten Koordinaten entlang einer Achse
+Das Gravitationsfeld entspricht dem Gradientenfeld des Potenzialfelds: Auf jede Koordinate im Gravitationsfeld wirkt Gravitationskraft zerlegt in die drei kartesische Komponenten des Konfigurationsraums. Jedes dieser drei Kraftfelder $F_{x/y/rotation}(\texttt{x}, \texttt{y}, \texttt{rotation})$ gibt für die jeweilige Dimension des Konfigurationsraums die Größe der Gravitationskraft in der Koordinate (\texttt{x}, \texttt{y}, \texttt{rotation}) an:
+\begin{equation*}
+ F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation}), F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation}), F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation}) = -\nabla U(\texttt{x}, \texttt{y}, \texttt{rotation})
+\end{equation*}
+
+Um die Gradienten zwischen dem letzten Rotationsschritt und $0$° zu berechnen, wird die erste und letzte Rotationsebene an das jeweils andere Ende der Dimension \texttt{potential[rotation]} kopiert.
+\begin{align*}
+	\texttt{first\_layer} & = \texttt{potential[0]} \\
+    \texttt{last\_layer} & = \texttt{potential[\texttt{rotations - 1}]} \\
+	\texttt{potential\_padded} & = \texttt{np.concatenate([last\_layer, potential, first\_layer], axis=0)}
+\end{align*}
+
+Die Gradienten des Potenzialfelds \texttt{potential} werden anschließend mit \texttt{np.gradients()} berechnet:
+\begin{equation*}
+ \texttt{gradient\_rotation}, \texttt{ gradient\_y}, \texttt{ gradient\_x} = \texttt{np.gradients(potential\_padded)}
+\end{equation*}
+
+Die Kraftfelder entsprechen somit den Gradienten werden ohne die kopierten Rotationsebenen:
+\begin{align*}
+	\texttt{force\_field\_rotation} & = -\texttt{gradient\_rotation[1:rotation-1]} \\
+    \texttt{force\_field\_x} & = -\texttt{gradient\_x[1:rotation-1]} \\
+	\texttt{force\_field\_y} & = -\texttt{gradient\_y[1:rotation-1]} \\
+\end{align*}
+Somit entsprechen Gradienten $ \texttt{force\_field\_rotation[rotation]} > 0 $ einer Kraft in Richtung $\texttt{force\_field\_rotation[0]}$ und Gradienten $ \texttt{force\_field\_rotation[0]} < 0 $ einer Kraft in Richtung $\texttt{force\_field\_rotation[rotation]}$.
 
 *** Abbildung mit Kraftvektoren in Konfigurationsraum ***
 
-Problem 1: np.gradients berechnet Gradienten an Grenzen von Array als Differenz der letzten beiden Werte (edge-order = 1)
-Lösung: Manuelles clipping der Gradienten: Wenn Gradient in Richtung der Grenze => Wird auf 0 geclippt
-Wichtig: durch Clipping können an Grenzen können lokale Minima oder Plateaus geschaffen werden:
+
+\subsection{Gradienten an Grenzen und Hindernissen}
+
+Für Koordinaten an den $X$- und $Y$-Grenzen des Konfigurationsraums werden Kräften in Grenzrichtung in der jeweiligen Dimension auf $0$ gesetzt:
+\begin{itemize}
+\item $\texttt{force\_field\_x[0]} < 0$
+\item $\texttt{force\_field\_x[occupancy\_grid\_width - 1]} > 0$
+\item $\texttt{force\_field\_y[0]} > 0$
+\item $\texttt{force\_field\_y[occupancy\_grid\_length - 1]} > 0$
+\end{itemize}
+
+Durch dieses manuelle "Abschneiden" der Kräfte -- das Setzen der Kraft auf $0$ -- können an den Grenzen lokale Minima oder Plateaus entstehen:
 	*** TODO: Abbildung ***
 
+Im Potenzialfeld \texttt{potential} haben Hindernisse das Potenzial \texttt{np.nan}. Somit berechnet \texttt{np.gradients()} für jede an ein Hindernis grenzende Koordinate den Gradienten \texttt{np.nan}.
+Stattdessen sollen Hindernisse bei Berechnung der Gradienten wie Grenzen des Konfigurationsraums interpretiert werden. Ebenso wird hier die Kraft der jeweiligen Dimension auf 0 gesetzt, sollte negative Gradient in Richtung des Hindernisses zeigen. Beispiel für Hindernisse im Kraftfeld der X-Achse:
 
-\subsection{Gradienten an Hindernissen}
+Kraftfeld			Koordinate Hindernis:	Gradient: 								Kraft = 0, wenn Kraft:
+force\_field\_x		(x+1) => "rechts"		pot.[z, y, x] - pot.[z, y, x-1]			> 0
+force\_field\_x		(x-1) => "links"		pot.[z, y, x+1] - pot.[z, y, x]			< 0
+force\_field\_x		(x+1) und (x-1)			0										N/A
+					=> "rechts und links"
 
-Problem 2: np.gradients Gradienten an Hindernissen (np.nan) np.nan als Gradienten. 
-Lösung: Behandlung von Hindernissen als Array-Grenzen: (Funktion "compute-obstacle-gradients")
-	- "Grenze rechts" (x+1 == np.nan): Gradient = ... Beispiel: *Abb*
-	- "Grenze links" (x-1 == np.nan): Gradient = ... Beispiel: *Abb*
-	- "Grenze vorne" (y-1 == np.nan): Gradient = ... Beispiel: *Abb*
-	- "Grenze hinten" (y+1 == np.nan): Gradient = ... Beispiel: *Abb*
-	- "Grenze oben" (z-1 mod 4 == np.nan): Gradient = ... Beispiel: *Abb*
-	- "Grenze unten" (z+1 mod 4 == np.nan): Gradient = ... Beispiel: *Abb*
-Wichtig: durch Clipping können an Hindernissen lokale Minima und Plateaus geschaffen werden: Wenn beide anderen Kraftvektoren ebenfalls 0 sind 
+Wird für eine Koordinate die Kraft einer Dimension "abgeschnitten", wobei die Kräfte der anderen Kraftfelder ebenfalls $0$ sind, entsteht ein lokales Minimum oder Plateau.
 
 
 \subsection{Behandlung lokaler Maxima}
 
-Problem: lokale Maxima
-> In jeder Achse haben die beiden entgegengesetzten Nachbarn gleich großes Potenzial
-> Unterschied lokales Minimum und Plateau: Potenzial der Nachbarn ist dabei niedriger als das der aktuellen Position
-
-Lösung:
-> Durch Implementierung von "compute-obstacle-gradients" kann lokales Maximum nicht an Grenze oder Hindernis existieren
-> Gedachte Grenze zu einem Nachbarn setzen: Berechne Differnz zu einem der Nachbarpotenziale Gradienten
+Im Unterschied zu einem lokalen Minimum oder Plateau ist bei einem lokalen Maximum das Potenzial der Nachbarn streng monoton niedriger als das der aktuellen Koordinate.
+In diesen Fällen wird zu einem der Nachbarn eine virtuelle Grenze gesetzt und der Gradient wie im vorherigen Abschnitt beschrieben berechnet.
 
 *** Abbildung mit Beispiel ***
 
+
 \section{Gradientenabstieg}
 
-Lokales Minimum oder Plateau: 0-Kraftvektor in allen Achsen
+Die berechneten Gradientenfelder ermöglichen die Roboternavigation durch das \textit{Gradientenabstiegsverfahren}:
 
-Startpunkt in 3D Konfigurationsraum
-
-Wiederhole bis Kraftvektor x = Kraftvektor y = Kraftvektor rotation = 0:
-	- Diskretisierung der Gradienten in Translationen des 3D Konfigurationsraum: Für betragsmäßig größten (oder gleich große) Gradienten in x, y oder Rotations-Richtung wird neue Position berechnet
-	- Aus allen möglichen neuen Positionen wird diejenige gewählt, die noch nicht besucht wurde und deren Gesamtkraft maximal ist-
-
-*** Abbildung mit paar Iterationen bis Ziel gefunden ***
+Pro Verarbeitungsschritt wird für eine Koordinate $(\texttt{x},\texttt{x},\texttt{rotation})$ die nächste Koordinate basierend auf der beträgsmäßig größten Gravitationskraft in $F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation})$, $F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation})$ und $F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation})$ gewählt, bis in einer Koordinate ein Kräftegleichgewicht $F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation}) = F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation}) = F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation}) = 0$ herrscht:
 
 
-\section{Vergleich der Potenzialfeldmethoden}
+\begin{algorithm}
+\caption{Gradientenabstiegsverfahren}
+\begin{algorithmic}[1]
+    \State \textbf{Initialisierung:}
+    \State \hspace{\algorithmicindent} $(\texttt{x}_{\text{current}}, \texttt{y}_{\text{current}}, \texttt{rotation}_{\text{current}}) = \texttt{start\_point}$
+    \State \hspace{\algorithmicindent} Visited $V \leftarrow \emptyset$
+	\vspace*{0.3cm}
+    \While{true}
+		\vspace*{0.1cm}
+        \If{$(\texttt{x}_{\text{current}}, \texttt{y}_{\text{current}}, \texttt{rotation}_{\text{current}}) = \texttt{goal\_point}$}
+            \State \textbf{return} Ziel gefunden
+        \EndIf
+		\vspace*{0.1cm}
+        \State $\texttt{force\_field\_x/y/rotation}\texttt{[}\texttt{rotation}_{\text{current}}\texttt{][}\texttt{y}_{\text{current}}\texttt{][}\texttt{x}_{\text{current}}\texttt{]} = 0$
+        \State $(\texttt{dx}, \texttt{dy}, \texttt{drotation}) \gets \max(|\texttt{force\_field\_x/y/rotation}\texttt{[}\texttt{rotation}_{\text{current}}\texttt{][}\texttt{y}_{\text{current}}\texttt{][}\texttt{x}_{\text{current}}\texttt{]}|)$
+		\vspace*{-0.3cm}
+        \If{$(\texttt{dx}, \texttt{dy}, \texttt{drotation}) = (0,0,0)$}
+            \State \textbf{return} Lokales Minimum oder Plateau
+        \EndIf
+     	\vspace*{0.1cm}
+        \State $(\texttt{x}_{\text{current}}, \texttt{y}_{\text{current}}, \texttt{rotation}_{\text{current}}) \gets (\texttt{x}_{\text{current}} + \texttt{dx}, \texttt{y}_{\text{current}} + \texttt{dy}, \texttt{rotation}_{\text{current}} + \texttt{drotation})$
+		\vspace*{-0.3cm}
+        \If{$(\texttt{x}_{\text{current}}, \texttt{y}_{\text{current}}, \texttt{rotation}_{\text{current}}) \in V$}
+            \State \textbf{return} Lokales Minimum
+		\Else
+			\State $(\texttt{x}_{\text{current}}, \texttt{y}_{\text{current}}, \texttt{rotation}_{\text{current}}) \rightarrow V$
+        \EndIf
+		\vspace*{0.1cm}
+    \EndWhile
+\end{algorithmic}
+\end{algorithm}
 
-Anziehendes/Abstoßendes Potenzial:
-	- Nachteil : lokale Minima
-	...
-	- Nicht-Lineare Gradienten
+Der Gradientenabstieg muss dabei für die erlaubten Translationen des Konfigurationsraums diskretisiert werden: 
+Gemäß der definierten Roboterbewegungen in Kapitel X (TODO!) darf der Roboter pro Verarbeitungsschritt nur eine Translation um eine Einheit entlang der Dimensionen \texttt{[rotation][y][x]} durchführen. Somit gilt:
+\begin{equation*}
+(\texttt{dx}, \texttt{dy}, \texttt{drotation}) \in \{(1,0,0)(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)\}
+\end{equation*}
 
 
-- Vorteil Wavefront Algorithmus: 
-	- Garantierte Konvergenz zum Ziel => Keine Lokalen Minima
-	...
-	Lineare Gradienten
+
+
+
+

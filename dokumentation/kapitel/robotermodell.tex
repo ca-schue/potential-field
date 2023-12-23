@@ -1,12 +1,16 @@
-\chapter{Robotermodell}
+\chapter{Roboterbewegung im Occupancy Grid}
 
-Robotermodell:
-- Anforderung: "Der Roboter besitzt eine rechteckige Form variabler Größer"
-- Implementierung: Robotergröße über Parameter `width` und `length` gesteuert
+Die physikalische Umgebung, in der sich der Roboter bewegen kann, wird diskretisiert durch das \textit{Occupancy Grid}.
+Dieser binäre, zweidimensionale Raum entspricht der Umgebung aus "Vogelperspektive". 
 
-Roboterbewegung:
-- Translation in vier Richtungen aus Vogelperspektive: "links", "rechts", "oben" und "unten"
-- Rotation: Roboter kann sich in 90° Schritten um den Ankerpunkt drehen: ... 270° <= 0° => 90° => 180° => 270° => 0° ...
-- Der Ankerpunkt der Roboters (Definiert Position im Raum) = "Ecke links oben": Bei einer Rotation von 0°
+Das numpy Boolean Koordinatensystem \texttt{occupancy\_grid} mit der Länge \texttt{occupancy\_grid\_length} und Breite \texttt{occupancy\_grid\_width} hat den Ursprung links oben. Bedingt durch Numpy werden Koordinaten mit \texttt{occupancy\_grid[Y][X]} referenziert. Die Umgebung ist im Occupancy Grid binär, wodruch jede Koordinate ($X$,$Y$) durch ein Hindernis belegt ist (\texttt{occupancy\_grid[Y][X] == False}) oder frei von Hindernissen ist (\texttt{occupancy\_grid[Y][X] == True}).
+
+*** TODO: Abbildung 2D True/False Array und geplottetes Occupancy Grid ***
+
+Gemäß der gestellten Anforderungen kann die Dimension des Roboters durch die Variablen \texttt{robot\_width} und \texttt{robot\_length} definiert werden. Pro Verarbeitungseinheit kann sich der Roboter entweder durch eine Translation oder Rotation im Occupancy Grid bewegen:
+\begin{itemize}
+\item \textbf{Translation} nach links (\texttt{x-1}), rechts (\texttt{x+1}), oben (\texttt{y-1}) und unten (\texttt{y+1})
+\item \textbf{Rotation} um einen \textit{Ankerpunkt}. Bei einer Rotation von $0°$ liegt dieser Referenzpunkt in der linken oberen Ecke des Roboters.
+\end{itemize}
 
 ** TODO: Abbildung Robotermodell + Translation/Rotation ***
