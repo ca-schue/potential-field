@@ -21,7 +21,6 @@ def plot_occupancy_grid(occupancy_grid, plot_axis, rotation_step, goal_point=Non
         line_color = 'black'
 
     if np.count_nonzero(~occupancy_grid) > 0:
-        print("np.count_nonzero(occupancy_grid) > 0")
         plot_axis.imshow(occupancy_grid, cmap=cmap, interpolation='none', origin='upper')
     else:
         plot_axis.imshow(occupancy_grid, cmap=cmap_empty, interpolation='none', origin='upper')

@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.1.2 (b8e25be833, 2022-02-05), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'robotermodell_latex.pdf' (pdf, eps, ps)
+%% Accompanies image file 'rotation-steps_latex.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{534.92857361bp}%
+    \setlength{\unitlength}{278.82730865bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,22 +50,18 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.32514843)%
+  \begin{picture}(1,0.61771291)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{robotermodell_latex.pdf}}%
-    \put(0.17373904,0.24608087){\color[rgb]{1,0.2,0.2}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}robot\_width \end{tabular}}}}%
-    \put(0.21822465,0.22728827){\color[rgb]{1,0.2,0.2}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}= 2\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{robotermodell_latex.pdf}}%
-    \put(0.02744618,0.11855964){\color[rgb]{1,0.2,0.2}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}robot\_length\end{tabular}}}}%
-    \put(0.0719318,0.09976704){\color[rgb]{1,0.2,0.2}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}= 3\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{robotermodell_latex.pdf}}%
-    \put(0.52232504,0.25950416){\color[rgb]{1,0.2,0.2}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Rotation: 225°\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=4]{robotermodell_latex.pdf}}%
-    \put(0.80996092,0.27829676){\color[rgb]{1,0.2,0.2}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Translation: x + 2\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=5]{robotermodell_latex.pdf}}%
-    \put(0.71348104,0.18030676){\color[rgb]{1,0.2,0.2}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Translation: \end{tabular}}}}%
-    \put(0.74217332,0.16151416){\color[rgb]{1,0.2,0.2}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}y - 3\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=6]{robotermodell_latex.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{rotation-steps_latex.pdf}}%
+    \put(0.65946171,0.17328615){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1*\texttt{rotation\_step}$\end{tabular}}}}%
+    \put(0.67748429,0.31231751){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$2*\texttt{rotation\_step}$\end{tabular}}}}%
+    \put(0.62856585,0.41787836){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$3*\texttt{rotation\_step}$\end{tabular}}}}%
+    \put(0.34277914,0.48481938){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$4*\texttt{rotation\_step}$\end{tabular}}}}%
+    \put(0.08273902,0.39728112){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$5*\texttt{rotation\_step}$\end{tabular}}}}%
+    \put(0.04926851,0.26082442){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$6*\texttt{rotation\_step}$\end{tabular}}}}%
+    \put(0.11106022,0.15268891){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$7*\texttt{rotation\_step}$\end{tabular}}}}%
+    \put(0.39427224,0.09604651){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0*\texttt{rotation\_step}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{rotation-steps_latex.pdf}}%
   \end{picture}%
 \endgroup%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  24 DEC 2023 12:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  24 DEC 2023 17:55
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1299,17 +1299,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 (_minted-main/default.pygstyle)
-(_minted-main/6B2F4D4EAD789392F1C6E0F94AF3A4AC8447DF9C2D5ED130E262CD4D9278E0D8.
+(_minted-main/2DB701CABAFA4049ECEFF396640965D08447DF9C2D5ED130E262CD4D9278E0D8.
 pygtex)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 41.
+(Font)              <5> on input line 40.
 <bilder/occupancy-grid2.png, id=31, 840.89156pt x 840.89156pt>
 File: bilder/occupancy-grid2.png Graphic file (type png)
 <use bilder/occupancy-grid2.png>
-Package pdftex.def Info: bilder/occupancy-grid2.png  used on input line 45.
+Package pdftex.def Info: bilder/occupancy-grid2.png  used on input line 44.
 (pdftex.def)             Requested size: 840.8895pt x 840.8895pt.
 
-Overfull \hbox (0.14688pt too wide) in paragraph at lines 51--52
+Overfull \hbox (0.14688pt too wide) in paragraph at lines 50--51
 []\T1/lmss/m/n/10.95 (-20) Gemäÿ der ge-stell-ten An-for-de-run-gen kann die Di
 -men-si-on des Ro-bo-ters durch die Va-ria-blen \T1/lmtt/m/n/10.95 robot_width
  []
@@ -1383,25 +1383,56 @@ n: multiple pdfs with page group included in a single page
 
  (kapitel/konfigurationsraum.tex
 chapter 4.
+(bilder/rotation-steps_latex.pdf_tex
+<bilder//rotation-steps_latex.pdf, id=80, page=1, 279.87291pt x 172.88112pt>
+File: bilder//rotation-steps_latex.pdf Graphic file (type pdf)
+<use bilder//rotation-steps_latex.pdf, page 1>
+Package pdftex.def Info: bilder//rotation-steps_latex.pdf , page1 used on input
+ line 56.
+(pdftex.def)             Requested size: 279.8729pt x 172.89651pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 19.
-
-Overfull \hbox (32.93942pt too wide) in paragraph at lines 25--26
-[]\T1/lmss/m/n/10.95 (-20) Die er-wei-ter-ten Oc-cu-pan-cy Grids wer-den zum Ko
-n-fi-gu-ra-ti-ons-raum \T1/lmtt/m/n/10.95 configuration-space[rotation][y][x]
- []
-
+(Font)              <9> on input line 57.
+<bilder//rotation-steps_latex.pdf, id=81, page=2, 279.87291pt x 172.88112pt>
+File: bilder//rotation-steps_latex.pdf Graphic file (type pdf)
+<use bilder//rotation-steps_latex.pdf, page 2>
+Package pdftex.def Info: bilder//rotation-steps_latex.pdf , page2 used on input
+ line 65.
+(pdftex.def)             Requested size: 279.8729pt x 172.89651pt.
 ) [6
 
 
 
 
-]
+ <./bilder//rotation-steps_latex.pdf> <./bilder//rotation-steps_latex.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//rotation-steps_latex.pdf): PDF inclusi
+on: multiple pdfs with page group included in a single page
+>] (bilder/robot-mask_latex.pdf_tex
+<bilder//robot-mask_latex.pdf, id=104, page=1, 418.94943pt x 183.81052pt>
+File: bilder//robot-mask_latex.pdf Graphic file (type pdf)
+<use bilder//robot-mask_latex.pdf, page 1>
+Package pdftex.def Info: bilder//robot-mask_latex.pdf , page1 used on input lin
+e 56.
+(pdftex.def)             Requested size: 418.94943pt x 183.81285pt.
+)
+Overfull \hbox (32.93942pt too wide) in paragraph at lines 36--37
+[]\T1/lmss/m/n/10.95 (-20) Die er-wei-ter-ten Oc-cu-pan-cy Grids wer-den zum Ko
+n-fi-gu-ra-ti-ons-raum \T1/lmtt/m/n/10.95 configuration-space[rotation][y][x]
+ []
+
+<bilder/configuration-space.png, id=105, 1551.22392pt x 570.41678pt>
+File: bilder/configuration-space.png Graphic file (type png)
+<use bilder/configuration-space.png>
+Package pdftex.def Info: bilder/configuration-space.png  used on input line 45.
+
+(pdftex.def)             Requested size: 1551.22015pt x 570.41537pt.
+) [7 <./bilder//robot-mask_latex.pdf> <./bilder/configuration-space.png>]
 \openout2 = `kapitel/potentialfelder.aux'.
 
- (kapitel/potentialfelder.tex
+
+(kapitel/potentialfelder.tex
 chapter 5.
-[7
+[8
 
 
 
@@ -1413,12 +1444,12 @@ Overfull \hbox (30.24559pt too wide) in paragraph at lines 66--67
 []), ...([], [], [])\OMS/lmsy/m/n/10.95 g$ 
  []
 
-) [8]
+) [9]
 \openout2 = `kapitel/navigation.aux'.
 
  (kapitel/navigation.tex
 chapter 6.
-[9
+[10
 
 
 
@@ -1451,12 +1482,12 @@ Overfull \hbox (25.92299pt too wide) in paragraph at lines 89--91
 0) )$
  []
 
-[10]) [11]
+[11]) [12]
 \openout2 = `kapitel/diskussion.aux'.
 
  (kapitel/diskussion.tex
 chapter 7.
-) [12
+) [13
 
 
 
@@ -1475,7 +1506,7 @@ LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-[13
+[14
 
 
 
@@ -1490,11 +1521,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25623 strings out of 475281
- 540230 string characters out of 2774064
- 1568333 words of memory out of 3000000
- 46439 multiletter control sequences out of 15000+600000
- 559973 words of font info for 192 fonts, out of 8000000 for 9000
+ 25659 strings out of 475281
+ 541720 string characters out of 2774064
+ 1569334 words of memory out of 3000000
+ 46466 multiletter control sequences out of 15000+600000
+ 557210 words of font info for 191 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  108i,20n,106p,10601b,2367s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
@@ -1512,19 +1543,22 @@ carls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/c
 arls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/ca
 rls/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/carl
 s/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/carls/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/carls/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/carls/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss8.pfb><C:/Users/carls/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss9.pfb><C:/Users/carls/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/carls/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Users/carls
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/carls
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/carls/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/carls/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb>
-Output written on main.pdf (15 pages, 548897 bytes).
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/carls/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/carls/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/carls/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss8.pfb><C:/Users/carls/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss9.pfb><C:/Users/carls/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/carls/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Users/carls/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/carls/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/carls/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/carls/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/carls/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/carls/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
+Output written on main.pdf (16 pages, 2217380 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
+ 250 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 60981 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 60489 words of extra memory for PDF output out of 61914 (max. 10000000)
 
