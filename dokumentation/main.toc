@@ -1,18 +1,18 @@
 \babel@toc {ngerman}{}\relax 
 \contentsline {chapter}{\numberline {1}Ziel der Implementierung}{1}{}%
 \contentsline {chapter}{\numberline {2}Ausführung der Implementierung}{2}{}%
-\contentsline {chapter}{\numberline {3}Roboterbewegung im Occupancy Grid}{3}{}%
-\contentsline {chapter}{\numberline {4}Konfigurationsraum}{4}{}%
-\contentsline {chapter}{\numberline {5}Berechnung der Potenzialfelder}{5}{}%
-\contentsline {section}{\numberline {5.1}Anziehende \& Abstoßende Potenziale}{5}{}%
-\contentsline {section}{\numberline {5.2}Wavefront Potenziale}{6}{}%
-\contentsline {chapter}{\numberline {6}Roboternavigation im Kraftfeld}{7}{}%
-\contentsline {section}{\numberline {6.1}Berechnung der Gradienten}{7}{}%
-\contentsline {subsection}{\numberline {6.1.1}Gradienten an Grenzen und Hindernissen}{8}{}%
-\contentsline {subsection}{\numberline {6.1.2}Behandlung lokaler Maxima}{8}{}%
-\contentsline {section}{\numberline {6.2}Gradientenabstieg}{8}{}%
-\contentsline {chapter}{\numberline {7}Diskussion}{10}{}%
-\contentsline {section}{\numberline {7.1}Vergleich der Potenzialfeldmethoden}{10}{}%
-\contentsline {section}{\numberline {7.2}Skalierung des Occupancy Grids}{10}{}%
-\contentsline {chapter}{\nonumberline Literatur}{11}{}%
+\contentsline {chapter}{\numberline {3}Roboterbewegung im Occupancy Grid}{4}{}%
+\contentsline {chapter}{\numberline {4}Konfigurationsraum}{6}{}%
+\contentsline {chapter}{\numberline {5}Berechnung der Potenzialfelder}{7}{}%
+\contentsline {section}{\numberline {5.1}Anziehende \& Abstoßende Potenziale}{7}{}%
+\contentsline {section}{\numberline {5.2}Wavefront Potenziale}{8}{}%
+\contentsline {chapter}{\numberline {6}Roboternavigation im Kraftfeld}{9}{}%
+\contentsline {section}{\numberline {6.1}Berechnung der Gradienten}{9}{}%
+\contentsline {subsection}{\numberline {6.1.1}Gradienten an Grenzen und Hindernissen}{10}{}%
+\contentsline {subsection}{\numberline {6.1.2}Behandlung lokaler Maxima}{10}{}%
+\contentsline {section}{\numberline {6.2}Gradientenabstieg}{10}{}%
+\contentsline {chapter}{\numberline {7}Diskussion}{12}{}%
+\contentsline {section}{\numberline {7.1}Vergleich der Potenzialfeldmethoden}{12}{}%
+\contentsline {section}{\numberline {7.2}Überdeckungen des Robotermodells mit Hindernissen}{12}{}%
+\contentsline {chapter}{\nonumberline Literatur}{13}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

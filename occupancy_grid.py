@@ -2,11 +2,12 @@ import numpy as np
 from matplotlib.colors import ListedColormap
 import matplotlib.pyplot as plt
 
-def plot_occupancy_grid(occupancy_grid, goal_point, plot_axis, rotation_step, current_position=None, path=[], robot_width=None, robot_length=None, active=True, plot_title="Occupancy Grid", y_axis_label=None, start_point=None, ticks=True):
+def plot_occupancy_grid(occupancy_grid, plot_axis, rotation_step, goal_point=None, current_position=None, path=[], robot_width=None, robot_length=None, active=True, plot_title="Occupancy Grid", y_axis_label=None, start_point=None, ticks=True):
     plot_axis.clear()
 
     if active:
-        cmap = ListedColormap(['darkblue', 'white'])        
+        cmap = ListedColormap(['darkblue', 'white'])     
+        cmap_empty = ListedColormap(['white'])        
         start_color = 'green'
         goal_color = 'red'
         path_color = 'darkkhaki'
@@ -19,7 +20,12 @@ def plot_occupancy_grid(occupancy_grid, goal_point, plot_axis, rotation_step, cu
         current_color = 'gray'
         line_color = 'black'
 
-    plot_axis.imshow(occupancy_grid, cmap=cmap, interpolation='none', origin='upper')
+    if np.count_nonzero(~occupancy_grid) > 0:
+        print("np.count_nonzero(occupancy_grid) > 0")
+        plot_axis.imshow(occupancy_grid, cmap=cmap, interpolation='none', origin='upper')
+    else:
+        plot_axis.imshow(occupancy_grid, cmap=cmap_empty, interpolation='none', origin='upper')
+
 
 
     if goal_point is not None:
@@ -109,11 +115,6 @@ def plot_occupancy_grid(occupancy_grid, goal_point, plot_axis, rotation_step, cu
             )
             plot_axis.add_patch(current_rect)
             plot_axis.scatter(current_x, current_y, color='black', marker='x', label='Rotation Anchor')
-
-
-   #plot_axis.plot([p[0] for p in path], [p[1] for p in path], color=path_color, label='Chosen Path')
-
-
 
     plot_axis.grid(False)
     plot_axis.set_title(plot_title)

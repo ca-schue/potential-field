@@ -2357,8 +2357,8 @@
     <bcf:citekey order="3" intorder="1">yujiang.2017</bcf:citekey>
     <bcf:citekey order="4" intorder="1">khatib.1985</bcf:citekey>
     <bcf:citekey order="5" intorder="1">choset.2007</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">yujiang.2017</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">maqbool.2021</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">maqbool.2021</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">yujiang.2017</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
