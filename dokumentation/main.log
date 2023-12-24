@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  24 DEC 2023 17:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  24 DEC 2023 18:36
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1438,18 +1438,25 @@ chapter 5.
 
 
 ]
-Overfull \hbox (30.24559pt too wide) in paragraph at lines 66--67
+<bilder/total-potential-computation.png, id=130, 1406.68393pt x 423.72589pt>
+File: bilder/total-potential-computation.png Graphic file (type png)
+<use bilder/total-potential-computation.png>
+Package pdftex.def Info: bilder/total-potential-computation.png  used on input 
+line 54.
+(pdftex.def)             Requested size: 1406.68051pt x 423.72485pt.
+
+Overfull \hbox (30.24559pt too wide) in paragraph at lines 74--75
 [] \T1/lmss/m/n/10.95 (-20) Nach-barn $\OML/lmm/m/it/10.95 N \OT1/lmr/m/n/10.95
  (-20) := \OMS/lmsy/m/n/10.95 f\OT1/lmr/m/n/10.95 (-20) ([], [], []), ([], [], 
 []), ...([], [], [])\OMS/lmsy/m/n/10.95 g$ 
  []
 
-) [9]
+) [9 <./bilder/total-potential-computation.png>] [10]
 \openout2 = `kapitel/navigation.aux'.
 
  (kapitel/navigation.tex
 chapter 6.
-[10
+[11
 
 
 
@@ -1482,12 +1489,12 @@ Overfull \hbox (25.92299pt too wide) in paragraph at lines 89--91
 0) )$
  []
 
-[11]) [12]
+[12]) [13]
 \openout2 = `kapitel/diskussion.aux'.
 
  (kapitel/diskussion.tex
 chapter 7.
-) [13
+) [14
 
 
 
@@ -1506,7 +1513,7 @@ LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-[14
+[15
 
 
 
@@ -1521,11 +1528,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25659 strings out of 475281
- 541720 string characters out of 2774064
+ 25670 strings out of 475281
+ 542058 string characters out of 2774064
  1569334 words of memory out of 3000000
- 46466 multiletter control sequences out of 15000+600000
- 557210 words of font info for 191 fonts, out of 8000000 for 9000
+ 46472 multiletter control sequences out of 15000+600000
+ 557363 words of font info for 193 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  108i,20n,106p,10601b,2367s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
@@ -1556,9 +1563,9 @@ pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/carls/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/carls/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/carls/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (16 pages, 2217380 bytes).
+Output written on main.pdf (17 pages, 3442274 bytes).
 PDF statistics:
- 250 PDF objects out of 1000 (max. 8388607)
+ 255 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 60489 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 60494 words of extra memory for PDF output out of 61914 (max. 10000000)
 

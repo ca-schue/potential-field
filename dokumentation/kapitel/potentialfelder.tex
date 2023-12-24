@@ -16,12 +16,14 @@ U_{Attr, Ziel}(\texttt{x}, \texttt{y}) = \sqrt{(\texttt{y} - \texttt{y}_{Ziel})^
 \end{equation*}
 
 Bei den getesteten Implementierungsszenarien wurden bessere Ergebnisse festgestellt, wenn das anziehenden Potenzial erst normiert und anschließend mit \texttt{attraction\_weight} gewichtet wird:
+*** TODO: wie "attraction\_weight" die "Anziehung" zum Ziel steuert ***
 
 \begin{equation*}
 U_{Attr, Ziel}(\texttt{x}, \texttt{y})_{norm} = \frac{U_{Attr, Ziel}(\texttt{x}, \texttt{y})}{\max \{ U_{Attr, Ziel}\}} * \texttt{attraction\_weight}
 \end{equation*}
 
 Die Hindernisse im Konfigurationsraum wirken auf jede Koordinate (\texttt{rotation}, \texttt{y}, \texttt{x}) mit einem \textit{abstoßendem} (engl. \textit{repulsive}) Potenzial. Dazu zählen auch die Hindernisse aus der benachbarten Rotationsebene $((\texttt{rotation} + 1) \mod \texttt{rotations})$ sowie $((\texttt{rotation} - 1) \mod \texttt{rotations})$:
+*** TODO: wie "repulsive\_weight" die "Weichheit" der Potenzialgrenze steuert ***
 
 \begin{equation*}
 \hspace*{-0.04\linewidth}
@@ -38,7 +40,6 @@ Yujiang und Huilin definieren das abstoßende Potenzial an der Koordinate (\text
 U_{Repul}(\texttt{x}, \texttt{y}, \texttt{rotation}) = \min_{\forall \,\,Hindernis \,\,\in \texttt{ occupancy\_grid}} \{ U_{Repul, Hindernis}(\texttt{x}, \texttt{y}, \texttt{rotation}) \}
 \end{equation*}
 
-*** TODO: Abbildung mit Plot. Zeigen, wie "repulsive\_weight" die "Weichheit" der Potenzialgrenze steuert ***
 
 Die gesamte potenzielle Energie einer Koordinate entspricht der Kombination beider Potenziale.
 In der Literatur werden dazu unterschiedliche Ansätze vorgeschlagen. Beispielsweise wählt XYZ das Maximum beider Potenziale. In dieser Implementierung wurden anziehendes und abstoßendes Potenzial gemäß Khalib addiert \cite{khatib.1985}: 
@@ -46,6 +47,13 @@ In der Literatur werden dazu unterschiedliche Ansätze vorgeschlagen. Beispielsw
 \begin{equation*}
 U(\texttt{x}, \texttt{y}, \texttt{rotation}) = U_{Attr, Ziel}(\texttt{x}, \texttt{y})_{norm} + U_{Repul}(\texttt{x}, \texttt{y}, \texttt{rotation})
 \end{equation*}
+
+\begin{figure}[h!]
+	\centering
+	\footnotesize
+	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/total-potential-computation.png}}}
+	\caption{Die Berechnung des Gestamtpotenzial für die $0$°-Rotationsebene des Konfigurationsraums mit $\texttt{attraction\_weight}=5$ und $\texttt{repulsion\_weight}=0$.}
+\end{figure}
 
 
 

@@ -47,15 +47,22 @@ def compute_potential_attraction_repulsion(configuration_space, goal, attraction
                 
 
     normalized_attraction_potential = (attraction_potential / np.max(attraction_potential)) * attraction_weight
+    normalized_attraction_potential[~configuration_space_padded] = np.nan
+    normalized_attraction_potential = normalized_attraction_potential[:, 1:-1, :]
+    normalized_attraction_potential = normalized_attraction_potential[:, :, 1:-1]
 
-    total_potential = normalized_attraction_potential + repulsion_potential
-    total_potential[~configuration_space_padded] = np.nan
+    repulsion_potential[~configuration_space_padded] = np.nan
+    repulsion_potential = repulsion_potential[:, 1:-1, :]
+    repulsion_potential = repulsion_potential[:, :, 1:-1]
 
-    total_potential = total_potential[:, 1:-1, :]
-    total_potential = total_potential[:, :, 1:-1]
-    total_potential[goal[2],goal[1],goal[0]] = 0
 
-    return total_potential
+    #total_potential = normalized_attraction_potential + repulsion_potential
+    #total_potential[~configuration_space_padded] = np.nan
+    #total_potential = total_potential[:, 1:-1, :]
+    #total_potential = total_potential[:, :, 1:-1]
+    #total_potential[goal[2],goal[1],goal[0]] = 0
+
+    return normalized_attraction_potential, repulsion_potential
 
 
 def compute_potential_wavefront(configuration_space, goal):
@@ -126,7 +133,7 @@ def plot_potential_stacked(potential, title, ax, rotation_step):
 
 
 
-def plot_potential_slice(potential_slice, title, ax):
+def plot_potential_slice(potential_slice, title, ax, alpha=1):
 
     obstacles = np.isnan(potential_slice)
     max_pot = np.max(np.nan_to_num(potential_slice))
@@ -148,7 +155,7 @@ def plot_potential_slice(potential_slice, title, ax):
     #Z = potential_slice_plot  # Set Z to the potential values
 
     colors = plt.cm.plasma(Z)
-    ax.plot_surface(X, Y, Z, facecolors=colors, rstride=1, cstride=1, alpha=1, antialiased=True)
+    ax.plot_surface(X, Y, Z, facecolors=colors, rstride=1, cstride=1, alpha=alpha, antialiased=True)
 
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
