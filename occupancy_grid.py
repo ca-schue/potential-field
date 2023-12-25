@@ -119,16 +119,17 @@ def plot_occupancy_grid(occupancy_grid, plot_axis, rotation_step, goal_point=Non
     # Beschriftung der X-Achse oben
     plot_axis.xaxis.tick_top()
     
+    plot_axis.set_xticks(range(occupancy_grid.shape[1]))
+    plot_axis.set_yticks(range(occupancy_grid.shape[0]))
+    if ticks:
+        plot_axis.set_xticklabels(range(occupancy_grid.shape[1]))
+        plot_axis.set_yticklabels(range(occupancy_grid.shape[0]))
+    else:
+        plot_axis.set_xticklabels([])
+        plot_axis.set_yticklabels([])     
+
     if grid:
-        plot_axis.grid(True)
-        plot_axis.set_xticks(range(occupancy_grid.shape[1]))
-        plot_axis.set_yticks(range(occupancy_grid.shape[0]))
-        if ticks:
-            plot_axis.set_xticklabels(range(occupancy_grid.shape[1]))
-            plot_axis.set_yticklabels(range(occupancy_grid.shape[0]))
-        else:
-            plot_axis.set_xticklabels([])
-            plot_axis.set_yticklabels([])        
+        plot_axis.grid(True)   
     else:
         plot_axis.grid(False)
 

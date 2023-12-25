@@ -1,6 +1,6 @@
 \chapter{Diskussion}
 
-\section{Anziehendes und abstoßendes Potenzial: Lokale Minima und Oszillationen}
+\section{Lokale Minima und Oszillationen}
 
 Eine Eigenschaft der Potenzialfunktion mit anziehendem und abstoßendem Potenzial ist die Konvergenz des Gradientenabstiegsverfahren zu einem lokalen Minimum bei konkaven Hindernissen.
 Davon betroffen sind Occupancy Grids, deren Hindernisse Polygone mit überstumpfen Winkeln ($180\text{°} \le \text{Winkel} \le 360\text{°}$) bilden.
@@ -13,7 +13,7 @@ Bekannte Beispiele der Literatur sind C- und U-förmige Polygone \cite{maqbool.2
 \end{figure}
 
 Weiterhin führt das Gravitationsfeld von Potenzialfeldern mit anziehendem und abstoßendem Potenzial zwischen Hindernisengstellen zu Oszillationen. Der Roboter wechselt bei dieser Art des lokalen Minimums zwischen zwei Koordinaten mit entgegen gerichteten Gradienten.
-Insbesondere kleine Occupancy Grids sind von diesem Effekt betroffen, da die Grenzen des Potenzialfelds als Hindernisse berücksichtigt werden. Abbildung \ref{fig:oscillation} zeigt diesen Effekt Anhand des Potenzialfelds aus Kapitel X (TODO).
+Insbesondere kleine Occupancy Grids sind von diesem Effekt betroffen, da die Grenzen des Potenzialfelds als Hindernisse berücksichtigt werden. Abbildung \ref{fig:oscillation} zeigt diesen Effekt anhand des Potenzialfelds aus Kapitel X (TODO).
 Die Erhöhung des Abstandes zwischen Occupancy-Grid-Grenzen und Hindernissen vermeidet dieses Problem.
 
 \begin{figure}[h!]
@@ -34,22 +34,32 @@ Die Erhöhung des Abstandes zwischen Occupancy-Grid-Grenzen und Hindernissen ver
 	\caption{Bei Engstellen heben sich die abstoßenden Kräfte zwischen Hindernissen auf (links), bei hinreichend Abstand nicht (rechts).}
 \end{figure}
 
-
-Im Gegensatz dazu verhindert die streng monotone Potenzialänderung des Wavefront Algorithmus die Konvergenz zu lokalen Minima, sofern sich das Ziel an einem für den Roboter physikalisch erreichbaren Punkt befindet.
-
-	- Konvergiert nie zu lokalem Minima
-	- Potenziale nur in physikalisch erreichbaren Regionen definiert
-
-*** TODO: Abbildungen mit unterschiedlichen Wavefront Szenarien ***
-
+Im Gegensatz dazu verhindert die streng monotone Potenzialänderung des Wavefront-Algorithmus die Konvergenz zu lokalen Minima, sofern sich das Ziel an einem für den Roboter physikalisch erreichbaren Punkt befindet.
+\begin{figure}[h!]
+	\footnotesize
+	\centering
+	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/wavefront-demo.png}}}
+	\caption{Das Gradientenabstiegsverfahren in Kraftfeldern der Wavefront-Potenzialfelder konvergiert zum Zielpunkt.}
+\end{figure}
 
 \section{Überdeckungen des Robotermodells mit Hindernissen}
 
-Beobachtung bei den getesteten Szenarien der Implementierung: 
-- Schlechte Interpolation der rotierten Robotermaske für kleine Roboterdimensionen mit kleinen Rotationsschritten in einem kleinen Occupancy Grids
- *** TODO: Beispiel Interpolation für 1x3 bei 10° ***
+Wie in Kapitel 4 beschrieben, wird bei der Berechnung des Konfigurationsraums die Roboterrotation in \texttt{rotation\_step}s diskretisiert. Dazu wird für das Robotermodell eine Array-Maske über die Matrixrotation \texttt{sklearn.rotate()} gedreht. 
 
-In Literatur (Author Wavefront) deshalb empfohlen: mit kleinen Rotationsschritten die Roboterdimensionen und das Occupancy Grid zu skalieren
-=> Erhöht die Auflösung der Robotermaske, verringert Artefakte der Interpolation
+Insbesondere bei kleinen Roboterdimensionen mit kleinen Rotationswinkeln entstehen hier Interpolationsartefakte.
+Dies zeigt sich bei der Visualisierung der Roboternavigation durch die Überdeckung von Hindernissen mit dem Robotermodell sichtbar. In Literatur (Autor Wavefront TODO!) deshalb empfohlen, für kleine Rotationswinkel die Roboterdimensionen sowie das Occupancy Grid zu skalieren.
+Somit wird die Auflösung der Robotermaske erhöht und die Artefakte der Interpolation verringert.
 
-*** TODO Beispiel Skalierung ***
+\begin{figure}[h!]
+	\footnotesize
+	\centering
+	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/occu-scaling4.png}}}
+	\caption{Die sukzessive Verdopplung der Dimensionen des Robotermodells und Occupancy Grids verringert die Interpolationsartefakte.}
+\end{figure}
+
+
+
+
+
+
+
