@@ -10,59 +10,69 @@ Das Gravitationsfeld entspricht dem Gradientenfeld des Potenzialfelds: Auf jede 
 \end{equation*}
 
 Um die Gradienten zwischen dem letzten Rotationsschritt und $0$° zu berechnen, wird die erste und letzte Rotationsebene an das jeweils andere Ende der Dimension \texttt{potential[rotation]} kopiert.
-\begin{align*}
-	\texttt{first\_layer} & = \texttt{potential[0]} \\
-    \texttt{last\_layer} & = \texttt{potential[\texttt{rotations - 1}]} \\
-	\texttt{potential\_padded} & = \texttt{np.concatenate([last\_layer, potential, first\_layer], axis=0)}
-\end{align*}
-
-Die Gradienten des Potenzialfelds \texttt{potential} werden anschließend mit \texttt{np.gradients()} berechnet:
 \begin{equation*}
- \texttt{gradient\_rotation}, \texttt{ gradient\_y}, \texttt{ gradient\_x} = \texttt{np.gradients(potential\_padded)}
+\hspace*{-0.0075\linewidth}
+\resizebox{1.05\linewidth}{!}{
+$
+	\texttt{potential\_padded} = \texttt{np.concatenate([potential[0], potential, potential[\texttt{rotations - 1}]])}
+$
+}
+\hspace*{-0.0075\linewidth}
 \end{equation*}
 
-Die Kraftfelder entsprechen somit den Gradienten werden ohne die kopierten Rotationsebenen:
-\begin{align*}
-	\texttt{force\_field\_rotation} & = -\texttt{gradient\_rotation[1:rotation-1]} \\
-    \texttt{force\_field\_x} & = -\texttt{gradient\_x[1:rotation-1]} \\
-	\texttt{force\_field\_y} & = -\texttt{gradient\_y[1:rotation-1]} \\
-\end{align*}
+Die kopierten Rotationsebenen werden nach Berechnung der Kraftfelder entfernt:
+\begin{equation*}
+\hspace*{-0.075\linewidth}
+\resizebox{1.15\linewidth}{!}{
+$
+\texttt{force\_field\_rotation}, \texttt{ force\_field\_y}, \texttt{ force\_field\_x} = -\texttt{np.gradients(potential\_padded)[1:rotation-1]}
+$
+}
+\hspace*{-0.075\linewidth}
+\end{equation*}
+
 Somit entsprechen Gradienten $ \texttt{force\_field\_rotation[rotation]} > 0 $ einer Kraft in Richtung $\texttt{force\_field\_rotation[0]}$ und Gradienten $ \texttt{force\_field\_rotation[0]} < 0 $ einer Kraft in Richtung $\texttt{force\_field\_rotation[rotation]}$.
 
-*** Abbildung mit Kraftvektoren in Konfigurationsraum ***
-
+\begin{figure}[h!]
+	\centering
+	\footnotesize
+	\centerline{\resizebox{0.45\linewidth}{!}{\includegraphics{bilder/force-field.png}}}
+	\caption{Darstellung des Gradientenfelds als Kraftpfeile im Konfigurationsraum.}
+\end{figure}
 
 \subsection{Gradienten an Grenzen und Hindernissen}
 
-Für Koordinaten an den $X$- und $Y$-Grenzen des Konfigurationsraums werden Kräften in Grenzrichtung in der jeweiligen Dimension auf $0$ gesetzt:
-\begin{itemize}
-\item $\texttt{force\_field\_x[0]} < 0$
-\item $\texttt{force\_field\_x[occupancy\_grid\_width - 1]} > 0$
-\item $\texttt{force\_field\_y[0]} > 0$
-\item $\texttt{force\_field\_y[occupancy\_grid\_length - 1]} > 0$
-\end{itemize}
-
-Durch dieses manuelle "Abschneiden" der Kräfte -- das Setzen der Kraft auf $0$ -- können an den Grenzen lokale Minima oder Plateaus entstehen:
-	*** TODO: Abbildung ***
-
+Um die Grenzen des Konfigurationsraums einzuhalten, werden unzulässige Gradienten an den $X$- und $Y$-Grenzen auf $0$ gesetzt. Durch dieses manuelle Abschneiden der Kräfte können an den Grenzen lokale Minima entstehen.
+\begin{figure}[h!]
+	\centering
+	\footnotesize
+	\centerline{\resizebox{0.65\linewidth}{!}{\input{bilder/gradient-clipping_latex.pdf_tex}}}
+	\caption{Das Setzen der Gradienten in Grenznähe auf 0 kann zu lokalen Minima führen.}
+\end{figure}
 Im Potenzialfeld \texttt{potential} haben Hindernisse das Potenzial \texttt{np.nan}. Somit berechnet \texttt{np.gradients()} für jede an ein Hindernis grenzende Koordinate den Gradienten \texttt{np.nan}.
-Stattdessen sollen Hindernisse bei Berechnung der Gradienten wie Grenzen des Konfigurationsraums interpretiert werden. Ebenso wird hier die Kraft der jeweiligen Dimension auf 0 gesetzt, sollte negative Gradient in Richtung des Hindernisses zeigen. Beispiel für Hindernisse im Kraftfeld der X-Achse:
-
-Kraftfeld			Koordinate Hindernis:	Gradient: 								Kraft = 0, wenn Kraft:
-force\_field\_x		(x+1) => "rechts"		pot.[z, y, x] - pot.[z, y, x-1]			> 0
-force\_field\_x		(x-1) => "links"		pot.[z, y, x+1] - pot.[z, y, x]			< 0
-force\_field\_x		(x+1) und (x-1)			0										N/A
-					=> "rechts und links"
-
-Wird für eine Koordinate die Kraft einer Dimension "abgeschnitten", wobei die Kräfte der anderen Kraftfelder ebenfalls $0$ sind, entsteht ein lokales Minimum oder Plateau.
-
+Stattdessen sollen Hindernisse bei Berechnung der Gradienten wie Grenzen des Konfigurationsraums interpretiert werden. Ebenso wird hier die Kraft der jeweiligen Dimension auf 0 gesetzt, sollte negative Gradient in Richtung des Hindernisses zeigen. Nachfolgende Tabelle zeigt dies beispielhaft für Hindernisse im Kraftfeld der $X$-Achse \texttt{force\_field\_x} gezeigt:
+\begin{table}[H]
+\centerline{\resizebox{0.9\linewidth}{!}{
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Koordinate Hindernis}                                                & \textbf{\texttt{force\_field\_x[rotation][y][x] = -1*...}}                                                        & \textbf{\texttt{= 0}, wenn ...} \\ \hline
+$x+1$ (rechts)                                                               & $\texttt{potential[z, y, x]} - \texttt{potential[z, y, x-1]}$ & $>0$                               \\ \hline
+$x-1$ (links)                                                                & $\texttt{potential[z, y, x+1]} - \texttt{potential[z, y, x]}$ & $<0$                                \\ \hline
+\begin{tabular}[c]{@{}c@{}}$x+1$ und $x-1$\\ (rechts und links)\end{tabular} & \texttt{0}                                                                           & N/A                                 \\ \hline
+\end{tabular}}}
+\end{table}
+Wird die Kraft einer Dimension auf $0$ gesetzt, wobei die Kräfte der anderen Kraftfelder an dieser Koordinate ebenfalls $0$ sind, entsteht ein lokales Minimum oder Plateau.
 
 \subsection{Behandlung lokaler Maxima}
 
 Im Unterschied zu einem lokalen Minimum oder Plateau ist bei einem lokalen Maximum das Potenzial der Nachbarn streng monoton niedriger als das der aktuellen Koordinate.
-In diesen Fällen wird zu einem der Nachbarn eine virtuelle Grenze gesetzt und der Gradient wie im vorherigen Abschnitt beschrieben berechnet.
-
-*** Abbildung mit Beispiel ***
+In diesen Fällen wird zu einem der Nachbarn eine künstliches Hindernis gesetzt und der Gradient neu berechnet.
+\begin{figure}[H]
+	\centering
+	\footnotesize
+	\centerline{\resizebox{0.9\linewidth}{!}{\input{bilder/local-maxima_latex.pdf_tex}}}
+	\caption{Lokale Maxima können durch künstliche Hindernisse behoben werden.}
+\end{figure}
 
 
 \section{Gradientenabstieg}

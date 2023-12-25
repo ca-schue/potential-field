@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  24 DEC 2023 18:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  25 DEC 2023 13:47
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1052,7 +1052,7 @@ in.aex <nul: /p x=^%~$PATH:i>> main.aex)...executed.
 runsystem(del main.aex)...executed.
 
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 9
-2.
+3.
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1067,32 +1067,32 @@ LaTeX Warning: Unused global option(s):
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Info: Redefining \microtypecontext on input line 92.
-Package microtype Info: Applying patch `item' on input line 92.
-Package microtype Info: Applying patch `toc' on input line 92.
-Package microtype Info: Applying patch `eqnum' on input line 92.
-Package microtype Info: Applying patch `footnote' on input line 92.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Info: Redefining \microtypecontext on input line 93.
+Package microtype Info: Applying patch `item' on input line 93.
+Package microtype Info: Applying patch `toc' on input line 93.
+Package microtype Info: Applying patch `eqnum' on input line 93.
+Package microtype Info: Applying patch `footnote' on input line 93.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 92.
+LaTeX Info: Redefining \showhyphens on input line 93.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1126,8 +1126,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 92.
-Package biblatex Info: Reference segment=0 on input line 92.
+Package biblatex Info: Reference section=0 on input line 93.
+Package biblatex Info: Reference segment=0 on input line 93.
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -1157,10 +1157,10 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 <bilder//thi_logo.pdf, id=4, 165.87971pt x 73.25368pt>
 File: bilder//thi_logo.pdf Graphic file (type pdf)
 <use bilder//thi_logo.pdf>
-Package pdftex.def Info: bilder//thi_logo.pdf  used on input line 96.
+Package pdftex.def Info: bilder//thi_logo.pdf  used on input line 97.
 (pdftex.def)             Requested size: 137.88785pt x 60.8933pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 9
-6.
+7.
  (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1169,30 +1169,30 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 9
-6.
+7.
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-96.
+97.
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-96.
+97.
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 96.
+(Font)              <14.4> on input line 97.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 96.
+(Font)              <10> on input line 97.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 96.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
+(Font)              <7> on input line 97.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
 
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -1201,7 +1201,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
 
 
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1216,7 +1216,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 {C:/Users/carls/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./bilder//th
 i_logo.pdf>]
 Package tocbasic Info: character protrusion at toc deactivated on input line 10
-1.
+2.
  (main.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 7.
@@ -1398,7 +1398,24 @@ File: bilder//rotation-steps_latex.pdf Graphic file (type pdf)
 Package pdftex.def Info: bilder//rotation-steps_latex.pdf , page2 used on input
  line 65.
 (pdftex.def)             Requested size: 279.8729pt x 172.89651pt.
-) [6
+) (bilder/robot-mask_latex.pdf_tex
+<bilder//robot-mask_latex.pdf, id=82, page=1, 418.94943pt x 183.81052pt>
+File: bilder//robot-mask_latex.pdf Graphic file (type pdf)
+<use bilder//robot-mask_latex.pdf, page 1>
+Package pdftex.def Info: bilder//robot-mask_latex.pdf , page1 used on input lin
+e 56.
+(pdftex.def)             Requested size: 418.94943pt x 183.81285pt.
+)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (32.93942pt too wide) in paragraph at lines 36--37
+[]\T1/lmss/m/n/10.95 (-20) Die er-wei-ter-ten Oc-cu-pan-cy Grids wer-den zum Ko
+n-fi-gu-ra-ti-ons-raum \T1/lmtt/m/n/10.95 configuration-space[rotation][y][x]
+ []
+
+[6
 
 
 
@@ -1407,19 +1424,7 @@ Package pdftex.def Info: bilder//rotation-steps_latex.pdf , page2 used on input
 
 pdfTeX warning: pdflatex (file ./bilder//rotation-steps_latex.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
->] (bilder/robot-mask_latex.pdf_tex
-<bilder//robot-mask_latex.pdf, id=104, page=1, 418.94943pt x 183.81052pt>
-File: bilder//robot-mask_latex.pdf Graphic file (type pdf)
-<use bilder//robot-mask_latex.pdf, page 1>
-Package pdftex.def Info: bilder//robot-mask_latex.pdf , page1 used on input lin
-e 56.
-(pdftex.def)             Requested size: 418.94943pt x 183.81285pt.
-)
-Overfull \hbox (32.93942pt too wide) in paragraph at lines 36--37
-[]\T1/lmss/m/n/10.95 (-20) Die er-wei-ter-ten Oc-cu-pan-cy Grids wer-den zum Ko
-n-fi-gu-ra-ti-ons-raum \T1/lmtt/m/n/10.95 configuration-space[rotation][y][x]
- []
-
+>]
 <bilder/configuration-space.png, id=105, 1551.22392pt x 570.41678pt>
 File: bilder/configuration-space.png Graphic file (type png)
 <use bilder/configuration-space.png>
@@ -1432,64 +1437,224 @@ Package pdftex.def Info: bilder/configuration-space.png  used on input line 45.
 
 (kapitel/potentialfelder.tex
 chapter 5.
+<bilder/total-potential-computation.png, id=122, 1525.8434pt x 468.03429pt>
+File: bilder/total-potential-computation.png Graphic file (type png)
+<use bilder/total-potential-computation.png>
+Package pdftex.def Info: bilder/total-potential-computation.png  used on input 
+line 54.
+(pdftex.def)             Requested size: 1525.83969pt x 468.03314pt.
 [8
 
 
 
 
 ]
-<bilder/total-potential-computation.png, id=130, 1406.68393pt x 423.72589pt>
-File: bilder/total-potential-computation.png Graphic file (type png)
-<use bilder/total-potential-computation.png>
-Package pdftex.def Info: bilder/total-potential-computation.png  used on input 
-line 54.
-(pdftex.def)             Requested size: 1406.68051pt x 423.72485pt.
-
 Overfull \hbox (30.24559pt too wide) in paragraph at lines 74--75
 [] \T1/lmss/m/n/10.95 (-20) Nach-barn $\OML/lmm/m/it/10.95 N \OT1/lmr/m/n/10.95
  (-20) := \OMS/lmsy/m/n/10.95 f\OT1/lmr/m/n/10.95 (-20) ([], [], []), ([], [], 
 []), ...([], [], [])\OMS/lmsy/m/n/10.95 g$ 
  []
 
-) [9 <./bilder/total-potential-computation.png>] [10]
+<bilder/wavefront.png, id=131, 1545.20143pt x 409.53pt>
+File: bilder/wavefront.png Graphic file (type png)
+<use bilder/wavefront.png>
+Package pdftex.def Info: bilder/wavefront.png  used on input line 92.
+(pdftex.def)             Requested size: 1545.19768pt x 409.52899pt.
+<bilder/potential-stacked-computed.png, id=132, 1478.95393pt x 476.20767pt>
+File: bilder/potential-stacked-computed.png Graphic file (type png)
+<use bilder/potential-stacked-computed.png>
+Package pdftex.def Info: bilder/potential-stacked-computed.png  used on input l
+ine 102.
+(pdftex.def)             Requested size: 1478.95033pt x 476.20651pt.
+[9 <./bilder/total-potential-computation.png> <./bilder/wavefront.png>])
+[10 <./bilder/potential-stacked-computed.png>]
 \openout2 = `kapitel/navigation.aux'.
 
  (kapitel/navigation.tex
 chapter 6.
-[11
 
-
-
-
-]
-Overfull \hbox (5.35387pt too wide) in paragraph at lines 48--50
-[]\T1/lmss/m/n/10.95 (-20) Im Po-ten-zi-al-feld \T1/lmtt/m/n/10.95 potential \T
-1/lmss/m/n/10.95 (-20) ha-ben Hin-der-nis-se das Po-ten-zi-al \T1/lmtt/m/n/10.9
-5 np.nan\T1/lmss/m/n/10.95 (-20) . So-mit be-rech-net \T1/lmtt/m/n/10.95 np.gra
-dients()
+Overfull \hbox (16.08965pt too wide) detected at line 21
+| []| 
  []
 
+<bilder/force-field.png, id=142, 871.00406pt x 824.32968pt>
+File: bilder/force-field.png Graphic file (type png)
+<use bilder/force-field.png>
+Package pdftex.def Info: bilder/force-field.png  used on input line 39.
+(pdftex.def)             Requested size: 871.00194pt x 824.32767pt.
+(bilder/gradient-clipping_latex.pdf_tex
+<bilder//gradient-clipping_latex.pdf, id=143, page=1, 290.8489pt x 64.63704pt>
+File: bilder//gradient-clipping_latex.pdf Graphic file (type pdf)
+<use bilder//gradient-clipping_latex.pdf, page 1>
+Package pdftex.def Info: bilder//gradient-clipping_latex.pdf , page1 used on in
+put line 56.
+(pdftex.def)             Requested size: 290.84889pt x 64.63783pt.
+<bilder//gradient-clipping_latex.pdf, id=144, page=2, 290.8489pt x 64.63704pt>
+File: bilder//gradient-clipping_latex.pdf Graphic file (type pdf)
+<use bilder//gradient-clipping_latex.pdf, page 2>
+Package pdftex.def Info: bilder//gradient-clipping_latex.pdf , page2 used on in
+put line 58.
+(pdftex.def)             Requested size: 290.84889pt x 64.63783pt.
+<bilder//gradient-clipping_latex.pdf, id=145, page=3, 290.8489pt x 64.63704pt>
+File: bilder//gradient-clipping_latex.pdf Graphic file (type pdf)
+<use bilder//gradient-clipping_latex.pdf, page 3>
+Package pdftex.def Info: bilder//gradient-clipping_latex.pdf , page3 used on in
+put line 60.
+(pdftex.def)             Requested size: 290.84889pt x 64.63783pt.
+<bilder//gradient-clipping_latex.pdf, id=146, page=4, 290.8489pt x 64.63704pt>
+File: bilder//gradient-clipping_latex.pdf Graphic file (type pdf)
+<use bilder//gradient-clipping_latex.pdf, page 4>
+Package pdftex.def Info: bilder//gradient-clipping_latex.pdf , page4 used on in
+put line 62.
+(pdftex.def)             Requested size: 290.84889pt x 64.63783pt.
+<bilder//gradient-clipping_latex.pdf, id=147, page=5, 290.8489pt x 64.63704pt>
+File: bilder//gradient-clipping_latex.pdf Graphic file (type pdf)
+<use bilder//gradient-clipping_latex.pdf, page 5>
+Package pdftex.def Info: bilder//gradient-clipping_latex.pdf , page5 used on in
+put line 64.
+(pdftex.def)             Requested size: 290.84889pt x 64.63783pt.
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 62.
+ [11
 
-Overfull \hbox (0.2131pt too wide) in paragraph at lines 51--56
-[]\T1/lmss/m/n/10.95 (-20) Kraftfeld Ko-or-di-na-te Hin-der-nis: Gra-di-ent: Kr
-aft = 0, wenn Kraft: for-ce_field_x (x+1) => "rechts"pot.[z,
- []
 
 
-Overfull \hbox (1.78362pt too wide) in paragraph at lines 72--73
+
+ <./bilder/force-field.png>]
+(bilder/local-maxima_latex.pdf_tex
+<bilder//local-maxima_latex.pdf, id=153, page=1, 381.5494pt x 71.66855pt>
+File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
+<use bilder//local-maxima_latex.pdf, page 1>
+Package pdftex.def Info: bilder//local-maxima_latex.pdf , page1 used on input l
+ine 56.
+(pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
+<bilder//local-maxima_latex.pdf, id=154, page=2, 381.5494pt x 71.66855pt>
+File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
+<use bilder//local-maxima_latex.pdf, page 2>
+Package pdftex.def Info: bilder//local-maxima_latex.pdf , page2 used on input l
+ine 58.
+(pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
+<bilder//local-maxima_latex.pdf, id=155, page=3, 381.5494pt x 71.66855pt>
+File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
+<use bilder//local-maxima_latex.pdf, page 3>
+Package pdftex.def Info: bilder//local-maxima_latex.pdf , page3 used on input l
+ine 60.
+(pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
+<bilder//local-maxima_latex.pdf, id=156, page=4, 381.5494pt x 71.66855pt>
+File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
+<use bilder//local-maxima_latex.pdf, page 4>
+Package pdftex.def Info: bilder//local-maxima_latex.pdf , page4 used on input l
+ine 62.
+(pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
+<bilder//local-maxima_latex.pdf, id=157, page=5, 381.5494pt x 71.66855pt>
+File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
+<use bilder//local-maxima_latex.pdf, page 5>
+Package pdftex.def Info: bilder//local-maxima_latex.pdf , page5 used on input l
+ine 64.
+(pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
+<bilder//local-maxima_latex.pdf, id=158, page=6, 381.5494pt x 71.66855pt>
+File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
+<use bilder//local-maxima_latex.pdf, page 6>
+Package pdftex.def Info: bilder//local-maxima_latex.pdf , page6 used on input l
+ine 68.
+(pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
+<bilder//local-maxima_latex.pdf, id=159, page=7, 381.5494pt x 71.66855pt>
+File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
+<use bilder//local-maxima_latex.pdf, page 7>
+Package pdftex.def Info: bilder//local-maxima_latex.pdf , page7 used on input l
+ine 70.
+(pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
+<bilder//local-maxima_latex.pdf, id=160, page=8, 381.5494pt x 71.66855pt>
+File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
+<use bilder//local-maxima_latex.pdf, page 8>
+Package pdftex.def Info: bilder//local-maxima_latex.pdf , page8 used on input l
+ine 72.
+(pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
+<bilder//local-maxima_latex.pdf, id=161, page=9, 381.5494pt x 71.66855pt>
+File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
+<use bilder//local-maxima_latex.pdf, page 9>
+Package pdftex.def Info: bilder//local-maxima_latex.pdf , page9 used on input l
+ine 74.
+(pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
+<bilder//local-maxima_latex.pdf, id=162, page=10, 381.5494pt x 71.66855pt>
+File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
+<use bilder//local-maxima_latex.pdf, page 10>
+Package pdftex.def Info: bilder//local-maxima_latex.pdf , page10 used on input 
+line 76.
+(pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
+) [12 <./bilder//gradient-clipping_latex.pdf> <./bilder//gradient-clipping_late
+x.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//gradient-clipping_latex.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+> <./bilder//gradient-clipping_latex.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//gradient-clipping_latex.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+> <./bilder//gradient-clipping_latex.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//gradient-clipping_latex.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+> <./bilder//gradient-clipping_latex.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//gradient-clipping_latex.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+> <./bilder//local-maxima_latex.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//local-maxima_latex.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./bilder//local-maxima_latex.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//local-maxima_latex.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./bilder//local-maxima_latex.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//local-maxima_latex.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./bilder//local-maxima_latex.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//local-maxima_latex.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./bilder//local-maxima_latex.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//local-maxima_latex.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./bilder//local-maxima_latex.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//local-maxima_latex.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./bilder//local-maxima_latex.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//local-maxima_latex.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./bilder//local-maxima_latex.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//local-maxima_latex.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./bilder//local-maxima_latex.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//local-maxima_latex.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./bilder//local-maxima_latex.pdf
+
+pdfTeX warning: pdflatex (file ./bilder//local-maxima_latex.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+>]
+Overfull \hbox (1.78362pt too wide) in paragraph at lines 82--83
 \OML/lmm/m/it/10.95 F[]\OT1/lmr/m/n/10.95 (-20) ([], [], [])$ \T1/lmss/m/n/10.9
 5 (-20) ge-wählt, bis in ei-ner Ko-or-di-na-te ein Kräf-te-gleich-ge-wicht $\OM
 L/lmm/m/it/10.95 F[]\OT1/lmr/m/n/10.95 (-20) ([], [], []) =
  []
 
 
-Overfull \hbox (25.92299pt too wide) in paragraph at lines 89--91
+Overfull \hbox (25.92299pt too wide) in paragraph at lines 99--101
 [] $\OT1/lmr/m/n/10.95 (-20) ([], [], []) \OMS/lmsy/m/n/10.95   []\OT1/lmr/m/n/
 10.95 (-20) (\OMS/lmsy/m/n/10.95 j[][][][][][][][][][][]j\OT1/lmr/m/n/10.95 (-2
 0) )$
  []
 
-[12]) [13]
+) [13]
 \openout2 = `kapitel/diskussion.aux'.
 
  (kapitel/diskussion.tex
@@ -1502,13 +1667,13 @@ chapter 7.
 ]
 chapter without number
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 12
-6.
+7.
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
-(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 126.
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 127.
 
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10.95'.
@@ -1528,13 +1693,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25670 strings out of 475281
- 542058 string characters out of 2774064
- 1569334 words of memory out of 3000000
- 46472 multiletter control sequences out of 15000+600000
- 557363 words of font info for 193 fonts, out of 8000000 for 9000
+ 25762 strings out of 475281
+ 545855 string characters out of 2774064
+ 1569340 words of memory out of 3000000
+ 46550 multiletter control sequences out of 15000+600000
+ 557883 words of font info for 196 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 108i,20n,106p,10601b,2367s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 108i,21n,106p,10601b,2367s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
 :/Users/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Us
 ers/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Us
@@ -1560,12 +1725,13 @@ pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Users/carls/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/carls/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/carls/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/carls/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/carls/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/carls/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/carls/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (17 pages, 3442274 bytes).
+Output written on main.pdf (17 pages, 7375398 bytes).
 PDF statistics:
- 255 PDF objects out of 1000 (max. 8388607)
+ 335 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 60494 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 61096 words of extra memory for PDF output out of 61914 (max. 10000000)
 

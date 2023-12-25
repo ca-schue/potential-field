@@ -10,7 +10,7 @@
 \contentsline {section}{\numberline {6.1}Berechnung der Gradienten}{11}{}%
 \contentsline {subsection}{\numberline {6.1.1}Gradienten an Grenzen und Hindernissen}{12}{}%
 \contentsline {subsection}{\numberline {6.1.2}Behandlung lokaler Maxima}{12}{}%
-\contentsline {section}{\numberline {6.2}Gradientenabstieg}{12}{}%
+\contentsline {section}{\numberline {6.2}Gradientenabstieg}{13}{}%
 \contentsline {chapter}{\numberline {7}Diskussion}{14}{}%
 \contentsline {section}{\numberline {7.1}Vergleich der Potenzialfeldmethoden}{14}{}%
 \contentsline {section}{\numberline {7.2}Überdeckungen des Robotermodells mit Hindernissen}{14}{}%

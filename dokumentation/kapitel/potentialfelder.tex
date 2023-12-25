@@ -2,7 +2,7 @@
 
 Gemäß der Aufgabenstellung erfolgt die Pfadplanung der Roboternavigation zu einem Zielpunkt mit der \textit{Potenzialfeldmethode}:
 
-Allgemein betrachtet, entspricht der Konfigurationsraum einem skalaren \textit{Potenzialfeld}, wobei jede Koordinate eine potenzielle Energie $U(\texttt{x}, \texttt{y}, \texttt{rotation})$ besitzt, ausgedrückt durch eine reelle Zahl.
+Der Konfigurationsraum entspricht einem skalaren \textit{Potenzialfeld}, wobei jede Koordinate eine potenzielle Energie $U(\texttt{x}, \texttt{y}, \texttt{rotation})$ besitzt, ausgedrückt durch eine reelle Zahl.
 Je Höher die potenzielle Energie einer Koordinate, desto weiter ist der Punkt auf dem aktuellen Pfad vom Ziel entfernt.
 \cite{yujiang.2017}
 Die Berechnung des Potenzialfelds $\texttt{potential[rotation][y][x]} = U(\texttt{x}, \texttt{y}, \texttt{rotation})$ erfolgt mit \textit{Potenzialfunktionen}.
@@ -10,40 +10,40 @@ Die Berechnung des Potenzialfelds $\texttt{potential[rotation][y][x]} = U(\textt
 \section{Anziehende \& Abstoßende Potenziale}
 
 Khatib schlug 1986 vor, das Potenzialfeld in Analogie zu Gravitationsfeldern zu berechnen. Der zu erreichende Zielpunkt wirkt mit einem \textit{anziehenden} (engl. \textit{attractive}) Potenzial auf eine Koordinate (\texttt{y}, \texttt{x}) \cite{khatib.1985}. Das Potenzial ist in allen Rotationsebenen gleich:
-
+\vspace*{0.2cm}
 \begin{equation*}
 U_{Attr, Ziel}(\texttt{x}, \texttt{y}) = \sqrt{(\texttt{y} - \texttt{y}_{Ziel})^2 + (\texttt{x} - \texttt{x}_{Ziel})^2}
 \end{equation*}
 
-Bei den getesteten Implementierungsszenarien wurden bessere Ergebnisse festgestellt, wenn das anziehenden Potenzial erst normiert und anschließend mit \texttt{attraction\_weight} gewichtet wird:
-*** TODO: wie "attraction\_weight" die "Anziehung" zum Ziel steuert ***
-
+\vspace*{-0.1cm}
+Bei den getesteten Implementierungsszenarien wurden bessere Ergebnisse festgestellt, wenn das anziehenden Potenzial erst normiert und anschließend gewichtet wird. Mit $\texttt{attraction\_weight} = 1$ hat das anziehende Potenzial einen Wertebereich von $[0;1]$. Mit  $\texttt{attraction\_weight} < 1$ wird die obere Grenze des Wertebereichs verringert, mit $\texttt{attraction\_weight} > 1$ vergrößert.
+\vspace*{0.2cm}
 \begin{equation*}
-U_{Attr, Ziel}(\texttt{x}, \texttt{y})_{norm} = \frac{U_{Attr, Ziel}(\texttt{x}, \texttt{y})}{\max \{ U_{Attr, Ziel}\}} * \texttt{attraction\_weight}
+U_{Attr, Ziel}(\texttt{x}, \texttt{y})_{norm} = \frac{U_{Attr, Ziel}(\texttt{x}, \texttt{y})}{\max \{ U_{Attr, Ziel}\}} * \texttt{attraction\_weight} 
 \end{equation*}
 
-Die Hindernisse im Konfigurationsraum wirken auf jede Koordinate (\texttt{rotation}, \texttt{y}, \texttt{x}) mit einem \textit{abstoßendem} (engl. \textit{repulsive}) Potenzial. Dazu zählen auch die Hindernisse aus der benachbarten Rotationsebene $((\texttt{rotation} + 1) \mod \texttt{rotations})$ sowie $((\texttt{rotation} - 1) \mod \texttt{rotations})$:
-*** TODO: wie "repulsive\_weight" die "Weichheit" der Potenzialgrenze steuert ***
-
+\vspace*{-0.1cm}
+Die Hindernisse im Konfigurationsraum wirken auf jede Koordinate (\texttt{rotation}, \texttt{y}, \texttt{x}) mit einem \textit{abstoßendem} (engl. \textit{repulsive}) Potenzial. Dazu zählen auch die Hindernisse aus der benachbarten Rotationsebene $((\texttt{rotation} + 1) \mod \texttt{rotations})$ sowie $((\texttt{rotation} - 1) \mod \texttt{rotations})$. Mit $\texttt{repulsion\_weight}=0$ hat das abstoßende Potenzial einen Wertebereich von $[0;1]$. Werte $\texttt{repulsion\_weight} > 0 $ verringern die obere Grenze gegen $0$.
+\vspace*{0.2cm}
 \begin{equation*}
 \hspace*{-0.04\linewidth}
 \resizebox{1.1\linewidth}{!}{
   $ U_{Repul, Hindernis}(\texttt{x}, \texttt{y}, \texttt{rotation}) = \frac{1}{\texttt{repulsion\_weight} + \sqrt{(\texttt{y} - \texttt{y}_{Hindernis})^2 + (\texttt{x} - \texttt{x}_{Hindernis})^2 + (\texttt{rotation} - \texttt{rotation}_{Hindernis})^2}}
-$ 
-}
+$}
 \hspace*{-0.06\linewidth}
 \end{equation*}
 
-Yujiang und Huilin definieren das abstoßende Potenzial an der Koordinate (\texttt{rotation}, \texttt{y}, \texttt{x}) als kleinsten Abstand zu allen Hindernissen \cite{yujiang.2017}:
-
+\vspace*{-0.1cm}
+Yujiang und Huilin definieren das abstoßende Potenzial an der Koordinate (\texttt{rotation}, \texttt{y}, \texttt{x}) als kleinsten Abstand zu allen Hindernissen \cite{yujiang.2017}.
+\vspace*{0.2cm}
 \begin{equation*}
 U_{Repul}(\texttt{x}, \texttt{y}, \texttt{rotation}) = \min_{\forall \,\,Hindernis \,\,\in \texttt{ occupancy\_grid}} \{ U_{Repul, Hindernis}(\texttt{x}, \texttt{y}, \texttt{rotation}) \}
 \end{equation*}
 
-
+\vspace*{-0.1cm}
 Die gesamte potenzielle Energie einer Koordinate entspricht der Kombination beider Potenziale.
-In der Literatur werden dazu unterschiedliche Ansätze vorgeschlagen. Beispielsweise wählt XYZ das Maximum beider Potenziale. In dieser Implementierung wurden anziehendes und abstoßendes Potenzial gemäß Khalib addiert \cite{khatib.1985}: 
-
+In der Literatur werden dazu unterschiedliche Ansätze vorgeschlagen. Beispielsweise wählt XYZ das Maximum beider Potenziale. In dieser Implementierung wurden anziehendes und abstoßendes Potenzial gemäß Khalib addiert \cite{khatib.1985}.
+\vspace*{0.2cm}
 \begin{equation*}
 U(\texttt{x}, \texttt{y}, \texttt{rotation}) = U_{Attr, Ziel}(\texttt{x}, \texttt{y})_{norm} + U_{Repul}(\texttt{x}, \texttt{y}, \texttt{rotation})
 \end{equation*}
@@ -86,7 +86,21 @@ Choset stellt als Alternative zur Potenzialfunktion basierend auf anziehenden un
 Somit breitet sich ausgehend vom Zielpunkt als Quelle mit jeder Iteration das monoton steigende Potenzial bildlich als "Wellenfront" im Konfigurationsraum aus.
 Koordinaten in Hindernisnähe erhalten auf entgegengesetzter Seite der Ausbreitungsrichtung höhere Potenziale.
 
-*** TODO: Abbildung mit ein paar Iterationen ***
+\begin{figure}[h!]
+	\centering
+	\footnotesize
+	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/wavefront.png}}}
+	\caption{Die Berechnung des Gestamtpotenzial für die $0$°-Rotationsebene des Konfigurationsraums mit $\texttt{attraction\_weight}=5$ und $\texttt{repulsion\_weight}=0$.}
+\end{figure}
 
+Unabhängig von der gewählten Potenzialfunktion wird das Potenzialfeld im dreidimensionalen Konfigurationsraum für jede Rotationsebene berechnet.
+Somit hat das Potenzialfeld die gleichen Dimensionen wie der Konfigurationsraum:
+
+\begin{figure}[h!]
+	\centering
+	\footnotesize
+	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/potential-stacked-computed.png}}}
+	\caption{Das Potenzialfeld wird im dreidimensionalen Konfigurationsraum berechnet.}
+\end{figure}
 
 
