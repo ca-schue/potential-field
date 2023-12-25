@@ -2,7 +2,7 @@ import numpy as np
 from matplotlib.colors import ListedColormap
 import matplotlib.pyplot as plt
 
-def plot_occupancy_grid(occupancy_grid, plot_axis, rotation_step, goal_point=None, current_position=None, path=[], robot_width=None, robot_length=None, active=True, plot_title="Occupancy Grid", y_axis_label=None, start_point=None, ticks=True):
+def plot_occupancy_grid(occupancy_grid, plot_axis, rotation_step, goal_point=None, current_position=None, path=[], robot_width=None, robot_length=None, active=True, plot_title="Occupancy Grid", y_axis_label=None, start_point=None, ticks=True, grid=True):
     plot_axis.clear()
 
     if active:
@@ -24,8 +24,6 @@ def plot_occupancy_grid(occupancy_grid, plot_axis, rotation_step, goal_point=Non
         plot_axis.imshow(occupancy_grid, cmap=cmap, interpolation='none', origin='upper')
     else:
         plot_axis.imshow(occupancy_grid, cmap=cmap_empty, interpolation='none', origin='upper')
-
-
 
     if goal_point is not None:
         goal_x, goal_y, goal_rotation = goal_point
@@ -115,19 +113,25 @@ def plot_occupancy_grid(occupancy_grid, plot_axis, rotation_step, goal_point=Non
             plot_axis.add_patch(current_rect)
             plot_axis.scatter(current_x, current_y, color='black', marker='x', label='Rotation Anchor')
 
-    plot_axis.grid(False)
+    
     plot_axis.set_title(plot_title)
 
     # Beschriftung der X-Achse oben
     plot_axis.xaxis.tick_top()
-
-    if ticks:
+    
+    if grid:
+        plot_axis.grid(True)
         plot_axis.set_xticks(range(occupancy_grid.shape[1]))
         plot_axis.set_yticks(range(occupancy_grid.shape[0]))
-        plot_axis.grid()
+        if ticks:
+            plot_axis.set_xticklabels(range(occupancy_grid.shape[1]))
+            plot_axis.set_yticklabels(range(occupancy_grid.shape[0]))
+        else:
+            plot_axis.set_xticklabels([])
+            plot_axis.set_yticklabels([])        
     else:
-        plot_axis.set_xticks([])
-        plot_axis.set_yticks([])
+        plot_axis.grid(False)
+
 
     if y_axis_label is not None:
         # Optionale Beschriftung Y-Achse

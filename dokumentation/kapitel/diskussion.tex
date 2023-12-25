@@ -1,28 +1,42 @@
 \chapter{Diskussion}
 
-\section{Vergleich der Potenzialfeldmethoden}
+\section{Anziehendes und abstoßendes Potenzial: Lokale Minima und Oszillationen}
 
-\subsection*{Anziehendes \& Abstoßendes Potenzial}
+Eine Eigenschaft der Potenzialfunktion mit anziehendem und abstoßendem Potenzial ist die Konvergenz des Gradientenabstiegsverfahren zu einem lokalen Minimum bei konkaven Hindernissen.
+Davon betroffen sind Occupancy Grids, deren Hindernisse Polygone mit überstumpfen Winkeln ($180\text{°} \le \text{Winkel} \le 360\text{°}$) bilden.
+Bekannte Beispiele der Literatur sind C- und U-förmige Polygone \cite{maqbool.2021, yujiang.2017}:
+\begin{figure}[h!]
+	\centering
+	\footnotesize
+	\centerline{\resizebox{0.3\linewidth}{!}{\includegraphics{bilder/attr-repul-c-shape.png}}}
+	\caption{Für konkave Hindernisse konvergiert das Gradientenabstiegsverfahren mit anziehendem und abstoßendem Potenzial.}
+\end{figure}
 
-In der Literatur bekanntes Problem von anziehendem und abstoßendem Potenzial: 
+Weiterhin führt das Gravitationsfeld von Potenzialfeldern mit anziehendem und abstoßendem Potenzial zwischen Hindernisengstellen zu Oszillationen. Der Roboter wechselt bei dieser Art des lokalen Minimums zwischen zwei Koordinaten mit entgegen gerichteten Gradienten.
+Insbesondere kleine Occupancy Grids sind von diesem Effekt betroffen, da die Grenzen des Potenzialfelds als Hindernisse berücksichtigt werden. Abbildung \ref{fig:oscillation} zeigt diesen Effekt Anhand des Potenzialfelds aus Kapitel X (TODO).
+Die Erhöhung des Abstandes zwischen Occupancy-Grid-Grenzen und Hindernissen vermeidet dieses Problem.
+
+\begin{figure}[h!]
+	\footnotesize
+	\centering
+	\hspace*{\fill}
+	\begin{minipage}{0.46\textwidth}%
+		\centerline{\resizebox{0.6\linewidth}{!}{\includegraphics{bilder/attr-repul-oscillating-arrow.png}}}
+	\end{minipage}
+	\hspace*{\fill}
+	\begin{minipage}{0.46\textwidth}%
+		\footnotesize
+		\centerline{\resizebox{0.6\linewidth}{!}{\includegraphics{bilder/attr-repul-oscillating-scaled.png}}}
+	\end{minipage}
+	\hspace*{\fill}
+	%	\vspace{-1cm}
+	\label{fig:oscillation}
+	\caption{Bei Engstellen heben sich die abstoßenden Kräfte zwischen Hindernissen auf (links), bei hinreichend Abstand nicht (rechts).}
+\end{figure}
 
 
-- Für konkave Hindernisse konvergiert die Potenzialfunktion zu einem lokalem Minimum.
+Im Gegensatz dazu verhindert die streng monotone Potenzialänderung des Wavefront Algorithmus die Konvergenz zu lokalen Minima, sofern sich das Ziel an einem für den Roboter physikalisch erreichbaren Punkt befindet.
 
-"However, the workspace modeled by APF suffers from local minima, especially when mapping convex-shaped obstacles. Path generation by gradient search over an APF containing local minima will result in the robot getting stuck at some intermediate state before reaching the target location." \cite{maqbool.2021}
-
-	- Beispiel: Literatur "C"- und "U"-shaped Hindernisse \cite{yujiang.2017}
-
-
-- Oszillationen zwischen Hindernisengstellen:
-	Wird deutlich bei Szenarien wenn:
-	- Dimensionen des Occupancy Grid klein sind: Da Grenzen als bei Berechnung des abstoßenden Potenzials Hindernisse interpretiert werden: Oszillationen, wenn Roboter zwischen Hindernis und Grenze
-	- Roboter gefangen zwischen zwei Gradienten, die aufeinander zeigen
-
-*** TODO: Abbildung von kleinem Occu Grid vs Großes Occu Grid bei gleicher Robotergröße ***
-
-
-Im Gegnsatz dazu: Wavefront Algorithmus: 
 	- Konvergiert nie zu lokalem Minima
 	- Potenziale nur in physikalisch erreichbaren Regionen definiert
 

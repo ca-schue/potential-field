@@ -117,7 +117,6 @@ def compute_potential_wavefront(configuration_space, goal):
             potential[unreachable_rotation, unreachable_y, unreachable_x] = np.nan
             configuration_space[unreachable_rotation, unreachable_y, unreachable_x] = False
     
-    print(index)
     return potential_0, potential_650, potential_1250, potential
 
 

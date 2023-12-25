@@ -222,7 +222,7 @@ def gradient_descent_step(current_position, force_field_x, force_field_y, force_
 from occupancy_grid import plot_occupancy_grid
 from configuration_space import plot_configuration_space
 
-def update_gradient_descent_plots(occupancy_grid, configuration_space, start_point, goal_point, current_position, robot_width, robot_length, rotation_step, ax_occupancy_grid, gradient_decent_plots=False, ax_cs_2D=None, ax_cs_3D=None, force_field_x=None, force_field_y=None, force_field_rotation=None, path=[]):
+def update_gradient_descent_plots(occupancy_grid, configuration_space, start_point, goal_point, current_position, robot_width, robot_length, rotation_step, ax_occupancy_grid, gradient_decent_plots=False, ax_cs_2D=None, ax_cs_3D=None, force_field_x=None, force_field_y=None, force_field_rotation=None, path=[],ticks=False,grid=False):
     plot_occupancy_grid(
         occupancy_grid=occupancy_grid,
         start_point=start_point,
@@ -233,7 +233,8 @@ def update_gradient_descent_plots(occupancy_grid, configuration_space, start_poi
         plot_axis=ax_occupancy_grid,
         rotation_step=rotation_step,
         path=path,
-        ticks=False
+        ticks=ticks,
+        grid=grid
     )
 
     if gradient_decent_plots:

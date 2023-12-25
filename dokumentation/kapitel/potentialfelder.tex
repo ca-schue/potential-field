@@ -59,7 +59,7 @@ U(\texttt{x}, \texttt{y}, \texttt{rotation}) = U_{Attr, Ziel}(\texttt{x}, \textt
 
 \section{Wavefront Potenziale}
 
-Choset stellt als Alternative zur Potenzialfunktion basierend auf anziehenden und abstoßenden Potenzialen die Verwendung der Breitensuche ausgehend vom Zielpunkt vor. Beim sogenannten \textit{Wavefront-Algorithmus} entsprechen die Koordinaten des Konfigurationsraums den Knoten, wobei jeder besuchte Knoten das monton steigende Potenzial der jeweiligen Breitensuchenebene erhält \cite{choset.2007}:
+Choset stellt die Anwendung der Breitensuche ausgehend vom Zielpunkt als Potenzialfunktion vor. Beim sogenannten \textit{Wavefront-Algorithmus} entsprechen die Koordinaten des Konfigurationsraums den Knoten der Breitensuche, wobei jeder besuchte Knoten das monton steigende Potenzial der jeweiligen Breitensuchenebene erhält \cite{choset.2007}:
 
 \begin{algorithm}
 \caption{Wavefront-Algorithmus}
@@ -67,7 +67,7 @@ Choset stellt als Alternative zur Potenzialfunktion basierend auf anziehenden un
     \State \textbf{Initialisierung:}
     \State \hspace{\algorithmicindent} Jeder Punkt $U(\texttt{x}, \texttt{y}, \texttt{rotation}) = 0$
     \State \hspace{\algorithmicindent} Warteschlange $Q := \{((\texttt{x}_{Ziel}, \texttt{y}_{Ziel}, \texttt{rotation}_{Ziel}), 2)\}$
-	\vspace*{0.5cm}
+	\vspace*{0.3cm}
     \While{$Q \neq \emptyset$}
         \State $((\texttt{x}, \texttt{y}, \texttt{rotation}), \texttt{potential}) \gets Q$
         \State $U(\texttt{x}, \texttt{y}, \texttt{rotation}) = \texttt{potential}$
@@ -92,6 +92,8 @@ Koordinaten in Hindernisnähe erhalten auf entgegengesetzter Seite der Ausbreitu
 	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/wavefront.png}}}
 	\caption{Die Berechnung des Gestamtpotenzial für die $0$°-Rotationsebene des Konfigurationsraums mit $\texttt{attraction\_weight}=5$ und $\texttt{repulsion\_weight}=0$.}
 \end{figure}
+
+\vspace*{1cm}
 
 Unabhängig von der gewählten Potenzialfunktion wird das Potenzialfeld im dreidimensionalen Konfigurationsraum für jede Rotationsebene berechnet.
 Somit hat das Potenzialfeld die gleichen Dimensionen wie der Konfigurationsraum:

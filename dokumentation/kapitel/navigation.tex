@@ -77,10 +77,7 @@ In diesen Fällen wird zu einem der Nachbarn eine künstliches Hindernis gesetzt
 
 \section{Gradientenabstieg}
 
-Die berechneten Gradientenfelder ermöglichen die Roboternavigation durch das \textit{Gradientenabstiegsverfahren}:
-
-Pro Verarbeitungsschritt wird für eine Koordinate $(\texttt{x},\texttt{x},\texttt{rotation})$ die nächste Koordinate basierend auf der beträgsmäßig größten Gravitationskraft in $F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation})$, $F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation})$ und $F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation})$ gewählt, bis in einer Koordinate ein Kräftegleichgewicht $F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation}) = F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation}) = F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation}) = 0$ herrscht:
-
+Die berechneten Gradientenfelder ermöglichen die Roboternavigation mit dem \textit{Gradientenabstiegsverfahren}. Pro Verarbeitungsschritt wird die nächste Koordinate basierend auf der betragsmäßig größten Gravitationskraft in $F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation})$, $F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation})$ und $F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation})$ gewählt, bis eine bereits besuchte Koordinate oder eine Koordinate mit Kräftegleichgewicht $F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation}) = F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation}) = F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation}) = 0$ erreicht wird:
 
 \begin{algorithm}
 \caption{Gradientenabstiegsverfahren}
@@ -90,7 +87,6 @@ Pro Verarbeitungsschritt wird für eine Koordinate $(\texttt{x},\texttt{x},\text
     \State \hspace{\algorithmicindent} Visited $V \leftarrow \emptyset$
 	\vspace*{0.3cm}
     \While{true}
-		\vspace*{0.1cm}
         \If{$(\texttt{x}_{\text{current}}, \texttt{y}_{\text{current}}, \texttt{rotation}_{\text{current}}) = \texttt{goal\_point}$}
             \State \textbf{return} Ziel gefunden
         \EndIf
@@ -109,18 +105,18 @@ Pro Verarbeitungsschritt wird für eine Koordinate $(\texttt{x},\texttt{x},\text
 		\Else
 			\State $(\texttt{x}_{\text{current}}, \texttt{y}_{\text{current}}, \texttt{rotation}_{\text{current}}) \rightarrow V$
         \EndIf
-		\vspace*{0.1cm}
     \EndWhile
 \end{algorithmic}
 \end{algorithm}
 
-Der Gradientenabstieg muss dabei für die erlaubten Translationen des Konfigurationsraums diskretisiert werden: 
-Gemäß der definierten Roboterbewegungen in Kapitel X (TODO!) darf der Roboter pro Verarbeitungsschritt nur eine Translation um eine Einheit entlang der Dimensionen \texttt{[rotation][y][x]} durchführen. Somit gilt:
-\begin{equation*}
-(\texttt{dx}, \texttt{dy}, \texttt{drotation}) \in \{(1,0,0)(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)\}
-\end{equation*}
-
-
+Gemäß der in Kapitel X (TODO!) definierten Roboterbewegungen darf pro Verarbeitungsschritt nur eine Translation um eine Einheit entlang der Dimensionen des Konfigurationsraums  durchgeführt werden: $ (\texttt{dx}, \texttt{dy}, \texttt{drotation}) \in \{(1,0,0)(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)\}$
+\vspace*{0.1cm}
+\begin{figure}[h!]
+	\centering
+	\footnotesize
+	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/grad-desc.png}}}
+	\caption{Roboternavigation über das Gradientenabstiegsverfahren im Kraftfeld des Wavefront-Potenzialfelds.}
+\end{figure}
 
 
 
