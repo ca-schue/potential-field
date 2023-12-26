@@ -1,17 +1,60 @@
 \chapter{Ausführung der Implementierung}
 
-- Quellcode herunterladen:
-	- Quellcode auf GitHub: (QR-Code)
+Die Roboternavigation mit Potenzialfeldern wurde in Python als \textit{Jupyter Notebook} implementiert.
+Das Programm ist nach Vorbereitung der Ausführungsumgebung in sechs sequenziellen Schritten ausführbar.
 
-- Python:
-	- Implementiert in Python
-	- Empfohlen: "Anacoda Navigator" (Hier können isolierte Pythonumgebungen "Environments" gestartet werden)
-	- Python Version: 3.9 (getestet mit 3.9.16)
-	- Benötigte Bibliotheken
-		> matplotlib zur Visualisierung
-		> numpny für Mathematische Berechnungen
-		=> Installation aller Abhängigkeiten: pip install -r requirements.txt
+\section{Vorbereitung der Ausführungsumgebung}
 
-- Programm starten:
-	- Empfohlene Ausführungsumgebung: Visual Studio Code
-	- Jupyter Notebook. 
+Das Programm ist entweder als lokales Jupyter Notebook ausführbar oder ohne benötigte lokale Installationen über \textit{Google Colab} in der Cloud ausführbar.
+
+\subsection*{Lokal}
+Um das Programm lokal auszuführen, muss das \href{https://github.com/ca-schue/potential-field.git}{GitHub Repository} geklont werden.
+Das Jupyter Notebook \texttt{robot-navigation-potential-fields-local.ipynb} ist der zentrale Einstiegspunkt des Programms.
+Die Implementierung wurde mit \textit{Visual Studio Code}, kurz \textit{VSCode}, als Ausführungsumgebung des Notebooks getestet.
+Dazu wird Python ab Version 3.8 vorausgesetzt (getestet mit Version 3.8.18).
+Isolierte \textit{Python Environments} können über \textit{Anacoda Navigator} installiert werden.
+Zur Ausführung eines Jupyter Notebooks wird der \textit{ipykernel} benötigt. Dieses Paket kann entweder nach Öffnen des Notebooks in VSCode über das Pop-up installiert werden oder über die Kommandozeile von Anaconda: \texttt{conda install -n <environment\_name> ipykernel}.
+
+\subsection*{Google Colab}
+Alternativ kann das Notebook ohne lokale Installationen in \href{https://colab.research.google.com/gist/ca-schue/73cff6faf02b6d75d84573625fd89bea/robot-navigation-with-potential-fields.ipynb}{Google Colab} ausgeführt werden. Hierfür wird einzig ein Google Account benötigt.
+
+
+\section{Ausführung des Jupyter Notebooks}
+
+Das Jupyter Notebook unterteilt das Programm in sechs sequenziell auszuführende Schritte. Ein Ausführungsschritt entspricht einer Überschrift, die eine auszuführende \textit{Zelle} gruppiert. Per Klick auf das Pfeilsymbol links neben der Überschrift wird die Zelle ausgeklappt. Per Klick auf den Knopf neben der Zelle oder über die Tastenkombination \texttt{Strg + Enter} wird der Python Code ausgeführt:
+\begin{figure}[H]
+	\centering
+	\footnotesize
+	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/cell execution.png}}}
+	\caption{Nach Aufklappen der Überschrift eines Ausführungsschritts (links) kann der Python Code der Zelle ausgeführt werden (rechts).}
+\end{figure}
+
+\section*{0) Abhängigkeiten installieren}
+Bevor das Python Programm ausgeführt werden kann, müssen alle notwendigen Bibliotheken installiert werden. Im Falle der lokalen Ausführung werden hier mit \textit{pip install -r requirements.txt} die benötigten Pakete installiert: \textit{Numpy} und \textit{Scipy} unterstützen für mathematische Berechnungen während \textit{matplotlib} zur Visualisierung dient. Nach Installation der Pakete müssen VSCode und Anaconda Navigator komplett neu gestartet werden.
+
+Beim Notebook für Google Colab wird zusätzlich das Repository geklont. Ein Neustart wird nicht benötigt.
+
+\section*{1) Szenario auswählen}
+Dieser Ausführungsschritt gruppiert als Ausnahme mehrere Zellen. Eine Zelle entspricht hier einem vorkonfiguriertem \textit{Szenario}. Dort werden alle Parameter des Programms eingestellt, beispielsweise die Dimensionen des Roboters, dessen Start- und Zielposition und die Position der Hindernisse.
+Die Bedeutung der Parameter sind als Kommentare dokumentiert, sodass neue Szenarien hinzugefügt werden können. Zu beachten ist, dass nur die Parameter der zuletzt ausgeführten Zelle übernommen werden.
+\begin{figure}[H]
+	\centering
+	\footnotesize
+	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/parameters.png}}}
+	\caption{Über die Parameter wird die gesamte Programmausführung eines Szenarios konfiguriert.}
+\end{figure}
+
+\section*{2) Berechnungen durchführen}
+Dieser Ausführungsschritt führt die in den nachfolgenden Kapiteln ausführlich beschriebenen mathematischen Berechnungen durch. Diese werden für das Gradientenabstiegsverfahren benötigt. Änderungen am Python Code dieser Zelle sind nicht notwendig.
+
+\section*{3) Plots ausgeben (optional)}
+Als einziger Ausführungsschritt, ist die Berechnung und Visualisierung der grafischen Darstellungen optional. Da dieser Schritt sehr rechenaufwändig sein kann, verhindert der im Ausführungsschritts 1) gesetzte Parameter \texttt{optional\_plots=False} bei bestimmten vorkonfigurierten Szenarien die Ausführung dieser Zelle.
+
+\section*{4) Gradientenabstieg initialisieren}
+Bedingt durch die \texttt{matplotlib} Bibliothek muss bei animierten grafische Darstellungen die Initialisierung von der Ausführungslogik auf mindestens zwei Zellen aufgeteilt werden. Diese Zelle initialisiert somit das Gradientenabstiegsverfahren und dessen animierte Visualisierung. Wenn im Ausführungsschritt 1) der Parameter \texttt{gradient\_decent\_plots=True} gesetzt wird, werden zusätzliche Plots berechnet. Analog zum Parameter \texttt{optional\_plots=False} des vorherigen Ausführungsschritts wird dies aufgrund des hohen Ressourcenverbrauchs für gewissen Szenarien nicht empfohlen.
+
+\section*{5) Gradientenabstieg starten}
+Beim Ausführen dieser Zelle wird das Gradientenabstiegsverfahren gestartet. Im Plot des vorherigen Ausführungsschritts wird die Roboternavigation animiert.
+Um ein weiteres Szenario auszuführen, werden die Ausführungsschritte ab 1) wiederholt.
+
+

@@ -1,18 +1,20 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {chapter}{\numberline {1}Ziel der Implementierung}{1}{}%
-\contentsline {chapter}{\numberline {2}Ausführung der Implementierung}{2}{}%
-\contentsline {chapter}{\numberline {3}Roboterbewegung im Occupancy Grid}{3}{}%
-\contentsline {chapter}{\numberline {4}Konfigurationsraum}{4}{}%
-\contentsline {chapter}{\numberline {5}Berechnung der Potenzialfelder}{6}{}%
-\contentsline {section}{\numberline {5.1}Anziehende \& Abstoßende Potenziale}{6}{}%
-\contentsline {section}{\numberline {5.2}Wavefront Potenziale}{7}{}%
-\contentsline {chapter}{\numberline {6}Roboternavigation im Kraftfeld}{9}{}%
-\contentsline {section}{\numberline {6.1}Berechnung der Gradienten}{9}{}%
-\contentsline {subsection}{\numberline {6.1.1}Gradienten an Grenzen und Hindernissen}{10}{}%
-\contentsline {subsection}{\numberline {6.1.2}Behandlung lokaler Maxima}{10}{}%
-\contentsline {section}{\numberline {6.2}Gradientenabstieg}{11}{}%
-\contentsline {chapter}{\numberline {7}Diskussion}{12}{}%
-\contentsline {section}{\numberline {7.1}Lokale Minima und Oszillationen}{12}{}%
-\contentsline {section}{\numberline {7.2}Überdeckungen des Robotermodells mit Hindernissen}{13}{}%
-\contentsline {chapter}{\nonumberline Literatur}{14}{}%
+\contentsline {chapter}{\numberline {1}Ziel der Implementierung}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Ausführung der Implementierung}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Vorbereitung der Ausführungsumgebung}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Ausführung des Jupyter Notebooks}{2}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Roboterbewegung im Occupancy Grid}{5}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Konfigurationsraum}{6}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Berechnung der Potenzialfelder}{8}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Anziehende \& Abstoßende Potenziale}{8}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Wavefront Potenziale}{9}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Roboternavigation im Kraftfeld}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Berechnung der Gradienten}{11}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Gradienten an Grenzen und Hindernissen}{12}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Behandlung lokaler Maxima}{12}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}Gradientenabstieg}{13}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Diskussion}{14}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Lokale Minima und Oszillationen}{14}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Überdeckungen des Robotermodells mit Hindernissen}{15}{section.7.2}%
+\contentsline {chapter}{\nonumberline Literatur}{16}{chapter*.10}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
