@@ -1,15 +1,13 @@
 \chapter{Berechnung der Potenzialfelder}
 
-Gemäß der Aufgabenstellung erfolgt die Pfadplanung der Roboternavigation zu einem Zielpunkt mit der \textit{Potenzialfeldmethode}:
-
+Die Grundlage der Pfadplanung für die Roboternavigation zu einem Zielpunkt bildet in dieser Implementierung die \textit{Potenzialfeldmethode}:
 Der Konfigurationsraum entspricht einem skalaren \textit{Potenzialfeld}, wobei jede Koordinate eine potenzielle Energie $U(\texttt{x}, \texttt{y}, \texttt{rotation})$ besitzt, ausgedrückt durch eine reelle Zahl.
 Je Höher die potenzielle Energie einer Koordinate, desto weiter ist der Punkt auf dem aktuellen Pfad vom Ziel entfernt.
-\cite{yujiang.2017}
-Die Berechnung des Potenzialfelds $\texttt{potential[rotation][y][x]} = U(\texttt{x}, \texttt{y}, \texttt{rotation})$ erfolgt mit \textit{Potenzialfunktionen}.
+Die Berechnung des Potenzialfelds $\texttt{potential[rotation][y][x]} = U(\texttt{x}, \texttt{y}, \texttt{rotation})$ erfolgt mit \textit{Potenzialfunktionen}. \cite{yujiang.2017}
 
 \section{Anziehende \& Abstoßende Potenziale}
 
-Khatib schlug 1986 vor, das Potenzialfeld in Analogie zu Gravitationsfeldern zu berechnen. Der zu erreichende Zielpunkt wirkt mit einem \textit{anziehenden} (engl. \textit{attractive}) Potenzial auf eine Koordinate (\texttt{y}, \texttt{x}) \cite{khatib.1985}. Das Potenzial ist in allen Rotationsebenen gleich:
+Khatib schlug 1986 vor, das Potenzialfeld in Analogie zu Gravitationsfeldern zu berechnen. Der zu erreichende Zielpunkt wirkt mit einem \textit{anziehenden} (engl. \textit{attractive}) Potenzial auf eine Koordinate (\texttt{y}, \texttt{x}). \cite{khatib.1985} Dieses Potenzial ist in allen Rotationsebenen gleich:
 \vspace*{0.2cm}
 \begin{equation*}
 U_{Attr, Ziel}(\texttt{x}, \texttt{y}) = \sqrt{(\texttt{y} - \texttt{y}_{Ziel})^2 + (\texttt{x} - \texttt{x}_{Ziel})^2}
@@ -23,18 +21,18 @@ U_{Attr, Ziel}(\texttt{x}, \texttt{y})_{norm} = \frac{U_{Attr, Ziel}(\texttt{x},
 \end{equation*}
 
 \vspace*{-0.1cm}
-Die Hindernisse im Konfigurationsraum wirken auf jede Koordinate (\texttt{rotation}, \texttt{y}, \texttt{x}) mit einem \textit{abstoßendem} (engl. \textit{repulsive}) Potenzial. Dazu zählen auch die Hindernisse aus der benachbarten Rotationsebene $((\texttt{rotation} + 1) \mod \texttt{rotations})$ sowie $((\texttt{rotation} - 1) \mod \texttt{rotations})$. Mit $\texttt{repulsion\_weight}=0$ hat das abstoßende Potenzial einen Wertebereich von $[0;1]$. Werte $\texttt{repulsion\_weight} > 0 $ verringern die obere Grenze gegen $0$.
+Die Hindernisse im Konfigurationsraum wirken auf jede Koordinate (\texttt{x}, \texttt{y}, \texttt{rotation}) mit einem \textit{abstoßendem} (engl. \textit{repulsive}) Potenzial. Dazu zählen auch die Hindernisse aus der benachbarten Rotationsebene \texttt{((rotation+1) \% rotations)} sowie \texttt{((rotation-1) \% rotations)}. Mit $\texttt{repulsion\_weight}=0$ hat das abstoßende Potenzial einen Wertebereich von $[0;1]$. Werte $\texttt{repulsion\_weight} > 0 $ verringern die obere Grenze gegen $0$.
 \vspace*{0.2cm}
 \begin{equation*}
-\hspace*{-0.04\linewidth}
-\resizebox{1.1\linewidth}{!}{
+\hspace*{-0.075\linewidth}
+\resizebox{1.15\linewidth}{!}{
   $ U_{Repul, Hindernis}(\texttt{x}, \texttt{y}, \texttt{rotation}) = \frac{1}{\texttt{repulsion\_weight} + \sqrt{(\texttt{y} - \texttt{y}_{Hindernis})^2 + (\texttt{x} - \texttt{x}_{Hindernis})^2 + (\texttt{rotation} - \texttt{rotation}_{Hindernis})^2}}
 $}
-\hspace*{-0.06\linewidth}
+\hspace*{-0.075\linewidth}
 \end{equation*}
 
 \vspace*{-0.1cm}
-Yujiang und Huilin definieren das abstoßende Potenzial an der Koordinate (\texttt{rotation}, \texttt{y}, \texttt{x}) als kleinsten Abstand zu allen Hindernissen \cite{yujiang.2017}.
+Yujiang und Huilin definieren das abstoßende Potenzial einer Koordinate als kleinsten Abstand zu allen Hindernissen \cite{yujiang.2017}.
 \vspace*{0.2cm}
 \begin{equation*}
 U_{Repul}(\texttt{x}, \texttt{y}, \texttt{rotation}) = \min_{\forall \,\,Hindernis \,\,\in \texttt{ occupancy\_grid}} \{ U_{Repul, Hindernis}(\texttt{x}, \texttt{y}, \texttt{rotation}) \}
@@ -47,46 +45,43 @@ In der Literatur werden dazu unterschiedliche Ansätze vorgeschlagen. Beispielsw
 \begin{equation*}
 U(\texttt{x}, \texttt{y}, \texttt{rotation}) = U_{Attr, Ziel}(\texttt{x}, \texttt{y})_{norm} + U_{Repul}(\texttt{x}, \texttt{y}, \texttt{rotation})
 \end{equation*}
-
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
 	\footnotesize
 	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/total-potential-computation.png}}}
-	\caption{Die Berechnung des Gestamtpotenzial für die $0$°-Rotationsebene des Konfigurationsraums mit $\texttt{attraction\_weight}=5$ und $\texttt{repulsion\_weight}=0$.}
+	\caption{Die Berechnung des Gestamtpotenzial für die $0$°-Rotationsebene des Konfigurationsraums mit \texttt{attraction\_weight=5} und \texttt{repulsion\_weight=0}.}
 \end{figure}
 
-
-
+%\vspace*{0.5cm}
 \section{Wavefront Potenziale}
 
-Choset stellt die Anwendung der Breitensuche ausgehend vom Zielpunkt als Potenzialfunktion vor. Beim sogenannten \textit{Wavefront-Algorithmus} entsprechen die Koordinaten des Konfigurationsraums den Knoten der Breitensuche, wobei jeder besuchte Knoten das monton steigende Potenzial der jeweiligen Breitensuchenebene erhält \cite{choset.2007}:
-
+Choset stellt eine Potenzialfunktion unter Verwendung der Breitensuche ausgehend vom Zielpunkt vor. Beim sogenannten \textit{Wavefront-Algorithmus} entsprechen die Koordinaten des Konfigurationsraums den Knoten der Breitensuche, wobei jeder besuchte Knoten das pro Breitensuchenebene streng monoton steigende Potenzial erhält: \cite{choset.2007}
 \begin{algorithm}
 \caption{Wavefront-Algorithmus}
-\begin{algorithmic}[1]
-    \State \textbf{Initialisierung:}
-    \State \hspace{\algorithmicindent} Jeder Punkt $U(\texttt{x}, \texttt{y}, \texttt{rotation}) = 0$
-    \State \hspace{\algorithmicindent} Warteschlange $Q := \{((\texttt{x}_{Ziel}, \texttt{y}_{Ziel}, \texttt{rotation}_{Ziel}), 2)\}$
-	\vspace*{0.3cm}
-    \While{$Q \neq \emptyset$}
-        \State $((\texttt{x}, \texttt{y}, \texttt{rotation}), \texttt{potential}) \gets Q$
-        \State $U(\texttt{x}, \texttt{y}, \texttt{rotation}) = \texttt{potential}$
-        \State Nachbarn $N := \{(\texttt{x-1}, \texttt{y}, \texttt{rotation}), (\texttt{x+1}, \texttt{y}, \texttt{rotation}), ... (\texttt{x}, \texttt{y}, \texttt{(rotation - 1) \% rotations})\}$
-        \For{$(\texttt{x}_{Nachbar}, \texttt{y}_{Nachbar}, \texttt{rotation}_{Nachbar}) \gets N$}         
-            \If{$0 \leq \texttt{x}_{Nachbar} < \texttt{occupancy\_grid\_width}$ \\
-                \hspace*{\algorithmicindent}\hspace*{\algorithmicindent} \textbf{and} $0 \leq \texttt{y}_{Nachbar} < \texttt{occupancy\_grid\_height}$ \\
-                \hspace*{\algorithmicindent}\hspace*{\algorithmicindent} \textbf{and} $ \texttt{computational\_space}[\texttt{rotation}_{Nachbar}][\texttt{y}_{Nachbar}][\texttt{x}_{Nachbar}] = \texttt{True}$}
-                \State $((\texttt{x}_{Nachbar}, \texttt{y}_{Nachbar}, \texttt{rotation}_{Nachbar}), \texttt{potential + 1}) \rightarrow Q$
-            \EndIf
-        \EndFor
-    \EndWhile
-\end{algorithmic}
+	\begin{algorithmic}[1]
+  \State \textbf{Initialisierung:}
+  \State \hspace{\algorithmicindent} Jeder Punkt $U(\texttt{x}, \texttt{y}, \texttt{rotation}) = 0$
+  \State \hspace{\algorithmicindent} Warteschlange $Q := \{((\texttt{x}_{Ziel}, \texttt{y}_{Ziel}, \texttt{rotation}_{Ziel}), 2)\}$
+		\vspace*{0.3cm}
+  \While{$Q \neq \emptyset$}
+      \State $((\texttt{x}, \texttt{y}, \texttt{rotation}), \texttt{potential}) \gets Q$
+      \State $U(\texttt{x}, \texttt{y}, \texttt{rotation}) = \texttt{potential}$
+      \State Nachbarn $N := \{(\texttt{x-1}, \texttt{y}, \texttt{rotation}), (\texttt{x+1}, \texttt{y}, \texttt{rotation}), ... (\texttt{x}, \texttt{y}, \texttt{(rotation-1) \% rotations})\}$
+      \For{$(\texttt{x}_{Nachbar}, \texttt{y}_{Nachbar}, \texttt{rotation}_{Nachbar}) \gets N$}         
+          \If{$0 \leq \texttt{x}_{Nachbar} < \texttt{occupancy\_grid\_width}$ \\
+              \hspace*{\algorithmicindent}\hspace*{\algorithmicindent} \textbf{and} $0 \leq \texttt{y}_{Nachbar} < \texttt{occupancy\_grid\_height}$ \\
+              \hspace*{\algorithmicindent}\hspace*{\algorithmicindent} \textbf{and} $ \texttt{computational\_space}[\texttt{rotation}_{Nachbar}][\texttt{y}_{Nachbar}][\texttt{x}_{Nachbar}] = \texttt{True}$}
+              \State $((\texttt{x}_{Nachbar}, \texttt{y}_{Nachbar}, \texttt{rotation}_{Nachbar}), \texttt{potential + 1}) \rightarrow Q$
+          \EndIf
+      \EndFor
+  \EndWhile
+	\end{algorithmic}
 \end{algorithm}
 
-Somit breitet sich ausgehend vom Zielpunkt als Quelle mit jeder Iteration das monoton steigende Potenzial bildlich als "Wellenfront" im Konfigurationsraum aus.
+Somit breitet sich ausgehend vom Zielpunkt als Quelle das monoton steigende Potenzial bildlich als \textit{Wellenfront} im Konfigurationsraum aus.
 Koordinaten in Hindernisnähe erhalten auf entgegengesetzter Seite der Ausbreitungsrichtung höhere Potenziale.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
 	\footnotesize
 	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/wavefront.png}}}
@@ -94,11 +89,10 @@ Koordinaten in Hindernisnähe erhalten auf entgegengesetzter Seite der Ausbreitu
 \end{figure}
 
 \vspace*{1cm}
-
 Unabhängig von der gewählten Potenzialfunktion wird das Potenzialfeld im dreidimensionalen Konfigurationsraum für jede Rotationsebene berechnet.
 Somit hat das Potenzialfeld die gleichen Dimensionen wie der Konfigurationsraum:
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
 	\footnotesize
 	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/potential-stacked-computed.png}}}

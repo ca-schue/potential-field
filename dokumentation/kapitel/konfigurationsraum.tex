@@ -15,9 +15,10 @@ Um den Verbrauch freier Koordinaten um das Hindernis zu minimieren, schlägt XYZ
 	\caption{Für \texttt{rotation\_step=45} ergeben sich $(360 \text{\textdegree} \div 45 \text{\textdegree}) = 8$ Rotationszustände.}
 \end{figure}
 
-\vspace*{-0.45cm}
+\vspace*{-0.3cm}
 Für das Robotermodell wird eine \texttt{robot\_length*robot\_width} Maske erstellt.
 Für jeden Rotationszustand wird die Maske mit \texttt{sklearn.rotate()} gedreht sowie ein \textit{erweitertes Occupancy Grids} generiert. Dazu wird jedes Hindernis sowie jede Grenzkoordinate des ursprünglichen Occupancy Grids um die rotierte Maske erweitert.
+\vspace*{0.12cm}
 \begin{figure}[H]
 	\centering
 	\footnotesize
@@ -27,10 +28,10 @@ Für jeden Rotationszustand wird die Maske mit \texttt{sklearn.rotate()} gedreht
 
 Der Konfigurationsraum \texttt{configuration-space[rotation][y][x]} mit den Dimensionen fasst die Erweiterten Occupancy Grids in der Dimension \texttt{[rotation]} zusammen:
 \begin{itemize}
-\item \texttt{(rotation+1)\%rotations} $\widehat{=}$ Rotation um \texttt{rotation\_step} im Uhrzeigersinn
-\item \texttt{(rotation-1)\%rotations} $\widehat{=}$ Rotation um \texttt{rotation\_step} gegen den Uhrzeigersinn
+\item \texttt{(rotation + 1) \% rotations} $\widehat{=}$ Rotation um \texttt{rotation\_step} gegen den Uhrzeigersinn
+\item \texttt{(rotation - 1) \% rotations} $\widehat{=}$ Rotation um \texttt{rotation\_step} im Uhrzeigersinn
 \end{itemize}
-
+\vspace*{0.4cm}
 \begin{figure}[H]
 	\centering
 	\footnotesize

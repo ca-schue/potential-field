@@ -2,31 +2,30 @@
 
 \section{Lokale Minima und Oszillationen}
 
-Eine Eigenschaft der Potenzialfunktion mit anziehendem und abstoßendem Potenzial ist die Konvergenz des Gradientenabstiegsverfahren zu einem lokalen Minimum bei konkaven Hindernissen.
+Die Potenzialfunktion mit anziehendem und abstoßendem Potenzial hat die Eigenschaft zur Konvergenz des Gradientenabstiegsverfahren zu einem lokalen Minimum bei konkaven Hindernissen.
 Davon betroffen sind Occupancy Grids, deren Hindernisse Polygone mit überstumpfen Winkeln ($180\text{°} \le \text{Winkel} \le 360\text{°}$) bilden.
 Bekannte Beispiele der Literatur sind C- und U-förmige Polygone \cite{maqbool.2021, yujiang.2017}:
 \begin{figure}[h!]
 	\centering
 	\footnotesize
 	\centerline{\resizebox{0.3\linewidth}{!}{\includegraphics{bilder/attr-repul-c-shape.png}}}
-	\caption{Für konkave Hindernisse konvergiert das Gradientenabstiegsverfahren mit anziehendem und abstoßendem Potenzial.}
+	\caption{Für konkave Hindernisse in Potenzialfeldern des anziehenden und abstoßenden Potenzials konvergiert das Gradientenabstiegsverfahren zu einem lokalen Minimum.}
 \end{figure}
 
-Weiterhin führt das Gravitationsfeld von Potenzialfeldern mit anziehendem und abstoßendem Potenzial zwischen Hindernisengstellen zu Oszillationen. Der Roboter wechselt bei dieser Art des lokalen Minimums zwischen zwei Koordinaten mit entgegen gerichteten Gradienten.
-Insbesondere kleine Occupancy Grids sind von diesem Effekt betroffen, da die Grenzen des Potenzialfelds als Hindernisse berücksichtigt werden. Abbildung \ref{fig:oscillation} zeigt diesen Effekt anhand des Potenzialfelds aus Kapitel X (TODO).
-Die Erhöhung des Abstandes zwischen Occupancy-Grid-Grenzen und Hindernissen vermeidet dieses Problem.
-
-\begin{figure}[h!]
+Weiterhin sind im Gravitationsfeld von Potenzialfeldern mit anziehendem und abstoßendem Potenzial zwischen Hindernisengstellen Oszillationen möglich. Der Roboter wechselt bei dieser Art des lokalen Minimums zwischen zwei Koordinaten mit entgegengerichteten Gradienten.
+Insbesondere kleine Occupancy Grids sind von diesem Effekt betroffen, da die X- und Y-Grenzen als Hindernisse interpretiert werden. Abbildung \ref{fig:oscillation} zeigt diesen Effekt anhand des Potenzialfelds aus Kapitel X (TODO).
+Die Erhöhung des Abstandes zwischen den Grenzen des Occupancy-Grid und Hindernissen vermeidet dieses Problem.
+\begin{figure}[H]
 	\footnotesize
 	\centering
 	\hspace*{\fill}
 	\begin{minipage}{0.46\textwidth}%
-		\centerline{\resizebox{0.6\linewidth}{!}{\includegraphics{bilder/attr-repul-oscillating-arrow.png}}}
+		\centerline{\resizebox{0.65\linewidth}{!}{\includegraphics{bilder/attr-repul-oscillating-arrow.png}}}
 	\end{minipage}
 	\hspace*{\fill}
 	\begin{minipage}{0.46\textwidth}%
 		\footnotesize
-		\centerline{\resizebox{0.6\linewidth}{!}{\includegraphics{bilder/attr-repul-oscillating-scaled.png}}}
+		\centerline{\resizebox{0.65\linewidth}{!}{\includegraphics{bilder/attr-repul-oscillating-scaled.png}}}
 	\end{minipage}
 	\hspace*{\fill}
 	%	\vspace{-1cm}
@@ -35,7 +34,7 @@ Die Erhöhung des Abstandes zwischen Occupancy-Grid-Grenzen und Hindernissen ver
 \end{figure}
 
 Im Gegensatz dazu verhindert die streng monotone Potenzialänderung des Wavefront-Algorithmus die Konvergenz zu lokalen Minima, sofern sich das Ziel an einem für den Roboter physikalisch erreichbaren Punkt befindet.
-\begin{figure}[h!]
+\begin{figure}[H]
 	\footnotesize
 	\centering
 	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/wavefront-demo.png}}}
@@ -53,7 +52,11 @@ Somit wird die Auflösung der Robotermaske erhöht und die Artefakte der Interpo
 \begin{figure}[h!]
 	\footnotesize
 	\centering
-	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/occu-scaling4.png}}}
+	\hspace*{-0.075\linewidth}
+	\centerline{\resizebox{1.15\linewidth}{!}{
+	\includegraphics{bilder/occu-scaling4.png}
+	}}
+	\hspace*{-0.075\linewidth}
 	\caption{Die sukzessive Verdopplung der Dimensionen des Robotermodells und Occupancy Grids verringert die Interpolationsartefakte.}
 \end{figure}
 

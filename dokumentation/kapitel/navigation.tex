@@ -1,15 +1,14 @@
 \chapter{Roboternavigation im Kraftfeld}
 
-Die Roboternavigation der Potenzialfeldmethode entspricht der Bewegung eines Körpers im \textit{Gravitationsfeld} des Potenzialfelds.
+Die Roboternavigation basierend auf der Potenzialfeldmethode entspricht der Bewegung eines Körpers im \textit{Gravitationsfeld} des Potenzialfelds.
 
 \section{Berechnung der Gradienten}
 
-Das Gravitationsfeld entspricht dem Gradientenfeld des Potenzialfelds: Auf jede Koordinate im Gravitationsfeld wirkt Gravitationskraft zerlegt in die drei kartesische Komponenten des Konfigurationsraums. Jedes dieser drei Kraftfelder $F_{x/y/rotation}(\texttt{x}, \texttt{y}, \texttt{rotation})$ gibt für die jeweilige Dimension des Konfigurationsraums die Größe der Gravitationskraft in der Koordinate (\texttt{x}, \texttt{y}, \texttt{rotation}) an:
+Das Gravitationsfeld entspricht dem negativen Gradientenfeld des Potenzialfelds: Auf jede Koordinate im Gravitationsfeld wirkt Gravitationskraft zerlegt in die drei kartesische Komponenten des Konfigurationsraums. Jedes dieser drei Kraftfelder $F_{x/y/rotation}(\texttt{x}, \texttt{y}, \texttt{rotation})$ gibt für die jeweilige Dimension des Konfigurationsraums die Größe der Gravitationskraft in der Koordinate (\texttt{x}, \texttt{y}, \texttt{rotation}) an:
 \begin{equation*}
  F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation}), F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation}), F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation}) = -\nabla U(\texttt{x}, \texttt{y}, \texttt{rotation})
 \end{equation*}
-
-Um die Gradienten zwischen dem letzten Rotationsschritt und $0$° zu berechnen, wird die erste und letzte Rotationsebene an das jeweils andere Ende der Dimension \texttt{potential[rotation]} kopiert.
+Um die Gradienten zwischen dem letzten Rotationszustand und $0$° zu berechnen, wird die erste und letzte Rotationsebene an das jeweils andere Ende der Dimension \texttt{potential[rotation]} kopiert:
 \begin{equation*}
 \hspace*{-0.0075\linewidth}
 \resizebox{1.05\linewidth}{!}{
@@ -19,7 +18,6 @@ $
 }
 \hspace*{-0.0075\linewidth}
 \end{equation*}
-
 Die kopierten Rotationsebenen werden nach Berechnung der Kraftfelder entfernt:
 \begin{equation*}
 \hspace*{-0.075\linewidth}
@@ -30,34 +28,33 @@ $
 }
 \hspace*{-0.075\linewidth}
 \end{equation*}
-
-Somit entsprechen Gradienten $ \texttt{force\_field\_rotation[rotation]} > 0 $ einer Kraft in Richtung $\texttt{force\_field\_rotation[0]}$ und Gradienten $ \texttt{force\_field\_rotation[0]} < 0 $ einer Kraft in Richtung $\texttt{force\_field\_rotation[rotation]}$.
-
-\begin{figure}[h!]
+Somit entspricht $ \texttt{force\_field\_rotation[rotation]} > 0 $ einer Kraft in Richtung $\texttt{force\_field\_rotation[0]}$ und $ \texttt{force\_field\_rotation[0]} < 0 $ einer Kraft in Richtung $\texttt{force\_field\_rotation[rotation]}$.
+\begin{figure}[H]
 	\centering
 	\footnotesize
-	\centerline{\resizebox{0.45\linewidth}{!}{\includegraphics{bilder/force-field.png}}}
-	\caption{Darstellung des Gradientenfelds als Kraftpfeile im Konfigurationsraum.}
+	\centerline{\resizebox{0.52\linewidth}{!}{\includegraphics{bilder/force-field.png}}}
+	\caption{Darstellung des negativen Gradientenfelds als Kraftpfeile im Konfigurationsraum.}
 \end{figure}
 
 \subsection{Gradienten an Grenzen und Hindernissen}
 
-Um die Grenzen des Konfigurationsraums einzuhalten, werden unzulässige Gradienten an den $X$- und $Y$-Grenzen auf $0$ gesetzt. Durch dieses manuelle Abschneiden der Kräfte können an den Grenzen lokale Minima entstehen.
-\begin{figure}[h!]
+Um die Grenzen des Konfigurationsraums einzuhalten, werden unzulässige Kräfte an den X- und Y-Grenzen auf $0$ gesetzt. Durch dieses manuelle Abschneiden der Kräfte können an den Grenzen lokale Minima entstehen.
+\begin{figure}[H]
 	\centering
 	\footnotesize
 	\centerline{\resizebox{0.65\linewidth}{!}{\input{bilder/gradient-clipping_latex.pdf_tex}}}
-	\caption{Das Setzen der Gradienten in Grenznähe auf 0 kann zu lokalen Minima führen.}
+	\caption{Das Setzen der Gradienten in Grenznähe auf $0$ kann zu lokalen Minima führen.}
 \end{figure}
-Im Potenzialfeld \texttt{potential} haben Hindernisse das Potenzial \texttt{np.nan}. Somit berechnet \texttt{np.gradients()} für jede an ein Hindernis grenzende Koordinate den Gradienten \texttt{np.nan}.
-Stattdessen sollen Hindernisse bei Berechnung der Gradienten wie Grenzen des Konfigurationsraums interpretiert werden. Ebenso wird hier die Kraft der jeweiligen Dimension auf 0 gesetzt, sollte negative Gradient in Richtung des Hindernisses zeigen. Nachfolgende Tabelle zeigt dies beispielhaft für Hindernisse im Kraftfeld der $X$-Achse \texttt{force\_field\_x} gezeigt:
+Im Numpy Potenzialfeld \texttt{potential} haben Hindernisse das Potenzial \texttt{np.nan}. Somit berechnet \texttt{np.gradients()} für jede an ein Hindernis grenzende Koordinate den Gradienten \texttt{np.nan}.
+Um die Gravitationskräfte an Hindernissen analog zu Kräften an Grenzen des Konfigurationsraums zu interpretieren, müssen diese manuell berechnet werden. 
+Sollte die berechnete Kraft einer Dimension in Richtung des Hindernisses zeigen, wird diese ebenfalls auf $0$ gesetzt. Nachfolgende Tabelle zeigt dies beispielhaft für Hindernisse im Kraftfeld der X-Achse \texttt{force\_field\_x}:
 \begin{table}[H]
 \centerline{\resizebox{0.9\linewidth}{!}{
 \begin{tabular}{|c|c|c|}
 \hline
 \textbf{Koordinate Hindernis}                                                & \textbf{\texttt{force\_field\_x[rotation][y][x] = -1*...}}                                                        & \textbf{\texttt{= 0}, wenn ...} \\ \hline
-$x+1$ (rechts)                                                               & $\texttt{potential[z, y, x]} - \texttt{potential[z, y, x-1]}$ & $>0$                               \\ \hline
-$x-1$ (links)                                                                & $\texttt{potential[z, y, x+1]} - \texttt{potential[z, y, x]}$ & $<0$                                \\ \hline
+$x+1$ (rechts)                                                               & \texttt{potential[z, y, x] - potential[z, y, x-1]} & $>0$                               \\ \hline
+$x-1$ (links)                                                                & \texttt{potential[z, y, x+1] - potential[z, y, x]} & $<0$                                \\ \hline
 \begin{tabular}[c]{@{}c@{}}$x+1$ und $x-1$\\ (rechts und links)\end{tabular} & \texttt{0}                                                                           & N/A                                 \\ \hline
 \end{tabular}}}
 \end{table}
@@ -66,7 +63,7 @@ Wird die Kraft einer Dimension auf $0$ gesetzt, wobei die Kräfte der anderen Kr
 \subsection{Behandlung lokaler Maxima}
 
 Im Unterschied zu einem lokalen Minimum oder Plateau ist bei einem lokalen Maximum das Potenzial der Nachbarn streng monoton niedriger als das der aktuellen Koordinate.
-In diesen Fällen wird zu einem der Nachbarn eine künstliches Hindernis gesetzt und der Gradient neu berechnet.
+In diesen Fällen wird zu einem der beiden Nachbarn ein künstliches Hindernis gesetzt und der Gradient neu berechnet.
 \begin{figure}[H]
 	\centering
 	\footnotesize
@@ -109,7 +106,7 @@ Die berechneten Gradientenfelder ermöglichen die Roboternavigation mit dem \tex
 \end{algorithmic}
 \end{algorithm}
 
-Gemäß der in Kapitel X (TODO!) definierten Roboterbewegungen darf pro Verarbeitungsschritt nur eine Translation um eine Einheit entlang der Dimensionen des Konfigurationsraums  durchgeführt werden: $ (\texttt{dx}, \texttt{dy}, \texttt{drotation}) \in \{(1,0,0)(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)\}$
+Gemäß der in Kapitel X (TODO!) definierten Roboterbewegungen darf pro Verarbeitungsschritt nur eine Translation um eine Einheit entlang der Dimensionen des Konfigurationsraums  durchgeführt werden: $ (\texttt{dx}, \texttt{dy}, \texttt{drotation}) \in \{(\texttt{1},\texttt{0},\texttt{0})(\texttt{-1},\texttt{0},\texttt{0}),(\texttt{0},\texttt{1},\texttt{0}),(\texttt{0},\texttt{-1},\texttt{0}),(\texttt{0},\texttt{0},\texttt{1}),(\texttt{0},\texttt{0},\texttt{-1})\}$
 \vspace*{0.1cm}
 \begin{figure}[h!]
 	\centering
