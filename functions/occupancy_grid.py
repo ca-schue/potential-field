@@ -139,14 +139,14 @@ def plot_occupancy_grid(occupancy_grid, plot_axis, rotation_step, goal_point=Non
         plot_axis.text(-0.15, 0.5, y_axis_label, rotation='horizontal', va='center', ha='right', transform=plot_axis.transAxes)
 
 
-def add_obstacle(occupancy_grid, width, length, x, y):
+def add_obstacle(occupancy_grid, obstacle_width, obstacle_length, x, y):
     width_occ_grid = len(occupancy_grid[0])
     height_occ_grid = len(occupancy_grid)
 
     start_row = y
-    end_row = min(height_occ_grid, y + length)
+    end_row = min(height_occ_grid, y + obstacle_length)
     start_col = x
-    end_col = min(width_occ_grid, x + width)
+    end_col = min(width_occ_grid, x + obstacle_width)
 
     for row in range(start_row, end_row):
         for col in range(start_col, end_col):
@@ -154,8 +154,8 @@ def add_obstacle(occupancy_grid, width, length, x, y):
 
     return occupancy_grid
 
-def generate_empty_occupancy_grid(length, width):
-    empty_occupancy_grid = np.ones((length, width), dtype=bool)
+def generate_empty_occupancy_grid(occupancy_grid_width, occupancy_grid_length):
+    empty_occupancy_grid = np.ones((occupancy_grid_length, occupancy_grid_width), dtype=bool)
 
     return empty_occupancy_grid
 

@@ -1,5 +1,7 @@
 import warnings
 import numpy as np
+from functions.occupancy_grid import plot_occupancy_grid
+from functions.configuration_space import plot_configuration_space
 
 def compute_gradients(potential, goal_point):
 
@@ -218,9 +220,6 @@ def gradient_descent_step(current_position, force_field_x, force_field_y, force_
     else:
         raise Exception("Local mininum or plateau at current location: x=" + str(x) + ", y=" + str(y) + ", rotation=" + str(rotation))
 
-
-from occupancy_grid import plot_occupancy_grid
-from configuration_space import plot_configuration_space
 
 def update_gradient_descent_plots(occupancy_grid, configuration_space, start_point, goal_point, current_position, robot_width, robot_length, rotation_step, ax_occupancy_grid, gradient_decent_plots=False, ax_cs_2D=None, ax_cs_3D=None, force_field_x=None, force_field_y=None, force_field_rotation=None, path=[],ticks=False,grid=False):
     plot_occupancy_grid(
