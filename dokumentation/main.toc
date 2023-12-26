@@ -2,17 +2,17 @@
 \contentsline {chapter}{\numberline {1}Ziel der Implementierung}{1}{}%
 \contentsline {chapter}{\numberline {2}Ausführung der Implementierung}{2}{}%
 \contentsline {chapter}{\numberline {3}Roboterbewegung im Occupancy Grid}{4}{}%
-\contentsline {chapter}{\numberline {4}Konfigurationsraum}{6}{}%
-\contentsline {chapter}{\numberline {5}Berechnung der Potenzialfelder}{8}{}%
-\contentsline {section}{\numberline {5.1}Anziehende \& Abstoßende Potenziale}{8}{}%
-\contentsline {section}{\numberline {5.2}Wavefront Potenziale}{9}{}%
-\contentsline {chapter}{\numberline {6}Roboternavigation im Kraftfeld}{11}{}%
-\contentsline {section}{\numberline {6.1}Berechnung der Gradienten}{11}{}%
-\contentsline {subsection}{\numberline {6.1.1}Gradienten an Grenzen und Hindernissen}{12}{}%
-\contentsline {subsection}{\numberline {6.1.2}Behandlung lokaler Maxima}{12}{}%
-\contentsline {section}{\numberline {6.2}Gradientenabstieg}{13}{}%
-\contentsline {chapter}{\numberline {7}Diskussion}{14}{}%
-\contentsline {section}{\numberline {7.1}Lokale Minima und Oszillationen}{14}{}%
-\contentsline {section}{\numberline {7.2}Überdeckungen des Robotermodells mit Hindernissen}{15}{}%
-\contentsline {chapter}{\nonumberline Literatur}{16}{}%
+\contentsline {chapter}{\numberline {4}Konfigurationsraum}{5}{}%
+\contentsline {chapter}{\numberline {5}Berechnung der Potenzialfelder}{7}{}%
+\contentsline {section}{\numberline {5.1}Anziehende \& Abstoßende Potenziale}{7}{}%
+\contentsline {section}{\numberline {5.2}Wavefront Potenziale}{8}{}%
+\contentsline {chapter}{\numberline {6}Roboternavigation im Kraftfeld}{10}{}%
+\contentsline {section}{\numberline {6.1}Berechnung der Gradienten}{10}{}%
+\contentsline {subsection}{\numberline {6.1.1}Gradienten an Grenzen und Hindernissen}{11}{}%
+\contentsline {subsection}{\numberline {6.1.2}Behandlung lokaler Maxima}{11}{}%
+\contentsline {section}{\numberline {6.2}Gradientenabstieg}{12}{}%
+\contentsline {chapter}{\numberline {7}Diskussion}{13}{}%
+\contentsline {section}{\numberline {7.1}Lokale Minima und Oszillationen}{13}{}%
+\contentsline {section}{\numberline {7.2}Überdeckungen des Robotermodells mit Hindernissen}{14}{}%
+\contentsline {chapter}{\nonumberline Literatur}{15}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

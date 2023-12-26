@@ -1,63 +1,62 @@
 \vspace*{-5cm}
 \chapter{Roboterbewegung im Occupancy Grid}
-Die physikalische Umgebung des Roboters wird diskretisiert durch das \textit{Occupancy Grid}.
-Dieser binäre, zweidimensionale Raum entspricht der Umgebung aus "Vogelperspektive". 
+Die physikalische Umgebung des Roboters wird diskretisiert durch das \textit{Occupancy Grid}, ein binärer, zweidimensionale Raum aus der Vogelperspektive. Implementiert mit der Python Bibliothek \textit{Numpy}, hat das Boolean Array \texttt{occupancy\_grid[Y][X]} die Länge \texttt{occupancy\_grid\_length} und Breite \texttt{occupancy\_grid\_width} und den Ursprung links oben. Jede Koordinate ist entweder durch ein Hindernis belegt (\texttt{occupancy\_grid[Y][X] == False}) oder frei von Hindernissen (\texttt{occupancy\_grid[Y][X] == True}).
 
-Das numpy Boolean Koordinatensystem \texttt{occupancy\_grid} mit der Länge \texttt{occupancy\_grid\_length} und Breite \texttt{occupancy\_grid\_width} hat den Ursprung links oben. Bedingt durch Numpy werden Koordinaten mit \texttt{occupancy\_grid[Y][X]} referenziert. Die Umgebung ist im Occupancy Grid binär, wodruch jede Koordinate ($X$,$Y$) durch ein Hindernis belegt ist (\texttt{occupancy\_grid[Y][X] == False}) oder frei von Hindernissen ist (\texttt{occupancy\_grid[Y][X] == True}).
-
-\begin{figure}[h!]
+Im Occupancy Grid gibt es drei Roboterpositionen: \texttt{start\_point}, \texttt{current\_position} und \texttt{goal\_point}.
+\begin{figure}[H]
 	\small
 	\centering	
-	\begin{minipage}{0.46\textwidth}%
-	\begin{minted}[
-		obeytabs=true,
-		tabsize=2,
-		autogobble,
-		fontsize={\fontsize{6.5}{8.5}\selectfont},
-		frame=single
-		]{python}
-		occupancy_grid = 
-		[[T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, F, F, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, F, F, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
-		 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T]]
-	\end{minted}
+	\hspace*{\fill}
+	\begin{minipage}{0.5\textwidth}%
+		\begin{minted}[
+			obeytabs=true,
+			tabsize=2,
+			autogobble,
+			fontsize={\fontsize{6.8}{7.1}\selectfont},
+			frame=single
+			]{python}
+			occupancy_grid = 
+			[[T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, F, F, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, F, F, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T],
+			 [T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T]]
+		\end{minted}
 	\end{minipage}
 	\hspace*{\fill}
-	\begin{minipage}{0.46\textwidth}%
+	\begin{minipage}{0.35\textwidth}%
 		\footnotesize
-		\resizebox{\linewidth}{!}{\includegraphics{bilder/occupancy-grid2.png}}
+		\resizebox{\linewidth}{!}{\includegraphics{bilder/occupancy-grid3.png}}
 	\end{minipage}
+	\hspace*{\fill}
 	%	\vspace{-1cm}
-	\caption{Im Occupancy Grid mit Ursprung links oben werden Hinderniskoordinaten mit \texttt{False} (\texttt{F}) markiert.}
+	\caption{Ein einfaches Occupancy Grid mit vier Hindernissen, dem \texttt{start\_point} bei (\texttt{X=2}, \texttt{Y=13}), der \texttt{current\_position} bei (\texttt{X=4}, \texttt{Y=4}) und dem \texttt{goal\_point} bei (\texttt{X=14}, \texttt{Y=2})}.
 \end{figure}
 
-Gemäß der gestellten Anforderungen kann die Dimension des Roboters durch die Variablen \texttt{robot\_width} und \texttt{robot\_length} definiert werden. Pro Verarbeitungseinheit kann sich der Roboter entweder durch eine Translation oder Rotation im Occupancy Grid bewegen:
+\vspace*{-0.5cm}
+Die Dimension des Roboters wird durch die Variablen \texttt{robot\_width} und \texttt{robot\_length} definiert. Pro Verarbeitungseinheit kann sich der Roboter relativ zum \textit{Ankerpunkt} der aktuellen Position entweder durch eine Translation oder Rotation im Occupancy Grid bewegen:
 \begin{itemize}
 \item \textbf{Translation} nach links (\texttt{x-1}), rechts (\texttt{x+1}), oben (\texttt{y-1}) und unten (\texttt{y+1})
-\item \textbf{Rotation} um einen \textit{Ankerpunkt}. Bei einer Rotation von $0$° liegt dieser Referenzpunkt in der linken oberen Ecke des Roboters.
+\item \textbf{Rotation} um den Ankerpunkt. Bei einer Rotation von $0$° liegt dieser Referenzpunkt in der linken oberen Koordinate innerhalb der Roboterdimensionen.
 \end{itemize}
-
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
-	\small
-	\centerline{\resizebox{\linewidth}{!}{\input{bilder/robotermodell_latex.pdf_tex}}}
-	\caption{Translation (rechts) und Rotation (mitte) eines Roboters mit variablen Dimensionen (links).}
+	\footnotesize
+	\centerline{\resizebox{1\linewidth}{!}{\input{bilder/robotermodell_latex.pdf_tex}}}
+	\caption{Bewegung eines Roboters mit variabler Dimension durch Translation und Rotation.}
 \end{figure}
 
-*** TODO: Abbildung mit Roboter als Start- und Zielpunkt in Occupancy Grid ***
