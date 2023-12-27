@@ -50,34 +50,6 @@
       \verb https://www.cs.cmu.edu/~motionplanning/lecture/Chap4-Potential-Field_howie.pdf
       \endverb
     \endentry
-    \entry{khatib.1985}{inproceedings}{}
-      \name{author}{1}{}{%
-        {{hash=0a9bcb07c557a30beb3c13b8fab1ad99}{%
-           family={Khatib},
-           familyi={K\bibinitperiod},
-           given={O.},
-           giveni={O\bibinitperiod}}}%
-      }
-      \strng{namehash}{0a9bcb07c557a30beb3c13b8fab1ad99}
-      \strng{fullhash}{0a9bcb07c557a30beb3c13b8fab1ad99}
-      \strng{bibnamehash}{0a9bcb07c557a30beb3c13b8fab1ad99}
-      \strng{authorbibnamehash}{0a9bcb07c557a30beb3c13b8fab1ad99}
-      \strng{authornamehash}{0a9bcb07c557a30beb3c13b8fab1ad99}
-      \strng{authorfullhash}{0a9bcb07c557a30beb3c13b8fab1ad99}
-      \field{sortinit}{K}
-      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings. 1985 IEEE International Conference on Robotics and Automation}
-      \field{title}{Real-time obstacle avoidance for manipulators and mobile robots}
-      \field{volume}{2}
-      \field{year}{1985}
-      \field{pages}{500\bibrangedash 505}
-      \range{pages}{6}
-      \verb{doi}
-      \verb 10.1109/ROBOT.1985.1087247
-      \endverb
-    \endentry
     \entry{maqbool.2021}{article}{}
       \name{author}{3}{}{%
         {{hash=b29fe67e171576119bfe940ab7c281da}{%
@@ -114,6 +86,117 @@
       \field{pages}{1066\bibrangedash 1077}
       \range{pages}{12}
     \endentry
+    \entry{khatib.1985}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=c1a852baf53ce3b5d952b17607932401}{%
+           family={Oussama},
+           familyi={O\bibinitperiod},
+           given={Khatib},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{c1a852baf53ce3b5d952b17607932401}
+      \strng{fullhash}{c1a852baf53ce3b5d952b17607932401}
+      \strng{bibnamehash}{c1a852baf53ce3b5d952b17607932401}
+      \strng{authorbibnamehash}{c1a852baf53ce3b5d952b17607932401}
+      \strng{authornamehash}{c1a852baf53ce3b5d952b17607932401}
+      \strng{authorfullhash}{c1a852baf53ce3b5d952b17607932401}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings. 1985 IEEE International Conference on Robotics and Automation}
+      \field{title}{Real-time obstacle avoidance for manipulators and mobile robots}
+      \field{volume}{2}
+      \field{year}{1985}
+      \field{pages}{500\bibrangedash 505}
+      \range{pages}{6}
+    \endentry
+    \entry{roberts.1999}{online}{}
+      \name{author}{1}{}{%
+        {{hash=3f0b4087333ba42289b68956400908d1}{%
+           family={Roberts},
+           familyi={R\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Stanford University: Department of Computer Science}%
+      }
+      \strng{namehash}{3f0b4087333ba42289b68956400908d1}
+      \strng{fullhash}{3f0b4087333ba42289b68956400908d1}
+      \strng{bibnamehash}{3f0b4087333ba42289b68956400908d1}
+      \strng{authorbibnamehash}{3f0b4087333ba42289b68956400908d1}
+      \strng{authornamehash}{3f0b4087333ba42289b68956400908d1}
+      \strng{authorfullhash}{3f0b4087333ba42289b68956400908d1}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{letzter Zugriff am 27.12.2023}
+      \field{title}{Robotics: Useful Definitions}
+      \field{year}{1999}
+      \verb{urlraw}
+      \verb https://cs.stanford.edu/people/eroberts/courses/soco/projects/1998-99/robotics/definitions.html
+      \endverb
+      \verb{url}
+      \verb https://cs.stanford.edu/people/eroberts/courses/soco/projects/1998-99/robotics/definitions.html
+      \endverb
+    \endentry
+    \entry{schweiger.2023}{online}{}
+      \name{author}{1}{}{%
+        {{hash=cdcee63e9d744bc2d7d4f1e168c5ba80}{%
+           family={Schweiger},
+           familyi={S\bibinitperiod},
+           given={Johann},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Technische Hochschule Ingolstadt: Fakultät Informatik}%
+      }
+      \strng{namehash}{cdcee63e9d744bc2d7d4f1e168c5ba80}
+      \strng{fullhash}{cdcee63e9d744bc2d7d4f1e168c5ba80}
+      \strng{bibnamehash}{cdcee63e9d744bc2d7d4f1e168c5ba80}
+      \strng{authorbibnamehash}{cdcee63e9d744bc2d7d4f1e168c5ba80}
+      \strng{authornamehash}{cdcee63e9d744bc2d7d4f1e168c5ba80}
+      \strng{authorfullhash}{cdcee63e9d744bc2d7d4f1e168c5ba80}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Wintersemester 2023/24}
+      \field{title}{Intelligente Robotik: Kapitel 5.3 Navigation}
+      \field{year}{2023}
+    \endentry
+    \entry{wang.2000}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=90fbfe2dc6273534e37644446adc706e}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yunfeng},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=0bb4fe91e5d0c99f7ecf93d5e8c0ca09}{%
+           family={Chirikjian},
+           familyi={C\bibinitperiod},
+           given={Gregory\bibnamedelima S},
+           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{a229e6b3f430aea58fe32378c7694d39}
+      \strng{fullhash}{a229e6b3f430aea58fe32378c7694d39}
+      \strng{bibnamehash}{a229e6b3f430aea58fe32378c7694d39}
+      \strng{authorbibnamehash}{a229e6b3f430aea58fe32378c7694d39}
+      \strng{authornamehash}{a229e6b3f430aea58fe32378c7694d39}
+      \strng{authorfullhash}{a229e6b3f430aea58fe32378c7694d39}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings 2000 ICRA. Millennium Conference. IEEE International Conference on Robotics and Automation. Symposia Proceedings (Cat. No. 00CH37065)}
+      \field{title}{A new potential field method for robot path planning}
+      \field{volume}{2}
+      \field{year}{2000}
+      \field{pages}{977\bibrangedash 982}
+      \range{pages}{6}
+    \endentry
     \entry{yujiang.2017}{article}{}
       \name{author}{2}{}{%
         {{hash=1302f74b6e7e41379b9fb30089d235cb}{%
@@ -126,9 +209,6 @@
            familyi={H\bibinitperiod},
            given={Li},
            giveni={L\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {JVE International Ltd.}%
       }
       \strng{namehash}{3392dad1d1f93e17e16de7e9797e8990}
       \strng{fullhash}{3392dad1d1f93e17e16de7e9797e8990}

@@ -1,10 +1,10 @@
 \chapter{Ziel der Implementierung}
 
-Die vorliegende Arbeit dokumentiert die praktische Umsetzung eines Planungssystems zur Roboternavigation im Rahmen der Vorlesung "Intelligente Robotik" im Wintersemester 2023/24.
+Die vorliegende Arbeit dokumentiert die praktische Umsetzung eines Planungssystems zur Roboternavigation im Rahmen der Vorlesung ``Intelligente Robotik`` im Wintersemester 2023/24.
 
 Die Implementierung erfolgte in Python, wobei ein Jupyter Notebook als zentraler Einstiegspunkt dient. 
 Ein rechteckiger Roboter variabler Größe navigiert in einem statisch vorgegebenen Occupancy Grid mit beliebig konfigurierbaren Hindernissen von einem Start- zum Zielpunkt.
-Die kollisionsfreie Roboternavigation wird durch die Transformation der Roboterbewegung in einen dreidimensionalen Konfigurationsraum nach dem Ansatz von XYZ (TODO!) ermöglicht. 
+Die kollisionsfreie Roboternavigation wird durch die Transformation der Roboterbewegung in einen dreidimensionalen Konfigurationsraum nach einem Ansatz von Yunfeng und Chirikjian ermöglicht \cite{wang.2000}.
 Die Routenplanung von Start- zu Zielpunkt basiert auf Potenzialfeldern, deren Berechnung sowohl mit anziehenden und abstoßenden Potenzialen als auch dem Wavefront-Algorithmus implementiert wurde. 
 Die Roboternavigation erfolgt durch das Gradientenabstiegsverfahren in den Kraftfeldern der Potenzialfelder. 
 Diverse grafische Darstellungen visualisieren die Berechnungen und Roboternavigation.

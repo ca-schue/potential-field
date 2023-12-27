@@ -5,7 +5,7 @@ Das Programm ist nach Vorbereitung der Ausführungsumgebung in sechs sequenziell
 
 \section{Vorbereitung der Ausführungsumgebung}
 
-Das Programm ist entweder als lokales Jupyter Notebook ausführbar oder ohne benötigte lokale Installationen über \textit{Google Colab} in der Cloud ausführbar.
+Das Jupyter Notebook ist entweder als lokal ausführbar oder ohne benötigte lokale Installationen über \textit{Google Colab} in der Cloud ausführbar.
 
 \subsection*{Lokal}
 Um das Programm lokal auszuführen, muss das \href{https://github.com/ca-schue/potential-field.git}{GitHub Repository} geklont werden.
@@ -16,27 +16,27 @@ Isolierte \textit{Python Environments} können über \textit{Anacoda Navigator} 
 Zur Ausführung eines Jupyter Notebooks wird der \textit{ipykernel} benötigt. Dieses Paket kann entweder nach Öffnen des Notebooks in VSCode über das Pop-up installiert werden oder über die Kommandozeile von Anaconda: \texttt{conda install -n <environment\_name> ipykernel}.
 
 \subsection*{Google Colab}
-Alternativ kann das Notebook ohne lokale Installationen in \href{https://colab.research.google.com/gist/ca-schue/73cff6faf02b6d75d84573625fd89bea/robot-navigation-with-potential-fields.ipynb}{Google Colab} ausgeführt werden. Hierfür wird einzig ein Google Account benötigt.
+Alternativ kann das Notebook ohne lokale Installationen in \href{https://colab.research.google.com/gist/ca-schue/73cff6faf02b6d75d84573625fd89bea/robot-navigation-with-potential-fields.ipynb}{Google Colab} ausgeführt werden. Hierfür wird nur ein Google Account benötigt.
 
 
 \section{Ausführung des Jupyter Notebooks}
 
-Das Jupyter Notebook unterteilt das Programm in sechs sequenziell auszuführende Schritte. Ein Ausführungsschritt entspricht einer Überschrift, die eine auszuführende \textit{Zelle} gruppiert. Per Klick auf das Pfeilsymbol links neben der Überschrift wird die Zelle ausgeklappt. Per Klick auf den Knopf neben der Zelle oder über die Tastenkombination \texttt{Strg + Enter} wird der Python Code ausgeführt:
+Das Jupyter Notebook unterteilt das Programm in sechs sequenziell auszuführende Schritte. Ein \textit{Ausführungsschritt} entspricht einer Überschrift, die eine auszuführende \textit{Zelle} gruppiert. Per Klick auf das Pfeilsymbol links neben der Überschrift wird die Zelle ausgeklappt. Per Klick auf den Knopf links neben der Zelle oder über die Tastenkombination \texttt{Strg + Enter} wird der Python Code ausgeführt:
 \begin{figure}[H]
 	\centering
 	\footnotesize
 	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/cell execution.png}}}
-	\caption{Nach Aufklappen der Überschrift eines Ausführungsschritts (links) kann der Python Code der Zelle ausgeführt werden (rechts).}
+	\caption{Nach Aufklappen der Überschrift eines Ausführungsschritts (links) kann der Python Code in der Zelle ausgeführt werden (rechts).}
 \end{figure}
 
 \section*{0) Abhängigkeiten installieren}
-Bevor das Python Programm ausgeführt werden kann, müssen alle notwendigen Bibliotheken installiert werden. Im Falle der lokalen Ausführung werden hier mit \textit{pip install -r requirements.txt} die benötigten Pakete installiert: \textit{Numpy} und \textit{Scipy} unterstützen für mathematische Berechnungen während \textit{matplotlib} zur Visualisierung dient. Nach Installation der Pakete müssen VSCode und Anaconda Navigator komplett neu gestartet werden.
+Bevor das Python Programm ausgeführt werden kann, müssen alle notwendigen Bibliotheken installiert werden. Im Falle der lokalen Ausführung werden mit \texttt{pip install -r requirements.txt} die benötigten Pakete installiert: \textit{Numpy} und \textit{Scipy} unterstützen mathematische Berechnungen während \textit{matplotlib} zur Visualisierung dient. Nach Installation der Pakete müssen VSCode und Anaconda Navigator komplett neu gestartet werden.
 
 Beim Notebook für Google Colab wird zusätzlich das Repository geklont. Ein Neustart wird nicht benötigt.
 
 \section*{1) Szenario auswählen}
 Dieser Ausführungsschritt gruppiert als Ausnahme mehrere Zellen. Eine Zelle entspricht hier einem vorkonfiguriertem \textit{Szenario}. Dort werden alle Parameter des Programms eingestellt, beispielsweise die Dimensionen des Roboters, dessen Start- und Zielposition und die Position der Hindernisse.
-Die Bedeutung der Parameter sind als Kommentare dokumentiert, sodass neue Szenarien hinzugefügt werden können. Zu beachten ist, dass nur die Parameter der zuletzt ausgeführten Zelle übernommen werden.
+Die Bedeutung der Parameter sind als Kommentare dokumentiert, sodass neue Szenarien konfiguriert werden können. Zu beachten ist, dass nur die Parameter der zuletzt ausgeführten Zelle übernommen werden.
 \begin{figure}[H]
 	\centering
 	\footnotesize
@@ -51,10 +51,10 @@ Dieser Ausführungsschritt führt die in den nachfolgenden Kapiteln ausführlich
 Als einziger Ausführungsschritt, ist die Berechnung und Visualisierung der grafischen Darstellungen optional. Da dieser Schritt sehr rechenaufwändig sein kann, verhindert der im Ausführungsschritts 1) gesetzte Parameter \texttt{optional\_plots=False} bei bestimmten vorkonfigurierten Szenarien die Ausführung dieser Zelle.
 
 \section*{4) Gradientenabstieg initialisieren}
-Bedingt durch die \texttt{matplotlib} Bibliothek muss bei animierten grafische Darstellungen die Initialisierung von der Ausführungslogik auf mindestens zwei Zellen aufgeteilt werden. Diese Zelle initialisiert somit das Gradientenabstiegsverfahren und dessen animierte Visualisierung. Wenn im Ausführungsschritt 1) der Parameter \texttt{gradient\_decent\_plots=True} gesetzt wird, werden zusätzliche Plots berechnet. Analog zum Parameter \texttt{optional\_plots=False} des vorherigen Ausführungsschritts wird dies aufgrund des hohen Ressourcenverbrauchs für gewissen Szenarien nicht empfohlen.
+Bedingt durch die matplotlib-Bibliothek muss bei animierten grafische Darstellungen die Initialisierung von der Ausführungslogik auf mindestens zwei Zellen aufgeteilt werden. Diese Zelle initialisiert somit das Gradientenabstiegsverfahren und dessen animierte Visualisierung. Wenn im Ausführungsschritt 1) der Parameter \texttt{gradient\_decent\_plots=True} gesetzt wird, werden zusätzliche Plots berechnet. Analog zum Parameter \texttt{optional\_plots=False} des vorherigen Ausführungsschritts wird dies aufgrund des hohen Ressourcenverbrauchs für gewissen Szenarien nicht empfohlen.
 
 \section*{5) Gradientenabstieg starten}
 Beim Ausführen dieser Zelle wird das Gradientenabstiegsverfahren gestartet. Im Plot des vorherigen Ausführungsschritts wird die Roboternavigation animiert.
-Um ein weiteres Szenario auszuführen, werden die Ausführungsschritte ab 1) wiederholt.
+Um ein weiteres Szenario auszuführen, müssen die Ausführungsschritte ab 1) wiederholt werden.
 
 

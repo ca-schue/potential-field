@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  26 DEC 2023 22:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  27 DEC 2023 11:14
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1420,7 +1420,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<bilder/cell execution.png, id=66, 1490.99893pt x 199.17268pt>
+<bilder/cell execution.png, id=68, 1490.99893pt x 199.17268pt>
 File: bilder/cell execution.png Graphic file (type png)
 <use bilder/cell execution.png>
 Package pdftex.def Info: bilder/cell execution.png  used on input line 28.
@@ -1437,7 +1437,7 @@ has been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.34 
       <./bilder/cell execution.png>]
-<bilder/parameters.png, id=78, 1531.86589pt x 428.88803pt>
+<bilder/parameters.png, id=80, 1531.86589pt x 428.88803pt>
 File: bilder/parameters.png Graphic file (type png)
 <use bilder/parameters.png>
 Package pdftex.def Info: bilder/parameters.png  used on input line 43.
@@ -1460,7 +1460,7 @@ chapter 3.
 pygtex)
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 38.
-<bilder/occupancy-grid3.png, id=95, 649.67719pt x 646.66594pt>
+<bilder/occupancy-grid3.png, id=97, 649.67719pt x 646.66594pt>
 File: bilder/occupancy-grid3.png Graphic file (type png)
 <use bilder/occupancy-grid3.png>
 Package pdftex.def Info: bilder/occupancy-grid3.png  used on input line 42.
@@ -1484,7 +1484,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 (bilder/robotermodell_latex.pdf_tex
-<bilder//robotermodell_latex.pdf, id=96, page=1, 434.20593pt x 111.77147pt>
+<bilder//robotermodell_latex.pdf, id=98, page=1, 434.20593pt x 111.77147pt>
 File: bilder//robotermodell_latex.pdf Graphic file (type pdf)
 <use bilder//robotermodell_latex.pdf, page 1>
 Package pdftex.def Info: bilder//robotermodell_latex.pdf , page1 used on input 
@@ -1492,31 +1492,31 @@ line 56.
 (pdftex.def)             Requested size: 434.20592pt x 111.77458pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 57.
-<bilder//robotermodell_latex.pdf, id=97, page=2, 434.20593pt x 111.77147pt>
+<bilder//robotermodell_latex.pdf, id=99, page=2, 434.20593pt x 111.77147pt>
 File: bilder//robotermodell_latex.pdf Graphic file (type pdf)
 <use bilder//robotermodell_latex.pdf, page 2>
 Package pdftex.def Info: bilder//robotermodell_latex.pdf , page2 used on input 
 line 58.
 (pdftex.def)             Requested size: 434.20592pt x 111.77458pt.
-<bilder//robotermodell_latex.pdf, id=98, page=3, 434.20593pt x 111.77147pt>
+<bilder//robotermodell_latex.pdf, id=100, page=3, 434.20593pt x 111.77147pt>
 File: bilder//robotermodell_latex.pdf Graphic file (type pdf)
 <use bilder//robotermodell_latex.pdf, page 3>
 Package pdftex.def Info: bilder//robotermodell_latex.pdf , page3 used on input 
 line 60.
 (pdftex.def)             Requested size: 434.20592pt x 111.77458pt.
-<bilder//robotermodell_latex.pdf, id=99, page=4, 434.20593pt x 111.77147pt>
+<bilder//robotermodell_latex.pdf, id=101, page=4, 434.20593pt x 111.77147pt>
 File: bilder//robotermodell_latex.pdf Graphic file (type pdf)
 <use bilder//robotermodell_latex.pdf, page 4>
 Package pdftex.def Info: bilder//robotermodell_latex.pdf , page4 used on input 
 line 62.
 (pdftex.def)             Requested size: 434.20592pt x 111.77458pt.
-<bilder//robotermodell_latex.pdf, id=100, page=5, 434.20593pt x 111.77147pt>
+<bilder//robotermodell_latex.pdf, id=102, page=5, 434.20593pt x 111.77147pt>
 File: bilder//robotermodell_latex.pdf Graphic file (type pdf)
 <use bilder//robotermodell_latex.pdf, page 5>
 Package pdftex.def Info: bilder//robotermodell_latex.pdf , page5 used on input 
 line 65.
 (pdftex.def)             Requested size: 434.20592pt x 111.77458pt.
-<bilder//robotermodell_latex.pdf, id=101, page=6, 434.20593pt x 111.77147pt>
+<bilder//robotermodell_latex.pdf, id=103, page=6, 434.20593pt x 111.77147pt>
 File: bilder//robotermodell_latex.pdf Graphic file (type pdf)
 <use bilder//robotermodell_latex.pdf, page 6>
 Package pdftex.def Info: bilder//robotermodell_latex.pdf , page6 used on input 
@@ -1566,20 +1566,20 @@ n: multiple pdfs with page group included in a single page
  (kapitel/konfigurationsraum.tex
 chapter 4.
 (bilder/rotation-steps_latex.pdf_tex
-<bilder//rotation-steps_latex.pdf, id=145, page=1, 269.00494pt x 119.8578pt>
+<bilder//rotation-steps_latex.pdf, id=149, page=1, 269.00494pt x 119.8578pt>
 File: bilder//rotation-steps_latex.pdf Graphic file (type pdf)
 <use bilder//rotation-steps_latex.pdf, page 1>
 Package pdftex.def Info: bilder//rotation-steps_latex.pdf , page1 used on input
  line 56.
 (pdftex.def)             Requested size: 269.00493pt x 119.85931pt.
-<bilder//rotation-steps_latex.pdf, id=146, page=2, 269.00494pt x 119.8578pt>
+<bilder//rotation-steps_latex.pdf, id=150, page=2, 269.00494pt x 119.8578pt>
 File: bilder//rotation-steps_latex.pdf Graphic file (type pdf)
 <use bilder//rotation-steps_latex.pdf, page 2>
 Package pdftex.def Info: bilder//rotation-steps_latex.pdf , page2 used on input
  line 65.
 (pdftex.def)             Requested size: 269.00493pt x 119.85931pt.
 ) (bilder/robot-mask_latex.pdf_tex
-<bilder//robot-mask_latex.pdf, id=147, page=1, 418.94943pt x 183.81052pt>
+<bilder//robot-mask_latex.pdf, id=151, page=1, 418.94943pt x 183.81052pt>
 File: bilder//robot-mask_latex.pdf Graphic file (type pdf)
 <use bilder//robot-mask_latex.pdf, page 1>
 Package pdftex.def Info: bilder//robot-mask_latex.pdf , page1 used on input lin
@@ -1596,13 +1596,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1})
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.30 \begin{itemize}
+l.29 \begin{itemize}
                     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.30 \begin{itemize}
+l.29 \begin{itemize}
                      <./bilder//rotation-steps_latex.pdf> <./bilder//rotation-s
 teps_latex.pdf
 
@@ -1613,10 +1613,10 @@ on: multiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex (file ./bilder//robot-mask_latex.pdf): PDF inclusion: 
 multiple pdfs with page group included in a single page
 >]
-<bilder/configuration-space.png, id=177, 1551.22392pt x 570.41678pt>
+<bilder/configuration-space.png, id=182, 1551.22392pt x 570.41678pt>
 File: bilder/configuration-space.png Graphic file (type png)
 <use bilder/configuration-space.png>
-Package pdftex.def Info: bilder/configuration-space.png  used on input line 38.
+Package pdftex.def Info: bilder/configuration-space.png  used on input line 37.
 
 (pdftex.def)             Requested size: 1551.22015pt x 570.41537pt.
 ) [7
@@ -1632,13 +1632,13 @@ l.131   \include{kapitel/konfigurationsraum}
  (kapitel/potentialfelder.tex
 chapter 5.
 
-Overfull \hbox (23.20488pt too wide) in paragraph at lines 24--26
+Overfull \hbox (23.20488pt too wide) in paragraph at lines 25--27
 \T1/lmss/m/n/10.95 (-20) ebe-ne \T1/lmtt/m/n/10.95 ((rotation+1) % rotations) \
 T1/lmss/m/n/10.95 (-20) so-wie \T1/lmtt/m/n/10.95 ((rotation-1) % rotations)\T1
 /lmss/m/n/10.95 (-20) . Mit $[] \OT1/lmr/m/n/10.95 (-20) =
  []
 
-<bilder/total-potential-computation.png, id=189, 1525.8434pt x 468.03429pt>
+<bilder/total-potential-computation.png, id=196, 1525.8434pt x 468.03429pt>
 File: bilder/total-potential-computation.png Graphic file (type png)
 <use bilder/total-potential-computation.png>
 Package pdftex.def Info: bilder/total-potential-computation.png  used on input 
@@ -1651,9 +1651,9 @@ line 51.
 
 ]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 60.
+put line 61.
 
-Overfull \hbox (18.74812pt too wide) in paragraph at lines 69--70
+Overfull \hbox (18.74812pt too wide) in paragraph at lines 70--71
 [] \T1/lmss/m/n/10.95 (-20) Nach-barn $\OML/lmm/m/it/10.95 N \OT1/lmr/m/n/10.95
  (-20) := \OMS/lmsy/m/n/10.95 f\OT1/lmr/m/n/10.95 (-20) ([], [], []), ([], [], 
 []), ...([], [], [])\OMS/lmsy/m/n/10.95 g$ 
@@ -1664,18 +1664,18 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1})
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.83 
-      <./bilder/total-potential-computation.png>]
-<bilder/wavefront.png, id=211, 1545.20143pt x 409.53pt>
+l.82 \newpage
+              <./bilder/total-potential-computation.png>]
+<bilder/wavefront.png, id=219, 1545.20143pt x 409.53pt>
 File: bilder/wavefront.png Graphic file (type png)
 <use bilder/wavefront.png>
-Package pdftex.def Info: bilder/wavefront.png  used on input line 87.
+Package pdftex.def Info: bilder/wavefront.png  used on input line 89.
 (pdftex.def)             Requested size: 1545.19768pt x 409.52899pt.
-<bilder/potential-stacked-computed.png, id=212, 1478.95393pt x 476.20767pt>
+<bilder/potential-stacked-computed.png, id=220, 1478.95393pt x 476.20767pt>
 File: bilder/potential-stacked-computed.png Graphic file (type png)
 <use bilder/potential-stacked-computed.png>
 Package pdftex.def Info: bilder/potential-stacked-computed.png  used on input l
-ine 98.
+ine 100.
 (pdftex.def)             Requested size: 1478.95033pt x 476.20651pt.
 ) [10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2}) 
@@ -1700,7 +1700,7 @@ Overfull \hbox (16.08965pt too wide) detected at line 20
 | []| 
  []
 
-<bilder/force-field.png, id=221, 871.00406pt x 824.32968pt>
+<bilder/force-field.png, id=230, 871.00406pt x 824.32968pt>
 File: bilder/force-field.png Graphic file (type png)
 <use bilder/force-field.png>
 Package pdftex.def Info: bilder/force-field.png  used on input line 35.
@@ -1718,31 +1718,31 @@ Overfull \hbox (1.05324pt too wide) in paragraph at lines 30--37
  []
 
 (bilder/gradient-clipping_latex.pdf_tex
-<bilder//gradient-clipping_latex.pdf, id=222, page=1, 290.8489pt x 64.63704pt>
+<bilder//gradient-clipping_latex.pdf, id=231, page=1, 290.8489pt x 64.63704pt>
 File: bilder//gradient-clipping_latex.pdf Graphic file (type pdf)
 <use bilder//gradient-clipping_latex.pdf, page 1>
 Package pdftex.def Info: bilder//gradient-clipping_latex.pdf , page1 used on in
 put line 56.
 (pdftex.def)             Requested size: 290.84889pt x 64.63783pt.
-<bilder//gradient-clipping_latex.pdf, id=223, page=2, 290.8489pt x 64.63704pt>
+<bilder//gradient-clipping_latex.pdf, id=232, page=2, 290.8489pt x 64.63704pt>
 File: bilder//gradient-clipping_latex.pdf Graphic file (type pdf)
 <use bilder//gradient-clipping_latex.pdf, page 2>
 Package pdftex.def Info: bilder//gradient-clipping_latex.pdf , page2 used on in
 put line 58.
 (pdftex.def)             Requested size: 290.84889pt x 64.63783pt.
-<bilder//gradient-clipping_latex.pdf, id=224, page=3, 290.8489pt x 64.63704pt>
+<bilder//gradient-clipping_latex.pdf, id=233, page=3, 290.8489pt x 64.63704pt>
 File: bilder//gradient-clipping_latex.pdf Graphic file (type pdf)
 <use bilder//gradient-clipping_latex.pdf, page 3>
 Package pdftex.def Info: bilder//gradient-clipping_latex.pdf , page3 used on in
 put line 60.
 (pdftex.def)             Requested size: 290.84889pt x 64.63783pt.
-<bilder//gradient-clipping_latex.pdf, id=225, page=4, 290.8489pt x 64.63704pt>
+<bilder//gradient-clipping_latex.pdf, id=234, page=4, 290.8489pt x 64.63704pt>
 File: bilder//gradient-clipping_latex.pdf Graphic file (type pdf)
 <use bilder//gradient-clipping_latex.pdf, page 4>
 Package pdftex.def Info: bilder//gradient-clipping_latex.pdf , page4 used on in
 put line 62.
 (pdftex.def)             Requested size: 290.84889pt x 64.63783pt.
-<bilder//gradient-clipping_latex.pdf, id=226, page=5, 290.8489pt x 64.63704pt>
+<bilder//gradient-clipping_latex.pdf, id=235, page=5, 290.8489pt x 64.63704pt>
 File: bilder//gradient-clipping_latex.pdf Graphic file (type pdf)
 <use bilder//gradient-clipping_latex.pdf, page 5>
 Package pdftex.def Info: bilder//gradient-clipping_latex.pdf , page5 used on in
@@ -1761,64 +1761,64 @@ has been already used, duplicate ignored
 l.47 \end{figure}
                   <./bilder/force-field.png>]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 59.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 60.
 
 (bilder/local-maxima_latex.pdf_tex
-<bilder//local-maxima_latex.pdf, id=234, page=1, 381.5494pt x 71.66855pt>
+<bilder//local-maxima_latex.pdf, id=243, page=1, 381.5494pt x 71.66855pt>
 File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
 <use bilder//local-maxima_latex.pdf, page 1>
 Package pdftex.def Info: bilder//local-maxima_latex.pdf , page1 used on input l
 ine 56.
 (pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
-<bilder//local-maxima_latex.pdf, id=235, page=2, 381.5494pt x 71.66855pt>
+<bilder//local-maxima_latex.pdf, id=244, page=2, 381.5494pt x 71.66855pt>
 File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
 <use bilder//local-maxima_latex.pdf, page 2>
 Package pdftex.def Info: bilder//local-maxima_latex.pdf , page2 used on input l
 ine 58.
 (pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
-<bilder//local-maxima_latex.pdf, id=236, page=3, 381.5494pt x 71.66855pt>
+<bilder//local-maxima_latex.pdf, id=245, page=3, 381.5494pt x 71.66855pt>
 File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
 <use bilder//local-maxima_latex.pdf, page 3>
 Package pdftex.def Info: bilder//local-maxima_latex.pdf , page3 used on input l
 ine 60.
 (pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
-<bilder//local-maxima_latex.pdf, id=237, page=4, 381.5494pt x 71.66855pt>
+<bilder//local-maxima_latex.pdf, id=246, page=4, 381.5494pt x 71.66855pt>
 File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
 <use bilder//local-maxima_latex.pdf, page 4>
 Package pdftex.def Info: bilder//local-maxima_latex.pdf , page4 used on input l
 ine 62.
 (pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
-<bilder//local-maxima_latex.pdf, id=238, page=5, 381.5494pt x 71.66855pt>
+<bilder//local-maxima_latex.pdf, id=247, page=5, 381.5494pt x 71.66855pt>
 File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
 <use bilder//local-maxima_latex.pdf, page 5>
 Package pdftex.def Info: bilder//local-maxima_latex.pdf , page5 used on input l
 ine 64.
 (pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
-<bilder//local-maxima_latex.pdf, id=239, page=6, 381.5494pt x 71.66855pt>
+<bilder//local-maxima_latex.pdf, id=248, page=6, 381.5494pt x 71.66855pt>
 File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
 <use bilder//local-maxima_latex.pdf, page 6>
 Package pdftex.def Info: bilder//local-maxima_latex.pdf , page6 used on input l
 ine 68.
 (pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
-<bilder//local-maxima_latex.pdf, id=240, page=7, 381.5494pt x 71.66855pt>
+<bilder//local-maxima_latex.pdf, id=249, page=7, 381.5494pt x 71.66855pt>
 File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
 <use bilder//local-maxima_latex.pdf, page 7>
 Package pdftex.def Info: bilder//local-maxima_latex.pdf , page7 used on input l
 ine 70.
 (pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
-<bilder//local-maxima_latex.pdf, id=241, page=8, 381.5494pt x 71.66855pt>
+<bilder//local-maxima_latex.pdf, id=250, page=8, 381.5494pt x 71.66855pt>
 File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
 <use bilder//local-maxima_latex.pdf, page 8>
 Package pdftex.def Info: bilder//local-maxima_latex.pdf , page8 used on input l
 ine 72.
 (pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
-<bilder//local-maxima_latex.pdf, id=242, page=9, 381.5494pt x 71.66855pt>
+<bilder//local-maxima_latex.pdf, id=251, page=9, 381.5494pt x 71.66855pt>
 File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
 <use bilder//local-maxima_latex.pdf, page 9>
 Package pdftex.def Info: bilder//local-maxima_latex.pdf , page9 used on input l
 ine 74.
 (pdftex.def)             Requested size: 381.5494pt x 71.67165pt.
-<bilder//local-maxima_latex.pdf, id=243, page=10, 381.5494pt x 71.66855pt>
+<bilder//local-maxima_latex.pdf, id=252, page=10, 381.5494pt x 71.66855pt>
 File: bilder//local-maxima_latex.pdf Graphic file (type pdf)
 <use bilder//local-maxima_latex.pdf, page 10>
 Package pdftex.def Info: bilder//local-maxima_latex.pdf , page10 used on input 
@@ -1829,13 +1829,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.6.2})
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.78 
+l.79 
      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6.3}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.78 
+l.79 
       <./bilder//gradient-clipping_latex.pdf> <./bilder//gradient-clipping_late
 x.pdf
 
@@ -1894,16 +1894,16 @@ pdfTeX warning: pdflatex (file ./bilder//local-maxima_latex.pdf): PDF inclusion
 pdfTeX warning: pdflatex (file ./bilder//local-maxima_latex.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
 >]
-Overfull \hbox (25.92299pt too wide) in paragraph at lines 92--94
+Overfull \hbox (25.92299pt too wide) in paragraph at lines 93--95
 [] $\OT1/lmr/m/n/10.95 (-20) ([], [], []) \OMS/lmsy/m/n/10.95   []\OT1/lmr/m/n/
 10.95 (-20) (\OMS/lmsy/m/n/10.95 j[][][][][][][][][][][]j\OT1/lmr/m/n/10.95 (-2
 0) )$
  []
 
-<bilder/grad-desc.png, id=306, 1541.76pt x 341.56178pt>
+<bilder/grad-desc.png, id=316, 1541.76pt x 341.56178pt>
 File: bilder/grad-desc.png Graphic file (type png)
 <use bilder/grad-desc.png>
-Package pdftex.def Info: bilder/grad-desc.png  used on input line 114.
+Package pdftex.def Info: bilder/grad-desc.png  used on input line 115.
 (pdftex.def)             Requested size: 1541.75624pt x 341.56094pt.
 ) [13
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6.4}) 
@@ -1917,24 +1917,24 @@ l.135   \include{kapitel/navigation}
 
 (kapitel/diskussion.tex
 chapter 7.
-<bilder/attr-repul-c-shape.png, id=317, 752.0597pt x 751.30687pt>
+<bilder/attr-repul-c-shape.png, id=328, 752.0597pt x 751.30687pt>
 File: bilder/attr-repul-c-shape.png Graphic file (type png)
 <use bilder/attr-repul-c-shape.png>
 Package pdftex.def Info: bilder/attr-repul-c-shape.png  used on input line 11.
 (pdftex.def)             Requested size: 752.05786pt x 751.30502pt.
-<bilder/attr-repul-oscillating-arrow.png, id=319, 746.79pt x 752.8125pt>
+<bilder/attr-repul-oscillating-arrow.png, id=331, 746.79pt x 752.8125pt>
 File: bilder/attr-repul-oscillating-arrow.png Graphic file (type png)
 <use bilder/attr-repul-oscillating-arrow.png>
 Package pdftex.def Info: bilder/attr-repul-oscillating-arrow.png  used on input
  line 23.
 (pdftex.def)             Requested size: 746.78816pt x 752.81065pt.
-<bilder/attr-repul-oscillating-scaled.png, id=320, 519.44063pt x 517.935pt>
+<bilder/attr-repul-oscillating-scaled.png, id=332, 519.44063pt x 517.935pt>
 File: bilder/attr-repul-oscillating-scaled.png Graphic file (type png)
 <use bilder/attr-repul-oscillating-scaled.png>
 Package pdftex.def Info: bilder/attr-repul-oscillating-scaled.png  used on inpu
 t line 28.
 (pdftex.def)             Requested size: 519.43936pt x 517.93372pt.
-<bilder/wavefront-demo.png, id=321, 1584.34767pt x 440.93303pt>
+<bilder/wavefront-demo.png, id=333, 1584.34767pt x 440.93303pt>
 File: bilder/wavefront-demo.png Graphic file (type png)
 <use bilder/wavefront-demo.png>
 Package pdftex.def Info: bilder/wavefront-demo.png  used on input line 40.
@@ -1958,7 +1958,7 @@ has been already used, duplicate ignored
 l.42 \end{figure}
                   <./bilder/attr-repul-c-shape.png> <./bilder/attr-repul-oscill
 ating-arrow.png> <./bilder/attr-repul-oscillating-scaled.png>]
-<bilder/occu-scaling4.png, id=332, 1538.74875pt x 337.69019pt>
+<bilder/occu-scaling4.png, id=346, 1538.74875pt x 337.69019pt>
 File: bilder/occu-scaling4.png Graphic file (type png)
 <use bilder/occu-scaling4.png>
 Package pdftex.def Info: bilder/occu-scaling4.png  used on input line 58.
@@ -2007,11 +2007,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32282 strings out of 475281
- 648551 string characters out of 2774064
- 1676541 words of memory out of 3000000
- 52907 multiletter control sequences out of 15000+600000
- 558224 words of font info for 200 fonts, out of 8000000 for 9000
+ 32292 strings out of 475281
+ 648992 string characters out of 2774064
+ 1676876 words of memory out of 3000000
+ 52918 multiletter control sequences out of 15000+600000
+ 558022 words of font info for 198 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  108i,20n,106p,10601b,2367s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
@@ -2043,9 +2043,9 @@ Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/carls/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/carls/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/carls/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (18 pages, 11104724 bytes).
+Output written on main.pdf (18 pages, 11106582 bytes).
 PDF statistics:
- 524 PDF objects out of 1000 (max. 8388607)
- 69 named destinations out of 1000 (max. 500000)
+ 539 PDF objects out of 1000 (max. 8388607)
+ 72 named destinations out of 1000 (max. 500000)
  59232 words of extra memory for PDF output out of 61914 (max. 10000000)
 
