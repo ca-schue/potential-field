@@ -1,5 +1,5 @@
 \chapter{Roboterbewegung im Occupancy Grid} \label{ch:roboterbewegung}
-Die physikalische Umgebung des Roboters wird diskretisiert durch das \textit{Occupancy Grid}, ein binärer, zweidimensionale Raum aus der Vogelperspektive. Implementiert mit der Python Bibliothek \textit{Numpy}, hat das Boolean Array \texttt{occupancy\_grid[Y][X]} die Länge \texttt{occupancy\_grid\_length}, die Breite \texttt{occupancy\_grid\_width} und den Ursprung links oben. Jede Koordinate ist entweder durch ein Hindernis belegt (\texttt{occupancy\_grid[Y][X] == False}) oder frei von Hindernissen (\texttt{occupancy\_grid[Y][X] == True}).
+Die physikalische Umgebung des Roboters wird diskretisiert durch das \textit{Occupancy Grid}, ein binärer, zweidimensionaler Raum aus der Vogelperspektive. Implementiert mit der Python Bibliothek \textit{Numpy}, hat das Boolean Array \texttt{occupancy\_grid[Y][X]} die Länge \texttt{occupancy\_grid\_length}, die Breite \texttt{occupancy\_grid\_width} und den Ursprung links oben. Jede Koordinate ist entweder durch ein Hindernis belegt (\texttt{occupancy\_grid[Y][X] == False}) oder frei von einem Hindernis (\texttt{occupancy\_grid[Y][X] == True}).
 
 Im Occupancy Grid gibt es drei Roboterpositionen: \texttt{start\_point}, \texttt{current\_position} und \texttt{goal\_point}.
 \begin{figure}[H]
@@ -43,7 +43,7 @@ Im Occupancy Grid gibt es drei Roboterpositionen: \texttt{start\_point}, \texttt
 	\end{minipage}
 	\hspace*{\fill}
 	%	\vspace{-1cm}
-	\caption{Ein einfaches Occupancy Grid mit vier Hindernissen, dem \texttt{start\_point} bei (\texttt{X=2}, \texttt{Y=13}), der \texttt{current\_position} bei (\texttt{X=4}, \texttt{Y=4}) und dem \texttt{goal\_point} bei (\texttt{X=14}, \texttt{Y=2})}.
+	\caption{Ein einfaches Occupancy Grid mit vier Hinderniskoordinaten, dem \texttt{start\_point} (grün), der \texttt{current\_position} (orange) und dem \texttt{goal\_point} (rot)}.
 \end{figure}
 
 \vspace*{-0.3cm}

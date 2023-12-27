@@ -34,6 +34,7 @@ Die Erhöhung des Abstandes zwischen den Grenzen des Occupancy-Grid und Hinderni
 \end{figure}
 
 Im Gegensatz dazu verhindert die streng monotone Potenzialänderung des Wavefront-Algorithmus die Konvergenz zu lokalen Minima, sofern sich das Ziel an einem für den Roboter physikalisch erreichbaren Punkt befindet.
+\vspace*{0.1cm}
 \begin{figure}[H]
 	\footnotesize
 	\centering
@@ -41,6 +42,7 @@ Im Gegensatz dazu verhindert die streng monotone Potenzialänderung des Wavefron
 	\caption{Das Gradientenabstiegsverfahren in Kraftfeldern der Wavefront-Potenzialfelder konvergiert zum Zielpunkt.}
 \end{figure}
 
+\vspace*{0.1cm}
 \section{Interpolationsartefakte}
 
 Wie in Kapitel \ref{ch:config-space} beschrieben, wird bei der Berechnung des Konfigurationsraums die Roboterrotation in \texttt{rotation\_step}s diskretisiert. Dazu wird für das Robotermodell eine Array-Maske über die Matrixrotation \texttt{sklearn.rotate()} gedreht. 
@@ -52,11 +54,12 @@ Somit wird die Auflösung der Robotermaske erhöht und die Artefakte der Interpo
 \begin{figure}[h!]
 	\footnotesize
 	\centering
-	\hspace*{-0.075\linewidth}
-	\centerline{\resizebox{1.15\linewidth}{!}{
-	\includegraphics{bilder/occu-scaling4.png}
+	\hspace*{-0.1\linewidth}
+	\centerline{\resizebox{1.2\linewidth}{!}{
+	\includegraphics{bilder/occu-scaling6.png}
 	}}
-	\hspace*{-0.075\linewidth}
+	\hspace*{-0.1\linewidth}
+	\vspace*{0.3cm}
 	\caption{Die sukzessive Verdopplung der Dimensionen des Robotermodells und Occupancy Grids verringert die Interpolationsartefakte.}
 \end{figure}
 

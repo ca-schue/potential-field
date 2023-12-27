@@ -1,38 +1,48 @@
 \chapter{Roboternavigation im Kraftfeld}
+\vspace*{-0.2cm}
+Die Roboternavigation basierend auf der Potenzialfeldmethode entspricht der Bewegung eines Körpers im \textit{Kraftfeld} des Potenzialfelds.
 
-Die Roboternavigation basierend auf der Potenzialfeldmethode entspricht der Bewegung eines Körpers im \textit{Gravitationsfeld} des Potenzialfelds.
-
+\vspace*{-0.1cm}
 \section{Berechnung der Gradienten}
+\enlargethispage{0.9cm}
 
-Das Gravitationsfeld entspricht dem negativen Gradientenfeld des Potenzialfelds: Auf jede Koordinate im Gravitationsfeld wirkt Gravitationskraft zerlegt in die drei kartesische Komponenten des Konfigurationsraums. Jedes dieser drei Kraftfelder $F_{x/y/rotation}(\texttt{x}, \texttt{y}, \texttt{rotation})$ gibt für die jeweilige Dimension des Konfigurationsraums die Größe der Gravitationskraft in der Koordinate (\texttt{x}, \texttt{y}, \texttt{rotation}) an \cite{khatib.1985}:
+Das Kraftfeld entspricht dem negativen Gradientenfeld des Potenzialfelds \cite{khatib.1985}. Auf jede Koordinate wirkt eine Kraft $F_{x/y/rotation}(\texttt{x}, \texttt{y}, \texttt{rotation})$ in Höhe der negativen Potentialänderung, zerlegt in die drei kartesischen Komponenten des Konfigurationsraums:
+\vspace*{0.13cm}
 \begin{equation*}
  F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation}), F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation}), F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation}) = -\nabla U(\texttt{x}, \texttt{y}, \texttt{rotation})
 \end{equation*}
+
 Um die Gradienten zwischen dem letzten Rotationszustand und $0$° zu berechnen, wird die erste und letzte Rotationsebene an das jeweils andere Ende der Dimension \texttt{potential[rotation]} kopiert:
+\vspace*{0.15cm}
 \begin{equation*}
 \hspace*{-0.0075\linewidth}
 \resizebox{1.05\linewidth}{!}{
 $
-	\texttt{potential\_padded} = \texttt{np.concatenate([potential[rotations - 1], potential, potential[0]])}
+	\texttt{potential\_padded} = \texttt{np.concatenate([potential[rotations-1], potential, potential[0]])}
 $
 }
 \hspace*{-0.0075\linewidth}
 \end{equation*}
+
+
 Die kopierten Rotationsebenen werden nach Berechnung der Kraftfelder entfernt:
+\vspace*{0.13cm}
 \begin{equation*}
-\hspace*{-0.075\linewidth}
-\resizebox{1.15\linewidth}{!}{
+\hspace*{-0.1\linewidth}
+\resizebox{1.2\linewidth}{!}{
 $
-\texttt{force\_field\_rotation}, \texttt{ force\_field\_y}, \texttt{ force\_field\_x} = -\texttt{np.gradients(potential\_padded)[1:rotation-1]}
+\texttt{force\_field\_rotation}, \texttt{ force\_field\_y}, \texttt{ force\_field\_x} = -\texttt{np.gradients(potential\_padded)[1 : rotations-1]}
 $
 }
-\hspace*{-0.075\linewidth}
+\hspace*{-0.1\linewidth}
 \end{equation*}
-Somit entspricht $ \texttt{force\_field\_rotation[rotation]} > 0 $ einer Kraft in Richtung $\texttt{force\_field\_rotation[0]}$ und $ \texttt{force\_field\_rotation[0]} < 0 $ einer Kraft in Richtung $\texttt{force\_field\_rotation[rotation]}$.
+
+Somit entspricht $\texttt{force\_field\_rotation[rotations-1]} > 0 $ einer Kraft in Richtung $\texttt{force\_field\_rotation[0]}$ und $ \texttt{force\_field\_rotation[0]} < 0 $ entspricht einer Kraft in Richtung $\texttt{force\_field\_rotation[rotations-1]}$.
 \begin{figure}[H]
 	\centering
 	\footnotesize
-	\centerline{\resizebox{0.52\linewidth}{!}{\includegraphics{bilder/force-field.png}}}
+	\centerline{\resizebox{0.63\linewidth}{!}{\includegraphics{bilder/force-field.png}}}
+	\vspace*{-0.23cm}
 	\caption{Darstellung des negativen Gradientenfelds als Kraftpfeile im Konfigurationsraum.}
 \end{figure}
 
@@ -47,7 +57,7 @@ Um die Grenzen des Konfigurationsraums einzuhalten, werden unzulässige Kräfte 
 \end{figure}
 \vspace*{-0.1cm}
 Im Numpy Potenzialfeld \texttt{potential} haben Hindernisse das Potenzial \texttt{np.nan}. Somit berechnet \texttt{np.gradients()} für jede an ein Hindernis grenzende Koordinate den Gradienten \texttt{np.nan}.
-Um die Gravitationskräfte an Hindernissen analog zu Kräften an Grenzen des Konfigurationsraums zu interpretieren, müssen diese manuell berechnet werden. 
+Um die Kräfte an Hindernissen analog zu Kräften an den Grenzen des Konfigurationsraums zu interpretieren, müssen diese manuell berechnet werden. 
 Sollte die berechnete Kraft einer Dimension in Richtung des Hindernisses zeigen, wird diese ebenfalls auf $0$ gesetzt. Nachfolgende Tabelle zeigt dies beispielhaft für Hindernisse im Kraftfeld der X-Achse \texttt{force\_field\_x}:
 \begin{table}[H]
 \centerline{\resizebox{0.9\linewidth}{!}{
@@ -75,7 +85,7 @@ In diesen Fällen wird zu einem der beiden Nachbarn ein künstliches Hindernis g
 
 \section{Gradientenabstieg}
 
-Die berechneten Gradientenfelder ermöglichen die Roboternavigation mit dem \textit{Gradientenabstiegsverfahren}. Pro Verarbeitungsschritt wird die nächste Koordinate basierend auf der betragsmäßig größten Gravitationskraft in $F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation})$, $F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation})$ und $F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation})$ gewählt, bis eine bereits besuchte Koordinate oder eine Koordinate mit Kräftegleichgewicht $F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation}) = F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation}) = F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation}) = 0$ erreicht wird:
+Die berechneten Gradientenfelder ermöglichen die Roboternavigation mit dem \textit{Gradientenabstiegsverfahren}. Pro Verarbeitungsschritt wird die nächste Koordinate basierend auf der betragsmäßig größten Kraft in $F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation})$, $F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation})$ und $F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation})$ gewählt, bis eine bereits besuchte Koordinate oder eine Koordinate mit Kräftegleichgewicht $F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation}) = F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation}) = F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation}) = 0$ erreicht wird:
 
 \begin{algorithm}
 \caption{Gradientenabstiegsverfahren}
