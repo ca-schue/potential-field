@@ -34,7 +34,7 @@ Bevor das Python Programm ausgeführt werden kann, müssen alle notwendigen Bibl
 
 \section*{1) Szenario auswählen}
 \enlargethispage{1.5cm}
-Dieser Ausführungsschritt gruppiert als Ausnahme mehrere Zellen, wobei eine Zelle einem vorkonfiguriertem \textit{Szenario} entspricht. Für ein Szenario müssen alle Parameter des Programms konfiguriert werden, beispielsweise die Dimensionen des Roboters, dessen Start- und Zielposition sowie die Position der Hindernisse. Es werden nur die Parameter der zuletzt ausgeführten Zelle dieses Ausführungsschritts übernommen.
+Dieser Ausführungsschritt gruppiert als Ausnahme mehrere Zellen, wobei eine Zelle einem vorkonfiguriertem \textit{Szenario} entspricht. Für ein Szenario müssen alle Parameter des Programms konfiguriert werden, beispielsweise die Start- und Zielposition des Roboters oder die Position der Hindernisse. Detaillierte Informationen zu den Parametern finden sich in den nachfolgenden Kapiteln. Es werden nur die Parameter der zuletzt ausgeführten Zelle dieses Ausführungsschritts übernommen. 
 \begin{figure}[H]
 	\centering
 	\footnotesize
@@ -49,7 +49,7 @@ Dieser Ausführungsschritt gruppiert als Ausnahme mehrere Zellen, wobei eine Zel
 In diesem Ausführungsschritt werden die für das Gradientenabstiegsverfahren benötigten mathematischen Berechnungen durchgeführt. Der theoretische Hintergrund der Berechnungen wird in den nachfolgenden Kapiteln beschrieben. Änderungen am Python Code dieser Zelle sind nicht notwendig.
 
 \section*{3) Plots ausgeben (optional)}
-Als einziger Ausführungsschritt ist die Berechnung und Visualisierung der grafischen Darstellungen optional. Da dieser Schritt sehr rechenaufwändig sein kann, verhindert der im Ausführungsschritts 1) gesetzte Parameter \texttt{optional\_plots=False} bei bestimmten vorkonfigurierten Szenarien die Ausführung dieser Zelle.
+Als einziger Ausführungsschritt ist die Berechnung und Visualisierung der grafischen Darstellungen optional. Da dieser Schritt sehr rechenaufwändig sein kann, verhindert der im Ausführungsschritt 1) gesetzte Parameter \texttt{optional\_plots=False} bei bestimmten vorkonfigurierten Szenarien die Ausführung dieser Zelle.
 
 \section*{4) Gradientenabstieg initialisieren}
 Bedingt durch die Bibliothek Matplotlib muss bei animierten grafischen Darstellungen die Initialisierung von der Ausführungslogik getrennt werden.
