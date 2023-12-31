@@ -21,7 +21,7 @@ Alternativ kann das Notebook ohne lokale Installationen in \href{https://colab.r
 
 \section{Ausführung des Jupyter Notebooks}
 
-Das Jupyter Notebook unterteilt das Programm in sechs sequenziell auszuführende Schritte. Ein \textit{Ausführungsschritt} entspricht einer Überschrift, die eine auszuführende \textit{Zelle} gruppiert. Per Klick auf das Pfeilsymbol links neben der Überschrift wird die Zelle ausgeklappt. Per Klick auf den Knopf links neben der Zelle oder über die Tastenkombination \texttt{Strg + Enter} wird der Python Code ausgeführt:
+Das Jupyter Notebook unterteilt das Programm in sechs sequenziell auszuführende Schritte. Ein solcher \textit{Ausführungsschritt} entspricht einer Überschrift, die eine auszuführende \textit{Zelle} gruppiert. Per Klick auf das Pfeilsymbol links neben der Überschrift wird die Zelle ausgeklappt. Per Klick auf den Knopf links neben der Zelle oder über die Tastenkombination \texttt{Strg + Enter} wird der Python Code ausgeführt:
 \begin{figure}[H]
 	\centering
 	\footnotesize
@@ -30,7 +30,7 @@ Das Jupyter Notebook unterteilt das Programm in sechs sequenziell auszuführende
 \end{figure}
 
 \section*{0) Abhängigkeiten installieren}
-Bevor das Python Programm ausgeführt werden kann, müssen alle notwendigen Bibliotheken installiert werden: \textit{Numpy} und \textit{Scipy} unterstützen mathematische Berechnungen während \textit{matplotlib} zur Visualisierung dient. Im Fall der lokalen Ausführung werden mit \texttt{pip install -r requirements.txt} die benötigten Pakete installiert Anschließend muss VSCode und Anaconda Navigator komplett neu gestartet werden. Beim Notebook für Google Colab wird zusätzlich das Repository geklont. Ein Neustart ist dort nicht erforderlich.
+Bevor das Python Programm ausgeführt werden kann, müssen alle notwendigen Bibliotheken installiert werden: \textit{Numpy}, \textit{Scipy} und \textit{Scikit-learn} unterstützen mathematische Berechnungen während \textit{Matplotlib} zur Visualisierung dient. Im Fall der lokalen Ausführung werden mit \texttt{pip install -r requirements.txt} die benötigten Pakete installiert. Anschließend muss VSCode und Anaconda Navigator komplett neu gestartet werden. Beim Notebook für Google Colab wird zusätzlich das Repository geklont. Ein Neustart ist dort nicht erforderlich.
 
 \section*{1) Szenario auswählen}
 \enlargethispage{1.5cm}
@@ -46,17 +46,17 @@ Dieser Ausführungsschritt gruppiert als Ausnahme mehrere Zellen, wobei eine Zel
 \end{figure}
 
 \section*{2) Berechnungen durchführen}
-In diesem Ausführungsschritt werden die für das Gradientenabstiegsverfahren benötigten mathematischen Berechnungen durchgeführt. Der theoretische Hintergrund der Berechnungen wird in den nachfolgenden Kapitel beschrieben. Änderungen am Python Code dieser Zelle sind nicht notwendig.
+In diesem Ausführungsschritt werden die für das Gradientenabstiegsverfahren benötigten mathematischen Berechnungen durchgeführt. Der theoretische Hintergrund der Berechnungen wird in den nachfolgenden Kapiteln beschrieben. Änderungen am Python Code dieser Zelle sind nicht notwendig.
 
 \section*{3) Plots ausgeben (optional)}
 Als einziger Ausführungsschritt ist die Berechnung und Visualisierung der grafischen Darstellungen optional. Da dieser Schritt sehr rechenaufwändig sein kann, verhindert der im Ausführungsschritts 1) gesetzte Parameter \texttt{optional\_plots=False} bei bestimmten vorkonfigurierten Szenarien die Ausführung dieser Zelle.
 
 \section*{4) Gradientenabstieg initialisieren}
-Bedingt durch die matplotlib-Bibliothek muss bei animierten grafischen Darstellungen die Initialisierung von der Ausführungslogik getrennt werden.
-Diese Zelle initialisiert ausschließlich das Gradientenabstiegsverfahren und dessen animierte Visualisierung. Wenn im Ausführungsschritt 1) der Parameter \texttt{gradient\_decent\_plots=True} gesetzt wird, werden zusätzliche Plots berechnet. Analog zum Parameter \texttt{optional\_plots=False} des vorherigen Ausführungsschritts wird dies aufgrund des hohen Ressourcenverbrauchs für gewissen Szenarien nicht empfohlen.
+Bedingt durch die Bibliothek Matplotlib muss bei animierten grafischen Darstellungen die Initialisierung von der Ausführungslogik getrennt werden.
+Diese Zelle initialisiert ausschließlich das Gradientenabstiegsverfahren und dessen animierte Visualisierung. Wenn im Ausführungsschritt 1) der Parameter \texttt{gradient\_decent\_plots=True} gesetzt wird, werden zusätzliche Plots berechnet. Analog zum Parameter \texttt{optional\_plots=False} des vorherigen Ausführungsschritts wird dies aufgrund des hohen Ressourcenverbrauchs für gewisse Szenarien nicht empfohlen.
 
 \section*{5) Gradientenabstieg starten}
-Beim Ausführen dieser Zelle wird das zuvor initialisierte Gradientenabstiegsverfahren gestartet. Im Plot des vorherigen Ausführungsschritts wird die Roboternavigation animiert.
+Bei Ausführung dieser Zelle wird das zuvor initialisierte Gradientenabstiegsverfahren gestartet. Im Plot des vorherigen Ausführungsschritts wird die Roboternavigation animiert.
 Um ein weiteres Szenario auszuführen, müssen die Ausführungsschritte ab 1) wiederholt werden.
 
 

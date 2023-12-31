@@ -2,18 +2,18 @@
 
 \section{Lokale Minima und Oszillationen}
 
-Bei konkaven Hindernissen in Potenzialfeldern berechnet mit anziehendem und abstoßendem Potenzial, hat das Gradientenabstiegsverfahren die Eigenschaft zur Konvergenz zu einem lokalen Minimum \cite{yujiang.2017}.
+Bei konkaven Hindernissen in Potenzialfeldern mit anziehenden und abstoßenden Potenzialen kann das Gradientenabstiegsverfahren gegen ein lokales Minimum konvergieren \cite{yujiang.2017}.
 Davon betroffen sind Occupancy Grids, deren Hindernisse Polygone mit überstumpfen Winkeln ($180\text{°} \le \text{Winkel} \le 360\text{°}$) bilden.
 Bekannte Beispiele in der Literatur sind C- und U-förmige Polygone \cite{maqbool.2021, yujiang.2017}:
 \begin{figure}[h!]
 	\centering
 	\footnotesize
 	\centerline{\resizebox{0.3\linewidth}{!}{\includegraphics{bilder/attr-repul-c-shape.png}}}
-	\caption{Für konkave Hindernisse in Potenzialfeldern berechnet mit anziehendem und abstoßendem Potenzial konvergiert das Gradientenabstiegsverfahren zu einem lokalen Minimum.}
+	\caption{Lokales Minimum bei einem konkaven Hindernis in einem Potenzialfeld mit anziehenden und abstoßenden Potenzialen}
 \end{figure}
 
-Weiterhin sind im Kraftfeld von Potenzialfeldern berechnet mit anziehendem und abstoßendem Potenzial zwischen Hindernisengstellen Oszillationen möglich. Der Roboter wechselt bei dieser Art des lokalen Minimums zwischen zwei Koordinaten mit entgegengerichteten Gradienten.
-Insbesondere kleine Occupancy Grids sind von diesem Effekt betroffen, da die X- und Y-Grenzen als Hindernisse interpretiert werden. Abbildung \ref{fig:oscillation} zeigt diesen Effekt anhand des Potenzialfelds aus Kapitel \ref{sec:attr-repul-pot}.
+Weiterhin sind bei Potenzialfeldern mit anziehenden und abstoßenden Potenzialen zwischen Hindernisengstellen Oszillationen möglich. Der Roboter wechselt bei dieser Art des lokalen Minimums zwischen zwei Koordinaten mit entgegengerichteten Gradienten.
+Insbesondere kleine Occupancy Grids sind von diesem Effekt betroffen, da die X- und Y-Grenzen als Hindernisse interpretiert werden. Abbildung \ref{fig:oscillation} zeigt dies anhand des Potenzialfelds aus Kapitel \ref{sec:attr-repul-pot}.
 Die Erhöhung des Abstandes zwischen den Grenzen des Occupancy-Grid und Hindernissen vermeidet dieses Problem.
 \begin{figure}[H]
 	\footnotesize
@@ -30,7 +30,7 @@ Die Erhöhung des Abstandes zwischen den Grenzen des Occupancy-Grid und Hinderni
 	\hspace*{\fill}
 	%	\vspace{-1cm}
 	\label{fig:oscillation}
-	\caption{Bei Engstellen oszillieren die abstoßenden Kräfte zwischen Hindernissen (links), bei hinreichend Abstand nicht (rechts).}
+	\caption{Hindernisengstellen können zu Oszillationen führen (links), hinreichend Abstand verhindert dies (rechts).}
 \end{figure}
 
 Im Gegensatz dazu verhindert die streng monotone Potenzialänderung des Wavefront-Algorithmus die Konvergenz zu lokalen Minima, sofern sich das Ziel an einem für den Roboter physikalisch erreichbaren Punkt befindet.
@@ -45,7 +45,7 @@ Im Gegensatz dazu verhindert die streng monotone Potenzialänderung des Wavefron
 \vspace*{0.1cm}
 \section{Interpolationsartefakte}
 
-Wie in Kapitel \ref{ch:config-space} beschrieben, wird bei der Berechnung des Konfigurationsraums die Roboterrotation in \texttt{rotation\_step}s diskretisiert. Dazu wird für das Robotermodell eine Array-Maske über die Matrixrotation \texttt{sklearn.rotate()} gedreht. 
+Wie in Kapitel \ref{ch:config-space} beschrieben, wird bei der Berechnung des Konfigurationsraums die Roboterrotation in \texttt{360/\texttt{rotation\_step}} unterschiedliche Rotationszustände diskretisiert. Dazu wird die Array-Maske des Robotermodells über die Matrixrotation \texttt{sklearn.rotate()} gedreht. 
 
 Insbesondere bei kleinen Roboterdimensionen mit kleinen Rotationswinkeln entstehen hier \textit{Interpolationsartefakte}.
 Dies zeigt sich bei der Visualisierung der Roboternavigation durch die Überdeckung von Hindernissen mit dem Robotermodell. Yunfeng und Chirikjian empfehlen deshalb, für kleine Rotationswinkel die Roboterdimensionen sowie das Occupancy Grid zu skalieren \cite{yujiang.2017}.

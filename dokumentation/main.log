@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  27 DEC 2023 22:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  31 DEC 2023 12:56
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1459,14 +1459,14 @@ chapter 3.
 (_minted-main/85B185D29F5352E479759EC30EE760328447DF9C2D5ED130E262CD4D9278E0D8.
 pygtex)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 38.
+(Font)              <5> on input line 39.
 <bilder/occupancy-grid3.png, id=97, 649.67719pt x 646.66594pt>
 File: bilder/occupancy-grid3.png Graphic file (type png)
 <use bilder/occupancy-grid3.png>
-Package pdftex.def Info: bilder/occupancy-grid3.png  used on input line 42.
+Package pdftex.def Info: bilder/occupancy-grid3.png  used on input line 43.
 (pdftex.def)             Requested size: 649.6756pt x 646.66435pt.
 
-Overfull \hbox (15.34982pt too wide) in paragraph at lines 4--47
+Overfull \hbox (15.34982pt too wide) in paragraph at lines 5--48
 []\T1/lmss/m/n/10.95 (-20) Im Oc-cu-pan-cy Grid gibt es drei Ro-bo-ter-po-si-ti
 o-nen: \T1/lmtt/m/n/10.95 start_point\T1/lmss/m/n/10.95 (-20) , \T1/lmtt/m/n/10
 .95 current_position \T1/lmss/m/n/10.95 (-20) und \T1/lmtt/m/n/10.95 goal_point
@@ -1474,7 +1474,7 @@ o-nen: \T1/lmtt/m/n/10.95 start_point\T1/lmss/m/n/10.95 (-20) , \T1/lmtt/m/n/10
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
-52.
+53.
 (C:\Users\carls\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmss.fd
 File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1586,6 +1586,11 @@ Package pdftex.def Info: bilder//robot-mask_latex.pdf , page1 used on input lin
 e 56.
 (pdftex.def)             Requested size: 418.94943pt x 183.81285pt.
 )
+Overfull \hbox (2.13783pt too wide) in paragraph at lines 25--26
+[]\T1/lmss/m/n/10.95 (-20) In \T1/lmtt/m/n/10.95 configuration_space[rotations]
+[occupancy_grid_length][occupancy_grid_width] \T1/lmss/m/n/10.95 (-20) wer-
+ []
+
 [6
 
 
@@ -1596,15 +1601,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1})
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.26 \begin{itemize}
-                    
+l.26 
+     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.26 \begin{itemize}
-                     <./bilder//rotation-steps_latex.pdf> <./bilder//rotation-s
-teps_latex.pdf
+l.26 
+      <./bilder//rotation-steps_latex.pdf> <./bilder//rotation-steps_latex.pdf
 
 pdfTeX warning: pdflatex (file ./bilder//rotation-steps_latex.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
@@ -1613,10 +1617,19 @@ on: multiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex (file ./bilder//robot-mask_latex.pdf): PDF inclusion: 
 multiple pdfs with page group included in a single page
 >]
+Overfull \hbox (54.0996pt too wide) detected at line 34
+[]
+ []
+
+
+Overfull \hbox (50.4111pt too wide) in paragraph at lines 28--36
+[]|  $[]$ 
+ []
+
 <bilder/configuration-space.png, id=182, 1551.22392pt x 570.41678pt>
 File: bilder/configuration-space.png Graphic file (type png)
 <use bilder/configuration-space.png>
-Package pdftex.def Info: bilder/configuration-space.png  used on input line 34.
+Package pdftex.def Info: bilder/configuration-space.png  used on input line 41.
 
 (pdftex.def)             Requested size: 1551.22015pt x 570.41537pt.
 ) [7
@@ -1631,13 +1644,6 @@ l.131   \include{kapitel/konfigurationsraum}
 
  (kapitel/potentialfelder.tex
 chapter 5.
-
-Overfull \hbox (23.20488pt too wide) in paragraph at lines 25--27
-\T1/lmss/m/n/10.95 (-20) ebe-ne \T1/lmtt/m/n/10.95 ((rotation+1) % rotations) \
-T1/lmss/m/n/10.95 (-20) so-wie \T1/lmtt/m/n/10.95 ((rotation-1) % rotations)\T1
-/lmss/m/n/10.95 (-20) . Mit $[] \OT1/lmr/m/n/10.95 (-20) =
- []
-
 <bilder/total-potential-computation.png, id=196, 1525.8434pt x 468.03429pt>
 File: bilder/total-potential-computation.png Graphic file (type png)
 <use bilder/total-potential-computation.png>
@@ -1669,13 +1675,13 @@ l.82 \newpage
 <bilder/wavefront.png, id=219, 1545.20143pt x 409.53pt>
 File: bilder/wavefront.png Graphic file (type png)
 <use bilder/wavefront.png>
-Package pdftex.def Info: bilder/wavefront.png  used on input line 89.
+Package pdftex.def Info: bilder/wavefront.png  used on input line 88.
 (pdftex.def)             Requested size: 1545.19768pt x 409.52899pt.
 <bilder/potential-stacked-computed.png, id=220, 1478.95393pt x 476.20767pt>
 File: bilder/potential-stacked-computed.png Graphic file (type png)
 <use bilder/potential-stacked-computed.png>
 Package pdftex.def Info: bilder/potential-stacked-computed.png  used on input l
-ine 100.
+ine 99.
 (pdftex.def)             Requested size: 1478.95033pt x 476.20651pt.
 ) [10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2}) 
@@ -2007,11 +2013,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32304 strings out of 475281
- 649145 string characters out of 2774064
- 1676876 words of memory out of 3000000
+ 32294 strings out of 475281
+ 649031 string characters out of 2774064
+ 1679876 words of memory out of 3000000
  52918 multiletter control sequences out of 15000+600000
- 558662 words of font info for 204 fonts, out of 8000000 for 9000
+ 558242 words of font info for 199 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  108i,20n,106p,10601b,2367s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/carls/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
@@ -2043,7 +2049,7 @@ Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/carls/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/carls/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/carls/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (18 pages, 11073726 bytes).
+Output written on main.pdf (18 pages, 11073071 bytes).
 PDF statistics:
  539 PDF objects out of 1000 (max. 8388607)
  72 named destinations out of 1000 (max. 500000)

@@ -4,7 +4,7 @@ Deshalb wird die Roboterbewegung im \textit{Konfigurationsraum} in eine Punktbew
 Dazu wird jedes Hindernis im Occupancy Grid um die Roboterdimensionen erweitert. \cite{roberts.1999}
 
 Je nach Rotation ändern sich die überdeckten Koordinaten im Occupancy Grid.
-Um den Verbrauch freier Koordinaten um das Hindernis zu minimieren, unterteilen Yunfeng und Chirikjian die Rotation in diskrete Zustände \cite{wang.2000}. Die Variable \texttt{rotation\_step} gibt als Teiler von $360$° an, um wie viel Grad sich der Roboter pro Bewegungsschritt drehen kann, wodurch sich \texttt{rotations=360/\texttt{rotation\_step}} unterschiedliche Rotationszustände ergeben.
+Um den Verbrauch freier Koordinaten um das Hindernis zu minimieren, unterteilen Yunfeng und Chirikjian die Rotation in diskrete Zustände \cite{wang.2000}. Der Parameter \texttt{rotation\_step} gibt als Teiler von $360$° an, um wie viel Grad sich der Roboter pro Bewegungsschritt drehen kann, wodurch sich \texttt{rotations=360/\texttt{rotation\_step}} unterschiedliche Rotationszustände ergeben.
 \begin{figure}[H]
 	\centering
 	\footnotesize
@@ -22,20 +22,27 @@ Für jeden Rotationszustand wird ein \textit{erweitertes Occupancy Grid} generie
 	\caption{Erzeugung eines erweiterten Occupancy Grid für eine Rotation um $45$°}
 \end{figure}
 
-Der Konfigurationsraum \texttt{configuration-space[rotation][y][x]} mit den Dimensionen fasst die erweiterten Occupancy Grids in der Dimension \texttt{[rotation]} zusammen:
-\begin{itemize}
-\item \texttt{(rotation + 1) \% rotations} $\widehat{=}$ Rotation um \texttt{rotation\_step} gegen den Uhrzeigersinn
-\item \texttt{(rotation - 1) \% rotations} $\widehat{=}$ Rotation um \texttt{rotation\_step} im Uhrzeigersinn
-\end{itemize}
-\vspace*{0.4cm}
+In \texttt{configuration\_space[rotations][occupancy\_grid\_length][occupancy\_grid\_width]} werden die erweiterten Occupancy Grids in der Dimension \texttt{[rotations]} zusammengefasst:
+
+\vspace*{-0.5cm}
+\hspace*{-0.6cm}
+\begin{minipage}{\linewidth}
+\begin{align*}
+\texttt{configuration\_space[(rotation+1)\%rotations]}\,\,&\widehat{=}\,\,\text{Rotation um \texttt{rotation\_step} gegen den Uhrzeigersinn} \\
+\vspace*{0.1cm}
+\texttt{configuration\_space[(rotation-1)\%rotations]}\,\,&\widehat{=}\,\,\text{Rotation um \texttt{rotation\_step} im Uhrzeigersinn}
+\end{align*}
+\end{minipage}
+
+\vspace*{0.46cm}
 \begin{figure}[H]
 	\centering
 	\footnotesize
 	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/configuration-space.png}}}
-	\caption{Die erweiterten Occupancy Grids bilden den Konfigurationsraum}
+	\caption{Die erweiterten Occupancy Grids bilden den dreidimensionalen Konfigurationsraum.}
 \end{figure}
 
-Der berechnete Konfigurationsraum $\texttt{rotations*occupancy\_grid\_length*occupancy\_grid\_width}$ nach Yunfeng und Chirikjian ermöglicht über die Punktbewegung im dreidimensionalen Raum eine kollisionsfreie Translation und Rotation im Occupancy Grid bei minimalem Verbrauch freier Koordinaten \cite{wang.2000}. 
+Die Punktbewegung im dreidimensionalen Konfigurationsraum \texttt{configuration\_space[rotations]}\\\texttt{[occupancy\_grid\_length][occupancy\_grid\_width]} ermöglicht eine kollisionsfreie Translation und Rotation im Occupancy Grid bei minimalem Verbrauch freier Koordinaten \cite{wang.2000}. 
 Die Position des Roboters sowie dessen Rotationszustand im Occupancy Grid wird dabei im Konfigurationsraum über die Dimensionen \texttt{rotation, y, x} referenziert.
 
 

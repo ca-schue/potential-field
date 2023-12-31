@@ -1,5 +1,6 @@
 \chapter{Roboterbewegung im Occupancy Grid} \label{ch:roboterbewegung}
-Die physikalische Umgebung des Roboters wird diskretisiert durch das \textit{Occupancy Grid}, ein binärer, zweidimensionaler Raum aus der Vogelperspektive. Implementiert mit der Python Bibliothek \textit{Numpy}, hat das Boolean Array \texttt{occupancy\_grid[Y][X]} die Länge \texttt{occupancy\_grid\_length}, die Breite \texttt{occupancy\_grid\_width} und den Ursprung links oben. Jede Koordinate ist entweder durch ein Hindernis belegt (\texttt{occupancy\_grid[Y][X] == False}) oder frei von einem Hindernis (\texttt{occupancy\_grid[Y][X] == True}).
+\enlargethispage{0.5cm}
+Die physikalische Umgebung des Roboters wird diskretisiert durch das \textit{Occupancy Grid}, ein binärer, zweidimensionaler Raum aus der Vogelperspektive. Implementiert mit der Python Bibliothek Numpy, hat das Boolean Array \texttt{occupancy\_grid[occupancy\_grid\_length][occupancy\_grid\_width]} den Ursprung links oben. Jede Koordinate ist entweder durch ein Hindernis belegt (\texttt{occupancy\_grid[Y][X] == False}) oder frei von einem Hindernis (\texttt{occupancy\_grid[Y][X] == True}).
 
 Im Occupancy Grid gibt es drei Roboterpositionen: \texttt{start\_point}, \texttt{current\_position} und \texttt{goal\_point}.
 \begin{figure}[H]
@@ -43,20 +44,20 @@ Im Occupancy Grid gibt es drei Roboterpositionen: \texttt{start\_point}, \texttt
 	\end{minipage}
 	\hspace*{\fill}
 	%	\vspace{-1cm}
-	\caption{Ein einfaches Occupancy Grid mit vier Hinderniskoordinaten, dem \texttt{start\_point} (grün), der \texttt{current\_position} (orange) und dem \texttt{goal\_point} (rot)}.
+	\caption{Ein einfaches Occupancy Grid mit vier Hinderniskoordinaten, dem \texttt{start\_point} (grün), der \texttt{current\_position} (orange) und dem \texttt{goal\_point} (rot).}
 \end{figure}
 
 \vspace*{-0.3cm}
-Die Dimension des Roboters wird durch die Variablen \texttt{robot\_width} und \texttt{robot\_length} definiert. Pro Verarbeitungseinheit kann sich der Roboter relativ zum \textit{Ankerpunkt} der aktuellen Position entweder durch eine Translation oder Rotation im Occupancy Grid bewegen:
+Die Dimension des Roboters wird durch die Variablen \texttt{robot\_width} und \texttt{robot\_length} definiert. Pro Verarbeitungsschritt kann sich der Roboter relativ zum \textit{Ankerpunkt} der aktuellen Position entweder durch eine Translation oder Rotation im Occupancy Grid bewegen:
 \begin{itemize}
-\item \textbf{Translation} nach links (\texttt{x-1}), rechts (\texttt{x+1}), oben (\texttt{y-1}) und unten (\texttt{y+1})
+\item \textbf{Translation} nach links (\texttt{x-1}), rechts (\texttt{x+1}), oben (\texttt{y-1}) und unten (\texttt{y+1}).
 \item \textbf{Rotation} um den Ankerpunkt. Bei einer Rotation von $0$° liegt der Ankerpunkt in der linken oberen Koordinate innerhalb der Roboterdimensionen.
 \end{itemize}
-\vspace*{0.3cm}
+\vspace*{0.2cm}
 \begin{figure}[H]
 	\centering
 	\footnotesize
 	\centerline{\resizebox{1\linewidth}{!}{\input{bilder/robotermodell_latex.pdf_tex}}}
-	\caption{Bewegung eines Roboters mit variabler Dimension durch Translation und Rotation.}
+	\caption{Bewegung eines Roboters mit variabler Dimension durch Translation und Rotation relativ zum Ankerpunkt}
 \end{figure}
 

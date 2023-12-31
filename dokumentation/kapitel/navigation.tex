@@ -43,7 +43,7 @@ Somit entspricht $\texttt{force\_field\_rotation[rotations-1]} > 0 $ einer Kraft
 	\footnotesize
 	\centerline{\resizebox{0.63\linewidth}{!}{\includegraphics{bilder/force-field.png}}}
 	\vspace*{-0.23cm}
-	\caption{Darstellung des negativen Gradientenfelds als Kraftpfeile im Konfigurationsraum.}
+	\caption{Darstellung des negativen Gradientenfelds als Kraftpfeile im Konfigurationsraum}
 \end{figure}
 
 \subsection{Gradienten an Grenzen und Hindernissen}
@@ -56,16 +56,16 @@ Um die Grenzen des Konfigurationsraums einzuhalten, werden unzulässige Kräfte 
 	\caption{Das Setzen der Gradienten in Grenznähe auf $0$ kann zu lokalen Minima führen.}
 \end{figure}
 \vspace*{-0.1cm}
-Im Numpy Potenzialfeld \texttt{potential} haben Hindernisse das Potenzial \texttt{np.nan}. Somit berechnet \texttt{np.gradients()} für jede an ein Hindernis grenzende Koordinate den Gradienten \texttt{np.nan}.
-Um die Kräfte an Hindernissen analog zu Kräften an den Grenzen des Konfigurationsraums zu interpretieren, müssen diese manuell berechnet werden. 
-Sollte die berechnete Kraft einer Dimension in Richtung des Hindernisses zeigen, wird diese ebenfalls auf $0$ gesetzt. Nachfolgende Tabelle zeigt dies beispielhaft für Hindernisse im Kraftfeld der X-Achse \texttt{force\_field\_x}:
+Im Numpy Potenzialfeld haben Hindernisse das Potenzial \texttt{np.nan}. Somit berechnet \texttt{np.gradients()} für jede an ein Hindernis grenzende Koordinate den Gradienten \texttt{np.nan}.
+Damit die Kräfte an Hindernissen analog zu den Kräften an den Grenzen des Konfigurationsraums interpretiert werden können, ist es notwendig, diese manuell zu berechnen.
+Sollte die berechnete Kraft einer Dimension in Richtung des Hindernisses zeigen, wird diese ebenfalls auf $0$ gesetzt. Nachfolgende Tabelle zeigt dies beispielhaft für Hindernisse im Kraftfeld der X-Achse:
 \begin{table}[H]
-\centerline{\resizebox{0.9\linewidth}{!}{
+\centerline{\resizebox{1\linewidth}{!}{
 \begin{tabular}{|c|c|c|}
 \hline
 \textbf{Koordinate Hindernis}                                                & \textbf{\texttt{force\_field\_x[rotation][y][x] = -1*...}}                                                        & \textbf{\texttt{= 0}, wenn ...} \\ \hline
-$x+1$ (rechts)                                                               & \texttt{potential[z, y, x] - potential[z, y, x-1]} & $<0$                               \\ \hline
-$x-1$ (links)                                                                & \texttt{potential[z, y, x+1] - potential[z, y, x]} & $>0$                                \\ \hline
+$x+1$ (rechts)                                                               & \texttt{potential[rotation, y, x] - potential[rotation, y, x-1]} & $<0$                               \\ \hline
+$x-1$ (links)                                                                & \texttt{potential[rotation, y, x+1] - potential[rotation, y, x]} & $>0$                                \\ \hline
 \begin{tabular}[c]{@{}c@{}}$x+1$ und $x-1$\\ (rechts und links)\end{tabular} & \texttt{0}                                                                           & N/A                                 \\ \hline
 \end{tabular}}}
 \end{table}
@@ -85,21 +85,21 @@ In diesen Fällen wird zu einem der beiden Nachbarn ein künstliches Hindernis g
 
 \section{Gradientenabstieg}
 
-Die berechneten Gradientenfelder ermöglichen die Roboternavigation mit dem \textit{Gradientenabstiegsverfahren}. Pro Verarbeitungsschritt wird die nächste Koordinate basierend auf der betragsmäßig größten Kraft in $F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation})$, $F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation})$ und $F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation})$ gewählt, bis eine bereits besuchte Koordinate oder eine Koordinate mit Kräftegleichgewicht $F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation}) = F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation}) = F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation}) = 0$ erreicht wird:
+Die berechneten Kraftfelder ermöglichen die Roboternavigation mit dem \textit{Gradientenabstiegsverfahren}. Pro Verarbeitungsschritt wird die nächste Koordinate basierend auf der betragsmäßig größten Kraft in $F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation})$, $F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation})$ und $F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation})$ gewählt, bis eine bereits besuchte Koordinate oder eine Koordinate mit Kräftegleichgewicht $F_{x}(\texttt{x}, \texttt{y}, \texttt{rotation}) = F_{y}(\texttt{x}, \texttt{y}, \texttt{rotation}) = F_{rotation}(\texttt{x}, \texttt{y}, \texttt{rotation}) = 0$ erreicht wird:
 
 \begin{algorithm}
 \caption{Gradientenabstiegsverfahren}
 \begin{algorithmic}[1]
     \State \textbf{Initialisierung:}
     \State \hspace{\algorithmicindent} $(\texttt{x}_{\text{current}}, \texttt{y}_{\text{current}}, \texttt{rotation}_{\text{current}}) = \texttt{start\_point}$
-    \State \hspace{\algorithmicindent} Visited $V \leftarrow \emptyset$
+    \State \hspace{\algorithmicindent} Visited $V \leftarrow \{(\texttt{x}_{\text{current}}, \texttt{y}_{\text{current}}, \texttt{rotation}_{\text{current}})\}$
 	\vspace*{0.3cm}
     \While{true}
         \If{$(\texttt{x}_{\text{current}}, \texttt{y}_{\text{current}}, \texttt{rotation}_{\text{current}}) = \texttt{goal\_point}$}
             \State \textbf{return} Ziel gefunden
         \EndIf
 		\vspace*{0.1cm}
-        \State $\texttt{force\_field\_x/y/rotation}\texttt{[}\texttt{rotation}_{\text{current}}\texttt{][}\texttt{y}_{\text{current}}\texttt{][}\texttt{x}_{\text{current}}\texttt{]} = 0$
+%        \State $\texttt{force\_field\_x/y/rotation}\texttt{[}\texttt{rotation}_{\text{current}}\texttt{][}\texttt{y}_{\text{current}}\texttt{][}\texttt{x}_{\text{current}}\texttt{]} = 0$
         \State $(\texttt{dx}, \texttt{dy}, \texttt{drotation}) \gets \max(|\texttt{force\_field\_x/y/rotation}\texttt{[}\texttt{rotation}_{\text{current}}\texttt{][}\texttt{y}_{\text{current}}\texttt{][}\texttt{x}_{\text{current}}\texttt{]}|)$
 		\vspace*{-0.3cm}
         \If{$(\texttt{dx}, \texttt{dy}, \texttt{drotation}) = (0,0,0)$}
@@ -109,7 +109,7 @@ Die berechneten Gradientenfelder ermöglichen die Roboternavigation mit dem \tex
         \State $(\texttt{x}_{\text{current}}, \texttt{y}_{\text{current}}, \texttt{rotation}_{\text{current}}) \gets (\texttt{x}_{\text{current}} + \texttt{dx}, \texttt{y}_{\text{current}} + \texttt{dy}, \texttt{rotation}_{\text{current}} + \texttt{drotation})$
 		\vspace*{-0.3cm}
         \If{$(\texttt{x}_{\text{current}}, \texttt{y}_{\text{current}}, \texttt{rotation}_{\text{current}}) \in V$}
-            \State \textbf{return} Lokales Minimum
+            \State \textbf{return} Lokales Minimum durch Oszillation
 		\Else
 			\State $(\texttt{x}_{\text{current}}, \texttt{y}_{\text{current}}, \texttt{rotation}_{\text{current}}) \rightarrow V$
         \EndIf
@@ -117,13 +117,13 @@ Die berechneten Gradientenfelder ermöglichen die Roboternavigation mit dem \tex
 \end{algorithmic}
 \end{algorithm}
 
-Gemäß der in Kapitel \ref{ch:roboterbewegung} definierten Roboterbewegungen darf pro Verarbeitungsschritt nur eine Translation um eine Einheit entlang der Dimensionen des Konfigurationsraums  durchgeführt werden: $ (\texttt{dx}, \texttt{dy}, \texttt{drotation}) \in \{(\texttt{1},\texttt{0},\texttt{0})(\texttt{-1},\texttt{0},\texttt{0}),(\texttt{0},\texttt{1},\texttt{0}),(\texttt{0},\texttt{-1},\texttt{0}),(\texttt{0},\texttt{0},\texttt{1}),(\texttt{0},\texttt{0},\texttt{-1})\}$
+Gemäß der in Kapitel \ref{ch:roboterbewegung} definierten Roboterbewegungen darf pro Verarbeitungsschritt nur eine Translation um eine Einheit entlang der Dimensionen des Konfigurationsraums  durchgeführt werden: $ (\texttt{dx}, \texttt{dy}, \texttt{drotation}) \in \{(\texttt{0},\texttt{0},\texttt{0}),(\texttt{1},\texttt{0},\texttt{0}),(\texttt{-1},\texttt{0},\texttt{0}),(\texttt{0},\texttt{1},\texttt{0}),(\texttt{0},\texttt{-1},\texttt{0}),(\texttt{0},\texttt{0},\texttt{1}),(\texttt{0},\texttt{0},\texttt{-1})\}$
 \vspace*{0.1cm}
 \begin{figure}[h!]
 	\centering
 	\footnotesize
 	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/grad-desc.png}}}
-	\caption{Roboternavigation über das Gradientenabstiegsverfahren im Kraftfeld des Wavefront-Potenzialfelds.}
+	\caption{Roboternavigation mit dem Gradientenabstiegsverfahren im Kraftfeld des Wavefront-Potenzialfelds}
 \end{figure}
 
 

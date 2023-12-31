@@ -3,4 +3,5 @@ ipympl
 ipywidgets
 jupyterlab-widgets
 scipy
+scikit-learn
 

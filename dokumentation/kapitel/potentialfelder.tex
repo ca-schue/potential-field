@@ -6,23 +6,23 @@ Je Höher die potenzielle Energie einer Koordinate, desto weiter ist der Punkt a
 Die Berechnung des Potenzialfelds $\texttt{potential[rotation][y][x]} = U(\texttt{x}, \texttt{y}, \texttt{rotation})$ erfolgt mit \textit{Potenzialfunktionen}. \cite{yujiang.2017}
 
 \vspace*{0.2cm}
-\section{Anziehende \& Abstoßende Potenziale} \label{sec:attr-repul-pot}
+\section{Anziehende \& abstoßende Potenziale} \label{sec:attr-repul-pot}
 
-Khatib schlug 1986 vor, das Potenzialfeld in Analogie zu Magnet- und Gravitationsfeldern zu berechnen \cite{khatib.1985}. Der zu erreichende Zielpunkt wirkt mit einem \textit{anziehenden} (engl. \textit{attractive}) Potenzial auf eine Koordinate (\texttt{y}, \texttt{x}). Dieses Potenzial ist in allen Rotationsebenen gleich:
+Khatib schlug 1986 vor, das Potenzialfeld analog zu Magnet- und Gravitationsfeldern zu berechnen \cite{khatib.1985}. Der zu erreichende Zielpunkt wirkt mit einem \textit{anziehenden} (engl. \textit{attractive}) Potenzial auf eine Koordinate (\texttt{y}, \texttt{x}). Dieses Potenzial ist in allen Rotationsebenen gleich:
 \vspace*{0.25cm}
 \begin{equation*}
 U_{Attr, Ziel}(\texttt{x}, \texttt{y}) = \sqrt{(\texttt{y} - \texttt{y}_{Ziel})^2 + (\texttt{x} - \texttt{x}_{Ziel})^2}
 \end{equation*}
 
 %\vspace*{-0.1cm}
-Bei den getesteten Implementierungsszenarien wurden bessere Ergebnisse festgestellt, wenn das anziehenden Potenzial erst normiert und anschließend gewichtet wird. Mit $\texttt{attraction\_weight} = 1$ hat das anziehende Potenzial einen Wertebereich von $[0;1]$. Mit  $\texttt{attraction\_weight} < 1$ wird die obere Grenze des Wertebereichs verringert, mit $\texttt{attraction\_weight} > 1$ vergrößert:
+Bei den getesteten Implementierungsszenarien wurden bessere Ergebnisse festgestellt, wenn das anziehenden Potenzial erst normiert und anschließend gewichtet wird. Mit $\texttt{attraction\_weight} = 1$ hat das anziehende Potenzial einen Wertebereich von $[0;1]$. Mit  $\texttt{attraction\_weight} < 1$ wird die obere Grenze des Wertebereichs gegen $0$ verringert, mit $\texttt{attraction\_weight} > 1$ wird sie über $1$ vergrößert:
 \vspace*{0.3cm}
 \begin{equation*}
 U_{Attr, Ziel}(\texttt{x}, \texttt{y})_{norm} = \frac{U_{Attr, Ziel}(\texttt{x}, \texttt{y})}{\max \{ U_{Attr, Ziel}\}} * \texttt{attraction\_weight} 
 \end{equation*}
 
 %\vspace*{-0.1cm}
-Die Hindernisse im Konfigurationsraum wirken auf jede Koordinate (\texttt{x}, \texttt{y}, \texttt{rotation}) mit einem \textit{abstoßendem} (engl. \textit{repulsive}) Potenzial. Dazu zählen auch die Hindernisse aus der benachbarten Rotationsebene \texttt{((rotation+1) \% rotations)} sowie \texttt{((rotation-1) \% rotations)}. Mit $\texttt{repulsion\_weight}=0$ hat das abstoßende Potenzial einen Wertebereich von $[0;1]$. Werte $\texttt{repulsion\_weight} > 0 $ verringern die obere Grenze des Wertebereichs gegen $0$: \cite{schweiger.2023}
+Die Hindernisse im Konfigurationsraum wirken auf jede Koordinate (\texttt{x}, \texttt{y}, \texttt{rotation}) mit einem \textit{abstoßendem} (engl. \textit{repulsive}) Potenzial. Das umfasst auch die Hindernisse in den benachbarten Rotationsebenen \texttt{((rotation+1) \% rotations)} sowie \texttt{((rotation-1) \% rotations)}. Mit $\texttt{repulsion\_weight}=0$ hat das abstoßende Potenzial einen Wertebereich von $[0;g]$, wobei $0\le g \le 1$. Werte $\texttt{repulsion\_weight} > 0 $ verringern die obere Grenze des Wertebereichs gegen $0$: \cite{schweiger.2023}
 \vspace*{0.25cm}
 \begin{equation*}
 \hspace*{-0.075\linewidth}
@@ -49,13 +49,13 @@ U(\texttt{x}, \texttt{y}, \texttt{rotation}) = U_{Attr, Ziel}(\texttt{x}, \textt
 	\centering
 	\footnotesize
 	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/total-potential-computation.png}}}
-	\caption{Die Berechnung des Gestamtpotenzial für die $0$°-Rotationsebene des Konfigurationsraums mit \texttt{attraction\_weight=5} und \texttt{repulsion\_weight=0}.}
+	\caption{Die Berechnung des Gesamtpotenzials für die $0$°-Rotationsebene des Konfigurationsraums mit \texttt{attraction\_weight=5} und \texttt{repulsion\_weight=0}}
 \end{figure}
 
 \vspace*{0.2cm}
 \section{Wavefront Potenziale}
 
-Choset stellt eine Potenzialfunktion unter Verwendung der Breitensuche ausgehend vom Zielpunkt vor. Beim sogenannten \textit{Wavefront-Algorithmus} entsprechen die Koordinaten des Konfigurationsraums den Knoten der Breitensuche, wobei jeder besuchte Knoten das pro Breitensuchenebene streng monoton steigende Potenzial erhält: \cite{choset.2007}
+Choset stellt eine Potenzialfunktion unter Verwendung der Breitensuche ausgehend vom Zielpunkt vor. Beim sogenannten \textit{Wavefront-Algorithmus} entsprechen die Koordinaten des Konfigurationsraums den Knoten der Breitensuche. Jeder besuchte Knoten erhält dabei ein Potenzial, das mit jeder Ebene der Breitensuche streng monoton ansteigt: \cite{choset.2007}
 \vspace*{0.1cm}
 \begin{algorithm}
 \caption{Wavefront-Algorithmus}
@@ -80,19 +80,18 @@ Choset stellt eine Potenzialfunktion unter Verwendung der Breitensuche ausgehend
 \end{algorithm}
 
 \newpage
-Somit breitet sich ausgehend vom Zielpunkt als Quelle das ansteigende Potenzial bildlich als \textit{Wellenfront} im Konfigurationsraum aus.
-Koordinaten in Hindernisnähe erhalten auf entgegengesetzter Seite der Ausbreitungsrichtung höhere Potenziale.
+Demnach breitet sich das ansteigende Potenzial, beginnend am Zielpunkt als Quelle, bildlich als \textit{Wellenfront} im Konfigurationsraum aus. Koordinaten in der Nähe von Hindernissen erhalten dabei auf der entgegengesetzten Seite der Ausbreitungsrichtung höhere Potenziale.
 
 \begin{figure}[H]
 	\centering
 	\footnotesize
 	\centerline{\resizebox{1\linewidth}{!}{\includegraphics{bilder/wavefront.png}}}
-	\caption{Die Berechnung des Gestamtpotenzial für die $0$°-Rotationsebene des Konfigurationsraums mit $\texttt{attraction\_weight}=5$ und $\texttt{repulsion\_weight}=0$.}
+	\caption{Die Berechnung des Gesamtpotenzials für die $0$°-Rotationsebene des Konfigurationsraums mit dem Wavefront-Algorithmus.}
 \end{figure}
 
 \vspace*{1cm}
 Unabhängig von der gewählten Potenzialfunktion wird das Potenzialfeld im dreidimensionalen Konfigurationsraum für jede Rotationsebene berechnet.
-Somit hat das Potenzialfeld die gleichen Dimensionen wie der Konfigurationsraum:
+Dadurch hat das Potenzialfeld die gleichen Dimensionen wie der Konfigurationsraum:
 
 \begin{figure}[H]
 	\centering
